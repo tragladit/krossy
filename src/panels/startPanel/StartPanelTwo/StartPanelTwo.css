@@ -1,0 +1,143 @@
+.start-panel-two_wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  background-image: url("../../../assets/background/iOS 2.svg");
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-color: #4986CC;
+}
+
+.start-panel-two-button_bottom {
+  margin-top: 40px;
+  width: 26.13%;
+  margin-bottom: 66px;
+}
+
+.start-panel-two-button_bottom .rectangle-button {
+  width: 100%;
+}
+
+.Panel--android .start-panel-two_wrap .rectangle-button_text {
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+}
+
+.start-panel-two_radio {
+  display: none;
+}
+
+.start-panel-two_radio_label {
+  box-sizing: border-box;
+  font-family: SF Pro Text, sans-serif;
+  color: #fff;
+  border: 2px solid #8EC8FF;
+  height: 48px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 131px;
+}
+
+.start-panel-two_radio:checked + .start-panel-two_radio_label {
+  border-color: #ffffff;
+  box-shadow: 0 0 8px 0 #ffffff;
+}
+
+.Panel--ios .start-panel-two_wrap label {
+  font-weight: 500;
+}
+
+.start-panel-two-carusel_wrap {
+  margin-top: 35px;
+}
+
+.start-panel-two_text {
+  text-align: center;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 22px;
+}
+
+.start-panel-two_text-2 {
+  margin-top: 50px;
+}
+
+.start-panel-two_text-1 {
+  margin-top: 110px;
+}
+
+.Panel--ios .start-panel-two_text-2 {
+  width: 66.5%;
+}
+
+.Panel--android .start-panel-two_text-2 {
+  width: 56.9%;
+}
+
+.start-panel-two-buttons_wrap {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.Panel--ios .start-panel-two-buttons_wrap {
+  width: 74.14%;
+}
+
+.Panel--android .start-panel-two-buttons_wrap {
+  width: 77.22%;
+}
+
+.start-panel-two-buttons_wrap .start-panel-two_radio_label {
+  width: 47.12%;
+}
+
+.start-panel-two_title {
+  font-size: 24px;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.start-panel-two_horizontal_wrap {
+  margin-top: 35px;
+  display: flex;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+}
+
+.start-panel-two_horizontal_wrap::-webkit-scrollbar {
+  display: none;
+}
+
+.start-panel-two_size {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  color: #fff;
+  border: 2px solid #8EC8FF;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin: 0 5px;
+}
+
+.start-panel-two_wrap .dots-slide_dot:nth-child(2) {
+  opacity: 1;
+}
+
+.start-panel-two_warning {
+  color: red;
+  font-weight: 500;
+}
+
+
+

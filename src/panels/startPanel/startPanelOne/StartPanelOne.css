@@ -1,0 +1,64 @@
+.start-panel-one_wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  background-image: url("../../../assets/background/iOS 1.svg");
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-color: #4986CC;
+}
+
+.start-panel-one_wrap .rectangle-button {
+  width: 26.13%;
+  margin-bottom: 66px;
+}
+
+.Panel--android .start-panel-one_wrap .rectangle-button_text {
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+}
+
+.Panel--ios .start-panel-one_wrap .rectangle-button_text {
+  font-weight: 500;
+}
+
+.start-panel-one_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-bottom: 25px;
+}
+
+.Panel--ios .start-panel-one_content {
+  width: 71.46%;
+}
+
+.Panel--android .start-panel-one_content {
+  width: 68.33%;
+}
+
+.start-panel-one-content_title {
+  font-family: "Segoe UI", sans-serif;
+  font-size: 20px;
+  color: #fff;
+
+  margin-bottom: 30px;
+}
+
+.start-panel-one-content_text {
+  text-align: center;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 22px;
+}
+
+.start-panel-one_wrap .dots-slide_dot:nth-child(1) {
+  opacity: 1;
+}
+

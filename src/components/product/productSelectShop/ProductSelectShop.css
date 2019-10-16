@@ -1,0 +1,45 @@
+.product-card-select_wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 24px;
+  background-color: #4986CC;
+  height: 64px;
+}
+
+.product-card-select_count {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #ffffff;
+  font-weight: 500;
+}
+.Panel--ios .product-card-select_count {
+  font-family: SF UI Text, sans-serif;
+  font-size: 16px;
+}
+
+.Panel--android .product-card-select_count {
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.product-card-select_count_color {
+  color: #8DE6C9;
+  margin: 0 5px;
+}
+
+.product-card-select-icon_wrap {
+  align-self: center;
+}
+
+.Panel--android .product-card-select-icon_wrap {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.Panel--android .product-card-select-icon_wrap .svg-icon-chevron-right {
+  transform: rotate(90deg);
+}

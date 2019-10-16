@@ -1,0 +1,41 @@
+.Panel--ios .setting-page-three-row {
+  padding: 12px 15px 12px 12px;
+}
+
+.Panel--android .setting-page-three-row {
+  padding: 18px 24px;
+}
+
+.setting-page-three-image {
+  width: 62px;
+  height: 62px;
+}
+
+.setting-page-three-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.setting-page-three-image_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 66%;
+}
+
+.Panel--android .setting-page-three-image_wrap {
+  width: 53%;
+}
+
+.Panel--android .setting-page-three_button .round-size-btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background-color: #4986CC;
+}
+
+.Panel--android .setting-page-three_button .svg-icon-close {
+  width: 9.28px;
+  height: 9.28px;
+}

@@ -1,0 +1,26 @@
+.main-tabbar-hidden {
+  display: none;
+}
+
+.main-tabbar-show {
+  display: flex;
+  box-shadow: 0 -2px 5px 0 rgba(0,0,0,.035)
+}
+
+#start-1 .Panel__in {
+  height: 100vh;
+}
+
+#start-2 .Panel__in {
+  height: 100vh;
+}
+
+#start-3 .Panel__in {
+  height: 100vh;
+}
+
+.svg-icon-search, .svg-icon-heart, .svg-icon-setting {
+  width: 20px;
+  height: 20px;
+}
+

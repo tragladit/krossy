@@ -1,0 +1,137 @@
+.setting-page-four {
+  display: flex;
+  flex-direction: column;
+}
+
+.Panel--android .setting-page-four_context_text {
+  width: 84%;
+}
+
+.Panel--ios .setting-page-four_context {
+  border: 1px solid #F0F3F5;
+}
+
+.Panel--ios .setting-page-four_context {
+  padding: 24px;
+}
+
+.Panel--android .setting-page-four_context {
+  padding: 18px 24px 24px 24px;
+}
+
+.setting-page-four_context_title {
+  color: #AEBFCF;
+  margin-bottom: 14px;
+}
+
+.Panel--ios .setting-page-four_context_title {
+  margin-bottom: 24px;
+}
+
+.setting-page-four_table {
+  padding: 0 24px;
+}
+
+.setting-page-four-table-header {
+  display: flex;
+  align-items: center;
+}
+
+.Panel--ios .setting-page-four-table-header {
+  height: 86px;
+}
+
+.Panel--android .setting-page-four-table-header {
+  height: 73px;
+}
+
+.setting-page-four-table-header_cell {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.table-header_cell-1 {
+  width: 31.5%;
+}
+
+.Panel--ios .table-header_cell-1 {
+  border-right: 1px solid #F0F3F5;
+}
+
+.table-header_cell-2 {
+  width: 38.53%;
+  justify-content: center;
+}
+
+.Panel--ios .table-header_cell-2 {
+  border-right: 1px solid #F0F3F5;
+}
+
+.table-header_cell-3 {
+  width: 30.88%;
+  justify-content: center;
+}
+
+.setting-page-four-table-header_text {
+  color: #AEBFCF;
+  text-align: center;
+}
+
+.table-header-text-col-1 {
+  width: 81%;
+}
+
+.table-header-text-col-2 {
+  width: 51%;
+}
+
+.table-header-text-col-3 {
+  width: 68%;
+}
+
+.Panel--ios .setting-page-four-table-header_text {
+  font-size: 13px;
+}
+
+.Panel--android .setting-page-four-table-header_text {
+  font-size: 14px;
+}
+
+.setting-page-four-table_row {
+  display: flex;
+}
+
+.Panel--ios .setting-page-four-table_row {
+  height: 42px;
+}
+
+.Panel--android .setting-page-four-table_row {
+  height: 55px;
+}
+
+.table-row_cell-1 {
+  width: 31.5%;
+}
+.table-row_cell-2 {
+  width: 38.53%;
+}
+.table-row_cell-3 {
+  width: 30.88%;
+}
+
+.table-row_cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.Panel--ios .table-row_cell-2 {
+  border-right: 1px solid #F0F3F5;
+  border-left: 1px solid #F0F3F5;
+}
+
+.table-row_cell-2 {
+  color: #8EC8FF;
+}

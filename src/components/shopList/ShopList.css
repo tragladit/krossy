@@ -1,0 +1,100 @@
+.shop-list_wrap {
+  background-color: #F7F8F9;
+  display: flex;
+  flex-direction: column;
+}
+
+.shop-list-border {
+  border-top: 1px solid #EDEFF2;
+}
+
+.shop-list_row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 24px;
+}
+
+.Panel--ios .shop-list_row {
+  height: 112px;
+}
+
+.Panel--android .shop-list_row {
+  height: 104px;
+}
+
+.shop-list-image {
+   width: 62px;
+  height: 62px;
+}
+
+.shop-list-attribute {
+  height: 62px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: -80px;
+}
+
+.shop-list-image_wrap {
+  height: 62px;
+}
+
+.Panel--ios .shop-list-attribute_shop-name {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.Panel--android .shop-list-attribute_shop-name {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.shop-list-attribute_price {
+  display: flex;
+}
+
+.shop-list-attribute_price-new {
+  font-size: 16px;
+  margin-right: 5px;
+}
+
+.shop-list-attribute_price-currency {
+  font-size: 9px;
+  align-self: center;
+}
+
+.shop-list-attribute_rating {
+  display: flex;
+  justify-content: space-between;
+  width: 82px;
+}
+
+.shop-list-attribute_button .rectangle-button {
+  background-color: #FF5C7B;
+  border: none;
+  box-shadow:  0 6px 16px 0  rgba(255, 92, 123, 0.4);
+}
+
+.Panel--ios .shop-list-attribute_button .rectangle-button {
+  width: 70px;
+  height: 32px;
+}
+
+.Panel--android .shop-list-attribute_button .rectangle-button {
+  width: 65px;
+  height: 32px;
+}
+
+.shop-list-attribute_button .rectangle-button_text {
+  font-size: 12px;
+}
+
+.Panel--android .shop-list-attribute_button .rectangle-button_text {
+  font-size: 10px;
+}
+
+.shop-list-attribute_button .Button--sz-l .Button__content {
+  padding: 0;
+}

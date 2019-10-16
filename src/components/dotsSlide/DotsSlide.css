@@ -1,0 +1,16 @@
+.dots-slide_wrap {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 46px;
+    height: 6px;
+    top: calc(100vh - 36px);
+}
+
+.dots-slide_dot {
+    width: 6px;
+    height: 6px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.2;
+}

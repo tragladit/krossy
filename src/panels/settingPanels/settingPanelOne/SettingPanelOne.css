@@ -1,0 +1,134 @@
+.setting-page_wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.Panel--android .setting-border-bottom {
+  border: 1px solid #F0F3F5;
+}
+
+.Panel--ios .setting-border-bottom {
+  border: 1px solid #F0F3F5;
+}
+
+.Panel--ios .setting-page-size {
+  height: 42px;
+}
+
+.Panel--android .setting-page-size {
+  height: 56px;
+}
+
+.setting-page-size {
+  display: flex;
+  justify-content: space-between;
+}
+
+.setting-page-size_left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.setting-page-size_right {
+  display: flex;
+  align-items: center;
+}
+
+.setting-page-size_left div {
+  margin-right: 5px;
+}
+
+.setting-page-size_left_color {
+  color: #8EC8FF;
+  margin-right: 5px;
+}
+
+.setting-page_wrap .Div--ios {
+  padding: 0 15px;
+}
+
+.setting-page_wrap .Div--android {
+  padding: 0 24px;
+}
+
+.setting-page-notifications {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.Panel--ios .setting-page-notifications {
+  height: 42px;
+}
+
+.Panel--android .setting-page-notifications {
+  height: 56px;
+}
+
+.setting-page-notifications .Div--ios {
+  padding: 0 45px;
+}
+
+.setting-page-notifications .Div--android {
+  padding: 0 24px;
+}
+
+.setting-page-notifications_left {
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+}
+
+.setting-page-notifications_left_color {
+  color: #8EC8FF;
+  margin-left: 5px;
+}
+
+.setting-page-notifications_right {
+  display: flex;
+  align-items: center;
+}
+
+.setting-page-buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.Panel--ios .setting-page-buttons {
+  padding: 24px 24px;
+}
+
+.Panel--android .setting-page-buttons  {
+  padding: 36px 24px;
+}
+
+.setting-page-buttons .rectangle-button{
+  width: 100%;
+  border: 1px solid #F0F3F5;
+  color: #AEBFCF;
+}
+
+.setting-page-buttons .rectangle-button:nth-child(1) {
+  background-color: #4986CC;
+  border: none;
+  color: #ffffff;
+}
+
+.Panel--ios .setting-page-buttons .rectangle-button {
+  margin-bottom: 25px;
+  font-family: SF Pro Text, sans-serif;
+  font-size: 16px;
+}
+
+.Panel--android .setting-page-buttons .rectangle-button {
+  margin-bottom: 25px;
+  font-size: 12px;
+}
+
+.setting-page-size_right .round-size-btn, .setting-page-notifications_right .round-size-btn{
+  border: none;
+  width: 24px;
+  height: 24px;
+  justify-content: flex-end;
+}

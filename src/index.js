@@ -1,12 +1,25 @@
+import 'core-js/es6/map';
+import 'core-js/es6/set';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import connect from '@vkontakte/vkui-connect-promise';
+import App from './components/app/App';
+import { Provider } from 'react-redux';
+import store from './store/configureStore';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// import registerServiceWorker from './sw';
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+connect.send('VKWebAppInit', {})
+
+// Если вы хотите, чтобы ваше веб-приложение работало в оффлайне и загружалось быстрее,
+// расскомментируйте строку с registerServiceWorker();
+// Но не забывайте, что на данный момент у технологии есть достаточно подводных камней
+// Подробнее про сервис воркеры можно почитать тут — https://vk.cc/8MHpmT 
+// registerServiceWorker();
+
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+);

@@ -1,0 +1,16 @@
+.search-panel-three {
+  background-color: #F7F8F9;
+}
+
+.search-panel-three_wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Panel--ios .search-panel-three_wrap {
+  justify-content: space-between;
+}
+
+.Panel--android .search-panel-three_wrap {
+  justify-content: space-evenly;
+}

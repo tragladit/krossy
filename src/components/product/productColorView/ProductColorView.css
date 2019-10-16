@@ -1,0 +1,73 @@
+.product-color-view {
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+}
+
+.bg_black {
+  background-color: #000000;
+}
+
+.bg_white {
+  background-color: #ffffff;
+}
+
+.bg_blue {
+  background-color: #3872fc;
+}
+
+.bg_beige {
+  background-color: #debd93;
+}
+
+.bg_turquoise {
+  background-color: #39e1d9;
+}
+
+.bg_burgundy {
+  background-color: #8f001a;
+}
+
+.bg_lightblue {
+  background-color: #8bcdff;
+}
+
+.bg_yellow {
+  background-color: #ffec1c;
+}
+
+.bg_green {
+  background-color: #3db701;
+}
+
+.bg_gold {
+  background-color: #dcbd64;
+}
+
+.bg_coral {
+  background-color: #ff606e;
+}
+
+.bg_brown {
+  background-color: #733d01;
+}
+
+.bg_red {
+  background-color: #e50000;
+}
+
+.bg_orange {
+  background-color: #ff7900;
+}
+
+.bg_pink {
+  background-color: #ff9ad5;
+}
+
+.bg_grey {
+  background-color: #b6b6b6;
+}
+
+.bg_multi {
+  background: conic-gradient(red, yellow, lime, aqua, blue, magenta, red);
+}

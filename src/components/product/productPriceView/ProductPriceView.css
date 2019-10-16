@@ -1,0 +1,40 @@
+.product-price_wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+
+  font-size: 12px;
+}
+
+.product-price_old {
+  color: rgba(174, 191, 207, 0.4);
+  font-weight: 500;
+  text-decoration: line-through;
+}
+
+.product-price_new {
+  font-weight: 400;
+}
+
+.product-price_currency {
+  font-weight: 500;
+  font-size: 8px;
+}
+
+.product-price_discount {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  align-items: center;
+
+  width: 26px;
+  height: 12px;
+
+  background-color: #404040;
+  border-radius: 7px;
+
+  color: #ffffff;
+  font-size: 8px;
+  font-weight: 500;
+}
+

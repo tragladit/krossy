@@ -1,37 +1,42 @@
 {
-  "homepage": "https://tragladit.github.io/krossy",
   "name": "krossy",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "react": "^16.10.2",
-    "react-dom": "^16.10.2",
-    "react-scripts": "3.2.0"
-  },
+  "homepage": "https://tragladit.github.io/krossy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
+    "start": "cross-env PORT=10888 react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
   "devDependencies": {
-    "gh-pages": "^2.1.1"
-  }
+    "cross-env": "^5.2.0",
+    "gh-pages": "^2.1.1",
+    "react-hot-loader": "^4.7.1",
+    "react-scripts": "^2.1.5",
+    "redux-devtools-extension": "^2.13.8"
+  },
+  "dependencies": {
+    "@vkontakte/icons": "^1.4.3",
+    "@vkontakte/vkui": "^2.21.5",
+    "@vkontakte/vkui-connect-promise": "^0.2.0-beta.7",
+    "babel-eslint": "^9.0.0",
+    "core-js": "^2.6.5",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
+    "react-redux": "^7.1.0",
+    "redux": "^4.0.4",
+    "redux-thunk": "^2.3.0"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }

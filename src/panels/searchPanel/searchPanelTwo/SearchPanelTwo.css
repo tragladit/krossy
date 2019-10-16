@@ -1,0 +1,12 @@
+.search-panel-two_wrap {
+  background-color: #F7F8F9;
+}
+
+.search-panel-two_wrap .Group--ios, .search-panel-two_wrap .Group--android {
+  margin: 0;
+}
+
+.search-panel-two_wrap .Cell__children {
+  display: flex;
+  justify-content: space-between;
+}

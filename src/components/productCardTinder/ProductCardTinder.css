@@ -1,0 +1,82 @@
+.tinder-page-product {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 3px 16px rgba(174, 191, 207, 0.3);
+  border-radius: 12px;
+}
+
+.tinder-page-product-header {
+  display: flex;
+  padding: 24px 24px 0 24px;
+  margin-bottom: 10px;
+}
+
+.tinder-page-product-header_left {
+  width: 70%;
+}
+
+.tinder-page-product-header_right {
+  width: 30%;
+}
+
+.tinder-page-product-header_right .round-size-btn {
+  box-shadow: 0 3px 6px rgba(73, 134, 204, 0.4);
+}
+
+.tinder-page-product-header_left .product-brand-view-name {
+  font-size: 10px;
+  color: #AEBFCF;
+}
+
+.tinder-page-product-header_left .product-price_wrap {
+  width: 117px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tinder-page-product-header_left .product-price_currency {
+  align-self: center;
+}
+
+.tinder-page-product-header_right {
+  padding-top: 16px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.tinder-page-product-header_right .round-size-btn {
+  width: 32px;
+  height: 32px;
+  background-color: #4986CC;
+  border: none;
+}
+
+.tinder-page-product-footer {
+  display: flex;
+  padding-left: 24px;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.tinder-page-product-footer .product-size-block_img {
+  width: 8px;
+  height: 8px;
+  margin: 0 2px;
+}
+
+.tinder-page-product-footer .product-size-block_content {
+  font-size: 8px;
+  margin-right: 2px;
+}
+
+.tinder-page-product-footer .product-size-block-wrap {
+  align-self: center;
+  margin-right: 5px;
+}
+
+.tinder-page-product-image {
+  width: 100%;
+}

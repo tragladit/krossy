@@ -1,0 +1,18 @@
+.like-counter_wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 67px;
+  height: 34px;
+
+  background-color: #8DE6C9;
+  border-radius: 85px;
+  box-shadow: 0 3px 8px rgba(141, 230, 201, 0.5);
+}
+
+.like-counter_text {
+  font-size: 16px;
+  font-family: Roboto, sans-serif;
+  color: #ffffff;
+  margin-left: 5px;
+}

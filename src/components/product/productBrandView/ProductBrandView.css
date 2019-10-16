@@ -1,0 +1,11 @@
+.product-brand-view-logo {
+  width: 100%;
+}
+
+.product-brand-view-name {
+  text-transform: uppercase;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

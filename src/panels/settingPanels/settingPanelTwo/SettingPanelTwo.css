@@ -1,0 +1,52 @@
+.setting-page-two {
+  display: flex;
+  flex-direction: column;
+}
+
+.setting-page-two-button_wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.Panel--ios .setting-page-two-button_wrap {
+  padding: 24px 24px 20px 24px;
+}
+
+.Panel--android .setting-page-two-button_wrap {
+  padding: 45px 24px 20px 24px;
+}
+
+.setting-page-two_button .rectangle-button {
+  width: 100%;
+  border: none;
+  background-color: #4986CC;
+  margin-bottom: 40px;
+}
+
+.Panel--android .setting-page-two_button .rectangle-button_text {
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.setting-page-two_text {
+  color: #AEBFCF;
+}
+
+.Panel--android .setting-page-two_button .setting-page-two_text {
+  font-size: 14px;
+}
+
+.Panel--ios .setting-page-two_button .setting-page-two_text {
+  font-size: 17px;
+}
+
+.Panel--ios .setting-page-two_radio .radio-button_wrap {
+  padding: 10px 15px;
+}
+
+.Panel--android .setting-page-two_radio .radio-button_wrap {
+  padding: 19px 20px 19px 24px
+}
+
+

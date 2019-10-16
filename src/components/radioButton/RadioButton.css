@@ -1,0 +1,94 @@
+.radio-button_wrap{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+.Panel--ios .radio-button_wrap {
+  padding: 10px 0;
+}
+
+.Panel--android .radio-button_wrap {
+  padding: 12px 0;
+}
+
+.Panel--ios .radio-button_wrap .radio-button_container {
+  width: 24px;
+  height: 24px;
+}
+
+.Panel--android .radio-button_wrap .radio-button_container {
+  width: 18px;
+  height: 18px;
+}
+
+.radio {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.radio + label {
+  position: relative;
+  cursor: pointer;
+}
+.radio + label:before {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: #FFF;
+}
+
+.Panel--ios .radio + label:before {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #AEBFCF;
+}
+
+.Panel--android .radio + label:before {
+  width: 14px;
+  height: 14px;
+  border: 2px solid #AEBFCF;
+}
+
+.radio + label:after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0;
+  transition: .2s;
+}
+
+.Panel--ios .radio + label:after {
+  top: 5px;
+  left: 5px;
+  width: 14px;
+  height: 14px;
+  background: #528BCC;
+}
+
+.Panel--android .radio + label:after {
+  top: 5px;
+  left: 5px;
+  width: 8px;
+  height: 8px;
+  background: #4986CC;
+}
+
+
+
+.radio:checked + label:after {
+  opacity: 1;
+}
+
+.Panel--ios .radio:checked + label:before {
+  border-color: #528BCC;
+}
+
+.Panel--android .radio:checked + label:before {
+  border-color: #4986CC;
+}
+
+
+/* .radio:focus + label:before {
+
+} */

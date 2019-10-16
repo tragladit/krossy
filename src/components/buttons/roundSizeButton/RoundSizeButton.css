@@ -1,0 +1,22 @@
+.round-size-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-sizing: border-box;
+
+  height: 48px;
+  width: 48px;
+
+  border:  2px solid #8EC8FF;
+  border-radius: 50%;
+
+  color: #ffffff;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.round-size-btn_image {
+  width: 18px;
+}

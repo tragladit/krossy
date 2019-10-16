@@ -1,0 +1,24 @@
+.horizontal-size-chart_wrap {
+  display: flex;
+}
+
+.horizontal-size-chart_circle {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  box-sizing: border-box;
+  border: 2px solid #8EC8FF;
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  margin-right: 16px;
+}
+
+.horizontal-size-chart_circle:active {
+  border-color: #ffffff;
+  box-shadow: 0 0 8px 0 #ffffff;
+}
