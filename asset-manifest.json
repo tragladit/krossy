@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/krossy/static/css/main.b100e6da.chunk.css",
+    "main.js": "/krossy/static/js/main.e24cf01e.chunk.js",
+    "main.js.map": "/krossy/static/js/main.e24cf01e.chunk.js.map",
+    "runtime-main.js": "/krossy/static/js/runtime-main.3baf317b.js",
+    "runtime-main.js.map": "/krossy/static/js/runtime-main.3baf317b.js.map",
+    "static/js/2.23d0bd0e.chunk.js": "/krossy/static/js/2.23d0bd0e.chunk.js",
+    "static/js/2.23d0bd0e.chunk.js.map": "/krossy/static/js/2.23d0bd0e.chunk.js.map",
+    "index.html": "/krossy/index.html",
+    "precache-manifest.b8b23be645d179d6ace8fe5d3ed15291.js": "/krossy/precache-manifest.b8b23be645d179d6ace8fe5d3ed15291.js",
+    "service-worker.js": "/krossy/service-worker.js",
+    "static/css/main.b100e6da.chunk.css.map": "/krossy/static/css/main.b100e6da.chunk.css.map",
+    "static/media/logo.svg": "/krossy/static/media/logo.25bf045c.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3baf317b.js",
+    "static/js/2.23d0bd0e.chunk.js",
+    "static/css/main.b100e6da.chunk.css",
+    "static/js/main.e24cf01e.chunk.js"
+  ]
+}
