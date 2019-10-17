@@ -28,6 +28,10 @@ export const sortMinPrice = (offers) => {
   return sortPrice
 };
 
+export const filterModeProducts = (mode, data) => data.filter(el => el[mode])
+
+export const filterSizes = (data) => data.filter(el => el.isSelected)
+
 
 // discount: 0
 // gender: "unisex"

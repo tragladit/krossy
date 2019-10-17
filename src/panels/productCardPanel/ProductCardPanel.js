@@ -63,10 +63,14 @@ class ProductCardPanel extends React.PureComponent {
     const {
       offers, modelsParams, prod, currentColor, currentSize, setDataOnChangeColor, setDataOnChangeSize
     } = this.props;
+
     const pictures = modelsParams[currentColor].pictures
     const colors = Object.keys(modelsParams)
     const params = modelsParams[currentColor].params
+
     const osname = platform();
+    let heightStyle = osname === IOS ? 236 : 220;
+
     const fontStyleAndroid = {
       fontFamily: 'Roboto, sans-serif',
       position: 'relative'
@@ -77,7 +81,6 @@ class ProductCardPanel extends React.PureComponent {
     const blurStyle = {
       filter: 'blur(9px)'
     };
-    let heightStyle = osname === IOS ? 236 : 220;
 
     const onColor = async (newColor) => {
       const newParams = modelsParams[newColor].params[0]
@@ -106,7 +109,9 @@ class ProductCardPanel extends React.PureComponent {
 
     const getProductColorView = () => {
       return colors.map((el, i) => (
-        <ProductColorView key={i} color={el} curColor={currentColor} setData={onColor} pid={prod.id} />
+        <ProductColorView
+          key={i} color={el} curColor={currentColor} setData={onColor} icons={modelsParams}
+        />
       ))
     }
 

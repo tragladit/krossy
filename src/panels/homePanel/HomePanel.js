@@ -8,6 +8,7 @@ import HeaderHome from "../../components/headerHome/HeaderHome";
 import { connect as reduxConnect } from "react-redux";
 // import {getData, getProducts, getUserInfo, onChangeGender, onChooseSizeBySize} from "../../reducers/user";
 import ApiService from "../../api/krossy-api";
+import { filterModeProducts } from '../../reducers/selectors';
 
 const osname = platform();
 
@@ -51,23 +52,29 @@ class HomePanel extends React.Component {
     const { contextOpened, mode } = this.state;
     const { data } = this.props;
 
+    let products = data.products
+    if (mode !== 'all') {
+      products = filterModeProducts(mode, products)
+    }
+
     return (
       <Panel id={this.props.id}>
-        <HeaderHome toggleContext={this.toggleContext}
-          select={this.select}
-          contextOpened={contextOpened}
-          mode={mode} />
+        <HeaderHome
+          toggleContext={this.toggleContext} select={this.select}
+          contextOpened={contextOpened} mode={mode}
+        />
         <Div className='all-product-page_wrap'>
           <PullToRefresh onRefresh={this.onRefresh}
             isFetching={this.state.fetching}>
             <div className='all-product-page_content'>
-              {
-                data.products.map(item => {
+              {products.length ?
+                products.map(item => {
                   return <ProductCardSmall
                     key={item.id} formSticker='round' nameSticker='star' goTo='productCardPanel'
                     func={this.props.go} productId={item.id} product={item}
                   />
-                })
+                }) :
+                <div>Ничего не найдено</div>
               }
             </div>
           </PullToRefresh>

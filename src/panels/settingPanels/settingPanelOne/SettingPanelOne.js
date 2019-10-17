@@ -7,7 +7,8 @@ import IconChevronAndroidRight from "../../../components/icon/IconChevronAndroid
 import RectangleButton from "../../../components/buttons/rectangleButton/RectangleButton";
 import RoundSizeButton from '../../../components/buttons/roundSizeButton/RoundSizeButton';
 import RadioButton from "../../../components/radioButton/RadioButton";
-
+import { connect as reduxConnect } from "react-redux";
+import { filterSizes } from '../../../reducers/selectors';
 
 class SettingPanelOne extends React.Component {
   constructor(props) {
@@ -21,6 +22,12 @@ class SettingPanelOne extends React.Component {
       fontSize: `${osname === IOS ? '17px' : '14px'}`
     };
 
+    const { sizes, gender } = this.props
+    
+    const Sizes = () => filterSizes(sizes).map(el => (
+      <div key={el.id} className='setting-page-size_left_color'>{el.size}</div>
+    ))
+
     return (
       <Panel id={this.props.id}
              theme='white'
@@ -30,9 +37,7 @@ class SettingPanelOne extends React.Component {
         <Div className='setting-page-size setting-border-bottom'>
           <div className='setting-page-size_left'>
             <div>Размер</div>
-            <div className='setting-page-size_left_color'>40</div>
-            <div className='setting-page-size_left_color'>41</div>
-            <div className='setting-page-size_left_color'>42</div>
+            {Sizes()}
           </div>
           <div className='setting-page-size_right'>
             <RoundSizeButton func={this.props.goPanel}
@@ -41,7 +46,7 @@ class SettingPanelOne extends React.Component {
           </div>
         </Div>
         <Div className='setting-page-checkbox-group setting-border-bottom'>
-          <RadioButton title='Мужские' name='gender'/>
+          <RadioButton checked={true} title='Мужские' name='gender'/>
           <RadioButton title='Женские' name='gender'/>
         </Div>
         <Div className='setting-page-notifications setting-border-bottom'>
@@ -65,4 +70,10 @@ class SettingPanelOne extends React.Component {
   }
 }
 
-export default SettingPanelOne;
+export default reduxConnect(
+  state => ({
+    sizes: state.user.sizeChart,
+    gender: state.user.gender
+  }),
+  null
+)(SettingPanelOne);

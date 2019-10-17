@@ -104,10 +104,11 @@ const colors = {
 const style = { width: '40px', height: '40px' };
 const styleSelected = { width: '52px', height: '52px' };
 
-const ProductColorView = ({ color, curColor, setData, pid }) => {
+const ProductColorView = ({ color, curColor, setData, icons }) => {
 
   // const selectedColor = colors[color] ? colors[color] : "multi";
-  const img = clrs[pid][color]
+  // const img = clrs[pid][color]
+  const icon = icons[color].pictures[0]
 
   return (
     <div
@@ -116,7 +117,7 @@ const ProductColorView = ({ color, curColor, setData, pid }) => {
       // style={color === curColor ? styleSelected : style}
     >
       <img
-        src={img}
+        src={icon}
         style={color === curColor ? styleSelected : style}
       />
     </div>

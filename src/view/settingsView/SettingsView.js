@@ -1,6 +1,5 @@
 import React from 'react';
-
-import {View, Panel} from "@vkontakte/vkui";
+import {View} from "@vkontakte/vkui";
 import SettingPanelOne from "../../panels/settingPanels/settingPanelOne/SettingPanelOne";
 import SettingPanelTwo from "../../panels/settingPanels/settingPanelTwo/SettingPanelTwo";
 import SettingPageThree from '../../panels/settingPanels/settingPanelThree/SettingPanelThree';
