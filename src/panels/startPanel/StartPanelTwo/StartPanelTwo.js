@@ -1,10 +1,9 @@
 import React from 'react';
-import {Panel, HorizontalScroll} from '@vkontakte/vkui';
-import {connect} from "react-redux";
+import { Panel } from '@vkontakte/vkui';
+import { connect } from "react-redux";
 import './StartPanelTwo.css';
 import RectangleButton from "../../../components/buttons/rectangleButton/RectangleButton";
-
-import {isChangeBoolean, onChangeGender, onChooseSize} from "../../../reducers/user";
+import { isChangeBoolean, onChangeGender, onChooseSize } from "../../../reducers/user";
 import DotsSlide from "../../../components/dotsSlide/DotsSlide";
 import ApiService from "../../../api/krossy-api";
 
@@ -28,33 +27,36 @@ class StartPanelTwo extends React.PureComponent {
   };
 
   saveUserSettings = () => {
-    const {gender, sizeChart, userInfo} = this.props.data;
+    const { gender, sizeChart, userInfo } = this.props.data;
     const sizes = [];
     sizeChart.forEach(item => {
       if (item.isSelected) {
         sizes.push(item.size)
       }
     });
-
     const form = new FormData();
     form.append("gender", gender);
     form.append("size", JSON.stringify(sizes));
-    form.append("bdate",  userInfo.bdate)
+    form.append("bdate", userInfo.bdate)
 
     sizes.length < 4 && sizes.length > 0 ?
       this.goNextScreen(userInfo.id, form) :
-      this.setState({isSelectedSizes: true})
+      this.setState({ isSelectedSizes: true })
   };
 
   goNextScreen = (userID, form) => {
-    this.setState({isSelectedSizes: false});
+    this.setState({ isSelectedSizes: false });
     this.Service.saveSetting(userID, form)
-      .then(res => {if(res.ok) this.props.isSave(true)});
+      .then(res => {
+        if (res.ok) {
+          this.props.isSave(true)
+        };
+      })
     this.props.goPanel('start-3');
   };
 
   render() {
-    const {id, goPanel, data} = this.props;
+    const { id, data } = this.props;
     return (
       <Panel id={id}>
         <div className='start-panel-two_wrap'>
@@ -64,24 +66,24 @@ class StartPanelTwo extends React.PureComponent {
           </div>
           <div className='start-panel-two-buttons_wrap'>
             <input className='start-panel-two_radio'
-                   type='radio'
-                   onChange={this.onChangeGender}
-                   name='gender'
-                   value='male'
-                   id='genderMale'
-                   checked={data.gender === "male"}
+              type='radio'
+              onChange={this.onChangeGender}
+              name='gender'
+              value='male'
+              id='genderMale'
+              checked={data.gender === "male"}
             />
             <label htmlFor='genderMale'
-                   className='start-panel-two_radio_label'>
+              className='start-panel-two_radio_label'>
               Мужские
             </label>
             <input className='start-panel-two_radio'
-                   type='radio'
-                   onChange={this.onChangeGender}
-                   name='gender'
-                   value='female'
-                   id='genderFemale'
-                   checked={data.gender === "female"}
+              type='radio'
+              onChange={this.onChangeGender}
+              name='gender'
+              value='female'
+              id='genderFemale'
+              checked={data.gender === "female"}
             />
             <label htmlFor='genderFemale' className='start-panel-two_radio_label'>
               Женские
@@ -94,26 +96,26 @@ class StartPanelTwo extends React.PureComponent {
                 <div>Выберете до 3-х интересующих Вас размеров кроссовок</div>
             }
           </div>
-            <div onClick={this.onChangeSize} className='start-panel-two_horizontal_wrap'>
-              {
-                data.sizeChart.map(item => {
-                  return <div key={item.id}
-                              data-id={item.id}
-                              className='start-panel-two_size'
-                              style={item.isSelected ? {borderColor: "#ffffff", boxShadow: "0 0 4px 0 #fff"} : {}}
-                  >
-                    {item.size}
-                  </div>
-                })
-              }
-            </div>
+          <div onClick={this.onChangeSize} className='start-panel-two_horizontal_wrap'>
+            {
+              data.sizeChart.map(item => {
+                return <div key={item.id}
+                  data-id={item.id}
+                  className='start-panel-two_size'
+                  style={item.isSelected ? { borderColor: "#ffffff", boxShadow: "0 0 4px 0 #fff" } : {}}
+                >
+                  {item.size}
+                </div>
+              })
+            }
+          </div>
 
           <div className='start-panel-two-button_bottom'>
             <RectangleButton title='Далее'
-                             secondAction={this.saveUserSettings}
-                             goTo={'start-3'} />
+              secondAction={this.saveUserSettings}
+              goTo={'start-3'} />
           </div>
-          <DotsSlide/>
+          <DotsSlide />
         </div>
       </Panel>
     )
@@ -130,4 +132,4 @@ export default connect(
     onPickSize: id => dispatch(onChooseSize(id))
   })
 )
-(StartPanelTwo);
+  (StartPanelTwo);

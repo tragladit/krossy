@@ -13,7 +13,6 @@ import IconArrowAndroidBack from "../../../components/icon/IconArrowAndroisBack"
 import ApiService from "../../../api/krossy-api";
 import DotsSlide from "../../../components/dotsSlide/DotsSlide";
 import { connect } from "react-redux";
-// import {getModelsById, getProducts, onChangeGender, onChooseSize} from "../../../reducers/user";
 
 class StartPanelThree extends React.PureComponent {
 

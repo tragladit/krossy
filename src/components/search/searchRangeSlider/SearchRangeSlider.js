@@ -35,7 +35,7 @@ class SearchRangeSlider extends React.Component {
         </div>
         <div style={style} className='search-page-price-range-slider'>
           <RangeSlider
-            min={3000} max={20000} onChange={this.changeRange}
+            min={2000} max={20000} onChange={this.changeRange}
             defaultValue={[prices.startValue, prices.endValue]}
           />
         </div>

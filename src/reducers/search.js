@@ -10,11 +10,11 @@ const RES_STATE = 'RES_STATE'
 
 const initialState = {
   brands: {
-    'Nike': false, 'Air Jordan': false, 'Adidas': false, 'Off-White': false,
-    'Asics': false, 'Converse': false, 'Puma': false, 'Reebok': false, 'FILA': false
+    'Nike': false, 'Adidas': false, 'Asics': false, 'Converse': false,
+    'Puma': false, 'Reebok': false, 'FILA': false
   },
   price: false,
-  prices: { startValue: 3000, endValue: 20000 },
+  prices: { startValue: 2000, endValue: 20000 },
   discount: false,
   sort: 'Не сортировать',
   color: false,
@@ -32,7 +32,7 @@ export const resState = () => ({ type: RES_STATE })
 const search = (state = initialState, action) => {
   switch (action.type) {
     case SET_BRANDS:
-      return { ...state, brands: { ...state.brands, [action.val]: !state.brands[action.val] }};
+      return { ...state, brands: { ...state.brands, [action.val]: !state.brands[action.val] } };
     case SET_PRICE:
       return { ...state, [action.field]: action.val };
     case SET_DISCOUNT:

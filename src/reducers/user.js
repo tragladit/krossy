@@ -1,103 +1,99 @@
 import {
   CHANGE_GENDER, CHOOSE_SIZE, CHOOSE_SIZE_BY_SIZE, GET_USER_INFO, IS_CHANGE_BOOLEAN, GET_DATA,
-  SET_NEW_INIT_DATA, SET_DATA_ON_CHANGE_COLOR, SET_DATA_ON_CHANGE_SIZE
+  SET_NEW_INIT_DATA, SET_DATA_ON_CHANGE_COLOR, SET_DATA_ON_CHANGE_SIZE, SET_SIZE_CHART, SET_LIKE
 } from "./constants";
-
-// CONNECT_LOAD_USER_INFO, FETCH_LOAD_SETTING, 
-// GET_MODEL_BY_ID,
-// GET_PRODUCTS,
-// GET_USER_ID, 
+import { setProductLike } from './selectors';
 
 const initialState = {
-  userInfo: {},
+  userInfo: false,
   isLoadUserInfo: false,
   isLoadSetting: false,
   isSaveSetting: false,
   isLoadProducts: false,
   isLoadModels: false,
+  gender: '',
   sizeChart: [
     {
       id: 1,
-      size: "38",
+      size: 38,
       isSelected: false
     },
     {
       id: 2,
-      size: "38.5",
+      size: 38.5,
       isSelected: false
     },
     {
       id: 3,
-      size: "39",
+      size: 39,
       isSelected: false
     },
     {
       id: 4,
-      size: "39.5",
+      size: 39.5,
       isSelected: false
     },
     {
       id: 5,
-      size: "40",
+      size: 40,
       isSelected: false
     },
     {
       id: 6,
-      size: "40.5",
+      size: 40.5,
       isSelected: false
     },
     {
       id: 7,
-      size: "41",
+      size: 41,
       isSelected: false
     },
     {
       id: 8,
-      size: "41.5",
+      size: 41.5,
       isSelected: false
     },
     {
       id: 9,
-      size: "42",
+      size: 42,
       isSelected: false
     },
     {
       id: 10,
-      size: "42.5",
+      size: 42.5,
       isSelected: false
     },
     {
       id: 11,
-      size: "43",
+      size: 43,
       isSelected: false
     },
     {
       id: 12,
-      size: "43.5",
+      size: 43.5,
       isSelected: false
     },
     {
       id: 13,
-      size: "44",
+      size: 44,
       isSelected: false
     },
     {
       id: 14,
-      size: "44.5",
+      size: 44.5,
       isSelected: false
     },
     {
       id: 15,
-      size: "45",
+      size: 45,
       isSelected: false
     }
   ],
-  gender: 'male',
   offersByModel: [],
-  products: [],
+  products: false,
+  productId: null,
   modelsParams: {},
-  currentProduct: {},
-  currentId: null,
+  modelId: null,
   currentColor: '',
   currentSize: null
 };
@@ -146,17 +142,21 @@ export const getData = (field, data) => {
   }
 };
 
-export const setNewInitData = (modelsParams, currentProduct, current) => ({
-  type: SET_NEW_INIT_DATA, modelsParams, currentProduct, current
+export const setNewInitData = (modelsParams, productId, current) => ({
+  type: SET_NEW_INIT_DATA, modelsParams, productId, current
 });
 
-export const setDataOnChangeColor = (currentColor, currentSize, currentId, offers) => (
-  { type: SET_DATA_ON_CHANGE_COLOR, currentColor, currentSize, currentId, offers }
+export const setDataOnChangeColor = (color, size, id, offers) => (
+  { type: SET_DATA_ON_CHANGE_COLOR, color, size, id, offers }
 );
 
-export const setDataOnChangeSize = (currentSize, currentId, offers) => (
-  { type: SET_DATA_ON_CHANGE_SIZE, currentSize, currentId, offers }
+export const setDataOnChangeSize = (size, id, offers) => (
+  { type: SET_DATA_ON_CHANGE_SIZE, size, id, offers }
 );
+
+export const setSizeChart = data => ({ type: SET_SIZE_CHART, data });
+
+export const setLike = id => ({ type: SET_LIKE, id });
 
 export function user(state = initialState, action) {
   switch (action.type) {
@@ -179,18 +179,23 @@ export function user(state = initialState, action) {
     case SET_NEW_INIT_DATA:
       return {
         ...state,
-        modelsParams: action.modelsParams, currentProduct: action.currentProduct,
-        currentId: action.current.id, currentSize: action.current.size, currentColor: action.current.color
+        modelsParams: action.modelsParams, productId: action.productId,
+        modelId: action.current.id, currentSize: action.current.size, currentColor: action.current.color
       };
     case SET_DATA_ON_CHANGE_COLOR:
       return {
         ...state, offersByModel: action.offers,
-        currentColor: action.currentColor, currentSize: action.currentSize, currentId: action.currentId
+        currentColor: action.color, currentSize: action.size, modelId: action.id
       };
     case SET_DATA_ON_CHANGE_SIZE:
       return {
-        ...state, offersByModel: action.offers, currentSize: action.currentSize, currentId: action.currentId
+        ...state, offersByModel: action.offers, currentSize: action.size, modelId: action.id
       };
+    case SET_SIZE_CHART:
+      return { ...state, sizeChart: action.data };
+    case SET_LIKE:
+      return { ...state, products: setProductLike(action.id, { ...state.products }) };
+    default:
+      return state
   }
-  return state;
 }

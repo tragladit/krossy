@@ -1,6 +1,5 @@
 import React from 'react';
 import { platform } from "@vkontakte/vkui"; //IOS
-//import pic from '../../assets/image/Rectangle 1276.png';
 import brandLogo from '../../assets/image/adidas.png';
 import './ProductCardSmall.css';
 import ProductSizeChartViewSmall from "../product/productSizeChartViewSmall/ProductSizeChartViewSmall";
@@ -11,8 +10,7 @@ import Sticker from "../Sticker/Sticker";
 import ApiService from "../../api/krossy-api";
 import { connect as reduxConnect } from "react-redux";
 import { isChangeBoolean, setNewInitData } from "../../reducers/user";
-import { getCurrentProduct, getNormalizeData } from "../../reducers/selectors";
-//filterModelInit , getCurrentModel, getPictures
+import { getNormalizeData } from "../../reducers/selectors";
 
 const osname = platform();
 
@@ -32,25 +30,28 @@ class ProductCardSmall extends React.PureComponent {
       const target = +e.currentTarget.dataset.goodId;
       this.props.isLoad(true);
       const resModels = await this.Service.getModels(target, data.userInfo.id);
-      const curProduct = getCurrentProduct(data.products, target);
       if (resModels.ok) {
-        const nmzData = getNormalizeData(resModels.result, curProduct.pictureModelId);
-        setNewInitData(nmzData.models, curProduct, nmzData.current);
+        const nmzData = getNormalizeData(resModels.result, data.products[target].pictureModelId);
+        setNewInitData(nmzData.models, target, nmzData.current);
         this.props.isLoad(false);
         this.props.func(goTo);
       } else {
-          console.log('#ProductCardSmall.goProduct.findCurrentModel# Model not find');
+        console.log('#ProductCardSmall.goProduct.findCurrentModel# Model not find');
       }
     } catch (err) {
-        console.log('#ProductCardSmall.goProduct#', err);
+      console.log('#ProductCardSmall.goProduct#', err);
     }
   };
 
   render() {
-    const { goTo, productId, formSticker, nameSticker, product } = this.props;
+
+    const { goTo, formSticker, nameSticker, prodId, product } = this.props;
+
+    const sizes = product && product.sizes.sort((a, b) => a - b)
+
     return (
       <div
-        onClick={this.goProduct} data-good-id={productId} data-to={goTo}
+        onClick={this.goProduct} data-good-id={prodId} data-to={goTo}
         className='product-card-small_wrap'
       >
         <div className='product-card-small-sticker_wrap'>
@@ -80,7 +81,7 @@ class ProductCardSmall extends React.PureComponent {
           }
         </div>
         <div className='product-card-small_footer'>
-          {product ? <ProductSizeChartViewSmall sizes={product.sizes} /> : null}
+          {product ? <ProductSizeChartViewSmall sizes={sizes} /> : null}
           {product ? <ProductCountShopView shops={product.shops} /> : null}
         </div>
       </div>

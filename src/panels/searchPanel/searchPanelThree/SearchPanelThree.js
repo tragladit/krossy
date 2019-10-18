@@ -1,11 +1,12 @@
 import React from 'react';
 import './SearchPanelThree.css';
-import {Panel, Div} from '@vkontakte/vkui';
+import { Panel, Div } from '@vkontakte/vkui';
 import { connect as reduxConnect } from "react-redux";
 import Header from '../../../components/header/Header';
 import ProductCardSearch from '../../../components/productCardSearch/ProductCardSearch';
 import {
-  filterBrands, normalizeProducts, filterNormalizeProducts, filterDiscount, filterPrice, sortPrice
+  toArray, filterBrands, normalizeProductsByBrand, filterProductsByBrand, filterDiscount,
+  filterPrice, sortPrice
 } from '../../../reducers/searchSelectors';
 
 //   brands: {Nike: true, Air Jordan: false, Adidas: true, Off-White: false, Asics: false, …}
@@ -19,16 +20,16 @@ import {
 const formSticker = 'round'
 const nameSticker = 'star'
 
-const SearchPanelThree = ({id, goPanel, products, searchParams}) => {
+const SearchPanelThree = ({ id, goPanel, products, searchParams }) => {
 
   const filterData = () => {
-    let data
+
+    let data = toArray(products)
+
     const brands = filterBrands(searchParams.brands)
     if (brands.length) {
-      const nmzProducts = normalizeProducts(products)
-      data = filterNormalizeProducts(brands, nmzProducts)
-    } else {
-      data = products
+      const productsByBrand = normalizeProductsByBrand(data)
+      data = filterProductsByBrand(brands, productsByBrand)
     }
     if (searchParams.discount) {
       data = filterDiscount(data)
@@ -45,9 +46,9 @@ const SearchPanelThree = ({id, goPanel, products, searchParams}) => {
     return data
   }
 
-  const cards = filterData().map((el, i) => (
+  const cards = filterData().map(el => (
     <ProductCardSearch
-      key={i} productId={el.id} product={el} formSticker={formSticker} nameSticker={nameSticker}
+      key={el.id} productId={el.id} product={el} formSticker={formSticker} nameSticker={nameSticker}
     />
   ))
 
@@ -70,5 +71,3 @@ export default reduxConnect(
   }),
   null
 )(SearchPanelThree);
-
-// export default SearchPanelThree

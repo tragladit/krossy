@@ -4,18 +4,18 @@ import IconStar from "../icon/IconStar";
 import IconHeartFull from "../icon/IconHeartFull";
 import './Sticker.css';
 
-const Sticker = ({form, icon}) => {
+const Sticker = ({ form, icon }) => {
 
   let stickerForm = form === 'round' ? 'sticker-round_wrap' : 'sticker-rectangle_wrap';
   let stickerSize = form === 'rectangle' ? icon === 'star' ? 'sticker-size-l' : 'sticker-size-m' : null;
 
   let iconSvg;
   if (icon === 'trend') {
-    iconSvg = <IconTrend/>
+    iconSvg = <IconTrend />
   } else if (icon === 'star') {
-    iconSvg = <IconStar/>
+    iconSvg = <IconStar />
   } else if (icon === 'like') {
-    iconSvg = <IconHeartFull/>
+    iconSvg = <IconHeartFull />
   }
 
   let bgColor;
@@ -33,7 +33,7 @@ const Sticker = ({form, icon}) => {
   };
   return (
     <div style={divStyle}
-         className={`${stickerForm} ${stickerSize}`} >
+      className={`${stickerForm} ${stickerSize}`} >
       {iconSvg}
       {form === 'rectangle' ? icon === 'trend' ? 'в тренде' : 'limited edition' : null}
     </div>

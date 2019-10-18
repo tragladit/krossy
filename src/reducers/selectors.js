@@ -18,6 +18,13 @@ export const getNormalizeData = (data, id) => {
   return nmzData
 };
 
+export const getNormalizeProducts = (data) => {
+  return data.reduce((res, el) => {
+    res[el.id] = el
+    return res
+  }, {})
+};
+
 export const getCurrentProduct = (products, id) => {
   const product = products.find(el => el.id === id);
   return product;
@@ -28,9 +35,35 @@ export const sortMinPrice = (offers) => {
   return sortPrice
 };
 
-export const filterModeProducts = (mode, data) => data.filter(el => el[mode])
+export const filterModeProducts = (mode, data) => {
+  return Object.keys(data).reduce((res, k) => {
+    if (data[k][mode]) {
+      res[k] = data[k]
+    }
+    return res
+  }, {})   
+}
 
 export const filterSizes = (data) => data.filter(el => el.isSelected)
+
+export const setSizes = (val, data) => (
+  data.map(el => el.size === val ? { ...el, isSelected: !el.isSelected } : el)
+)
+
+export const getSettingsSizes = (data) => {
+  const sizes = data.reduce((res, el) => {
+    if (el.isSelected) {
+      res.push(el.size)
+    }
+    return res
+  }, [])
+  return JSON.stringify(sizes)
+}
+
+export const setProductLike = (id, data) => {
+  data[id].top = !data[id].top
+  return data
+}
 
 
 // discount: 0

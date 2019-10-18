@@ -4,9 +4,8 @@ import './SearchPanelOne.css';
 import IconChevronIOSRight from '../../../components/icon/IconChevronIOSRight';
 import IconChevronAndroidRight from '../../../components/icon/IconChevronAndroidRight';
 import SearchRangeSlider from '../../../components/search/searchRangeSlider/SearchRangeSlider';
-// import SearchColorPick from '../../../components/search/searchColorPick/searchColorPick';
 import RectangleButton from '../../../components/buttons/rectangleButton/RectangleButton';
-import SearchRadioButton from "../../../components/search/searchRadioButton/SearchRadioButton";
+import RadioButton from "../../../components/radioButtonRedux/RadioButtonRedux";
 import Header from "../../../components/header/Header";
 import { connect as reduxConnect } from "react-redux";
 import { setDiscount, setSort } from '../../../reducers/search';
@@ -33,17 +32,15 @@ class SearchPanelOne extends React.Component {
 
   changeSwitch = (e) => this.props.setDiscount(e.target.checked);
 
-  changeSort = (e) => this.props.setSort(e.target.value);
-
-  // changeColor = (e) => console.log(e);
-
+  changeSort = (val) => this.props.setSort(val)
+  
   render() {
     const { discount, sort } = this.props
 
     const SortPriceButtons = () => {
       return sortTitles.map((el, i) => (
-        <SearchRadioButton
-          key={i} name={sortName} title={el} sort={sort} getChecked={this.changeSort}
+        <RadioButton
+          key={i} title={el} name={sortName} value={el} checked={sort} setChecked={this.changeSort}
         />
       ))
     }
@@ -72,10 +69,6 @@ class SearchPanelOne extends React.Component {
         <Div className='search-page-checkbox-group search-border-bottom'>
           {SortPriceButtons()}
         </Div>
-        {/* <Div className='search-page-color-pick'>
-          <SearchColorPick  /> 
-          onChange={this.changeColor} 
-        </Div> */}
         <Div className='search-page-button_wrap'>
           <RectangleButton title='Найти' func={this.props.goPanel} goTo='search-3' />
         </Div>
@@ -87,7 +80,7 @@ class SearchPanelOne extends React.Component {
 export default reduxConnect(
   state => ({
     discount: state.search.discount,
-    sort: state.search.sort 
+    sort: state.search.sort
   }),
   dispatch => ({
     setDiscount: val => dispatch(setDiscount(val)),

@@ -2,14 +2,14 @@ import React from 'react';
 import { Panel, Gallery, platform, IOS, Div } from '@vkontakte/vkui';
 import Header from '../../components/header/Header';
 import './ProductCardPanel.css';
-//import pic from '../../assets/image/Rectangle 1297@2x.png';
 import RoundSizeButton from '../../components/buttons/roundSizeButton/RoundSizeButton';
 import RectangleButton from '../../components/buttons/rectangleButton/RectangleButton';
 import ProductColorView from '../../components/product/productColorView/ProductColorView';
 import ProductSizeChartView from "../../components/product/productSizeChartView/ProductSizeChartView";
 import ProductPriceView from "../../components/product/productPriceView/ProductPriceView";
-import IconNotification from '../../components/icon/IconNotification';
-import IconHeartPink from '../../components/icon/IconHeartPink';
+// import IconNotificationOn from '../../components/icon/IconNotificationOn';
+import IconNotificationOff from '../../components/icon/IconNotificationOff';
+import IconHeartSet from '../../components/icon/IconHeartSet';
 import IconQuestion from '../../components/icon/IconQuestion';
 import ProductCardLikeBrand from '../../components/productCardLikeBrand/ProductCardLikeBrand';
 import ShopList from "../../components/shopList/ShopList";
@@ -17,8 +17,8 @@ import ProductSelectShop from "../../components/product/productSelectShop/Produc
 import ProductCardNotification from "../../components/productCardNotification/ProductCardNotification";
 import Sticker from "../../components/Sticker/Sticker";
 import { connect as reduxConnect } from "react-redux";
-import { getData, setDataOnChangeColor, setDataOnChangeSize } from "../../reducers/user";
-import { sortMinPrice } from "../../reducers/selectors"; //filterModelInit, getModel
+import { getData, setDataOnChangeColor, setDataOnChangeSize, setLike } from '../../reducers/user';
+import { sortMinPrice } from "../../reducers/selectors";
 import ApiService from "../../api/krossy-api";
 
 class ProductCardPanel extends React.PureComponent {
@@ -44,7 +44,7 @@ class ProductCardPanel extends React.PureComponent {
   };
 
   componentDidMount() {
-    this.loadOffers(this.props.currentId);
+    this.loadOffers(this.props.modelId);
   }
 
   handleOpenSelect = () => {
@@ -61,7 +61,8 @@ class ProductCardPanel extends React.PureComponent {
 
   render() {
     const {
-      offers, modelsParams, prod, currentColor, currentSize, setDataOnChangeColor, setDataOnChangeSize
+      offers, products, productId, modelsParams, currentColor, currentSize,
+      setDataOnChangeColor, setDataOnChangeSize, setLike
     } = this.props;
 
     const pictures = modelsParams[currentColor].pictures
@@ -81,6 +82,8 @@ class ProductCardPanel extends React.PureComponent {
     const blurStyle = {
       filter: 'blur(9px)'
     };
+
+    const colorHeart = products[productId].top ? '#ff5c7b' : '#aebfcf'
 
     const onColor = async (newColor) => {
       const newParams = modelsParams[newColor].params[0]
@@ -107,13 +110,13 @@ class ProductCardPanel extends React.PureComponent {
 
     const getGallery = () => pictures.map((el, i) => <img key={i} src={el} alt={`pic${i}`} />)
 
-    const getProductColorView = () => {
-      return colors.map((el, i) => (
+    const getProductColorView = () => (
+      colors.map((el, i) => (
         <ProductColorView
           key={i} color={el} curColor={currentColor} setData={onColor} icons={modelsParams}
         />
+      )
       ))
-    }
 
     return (
       <Panel id={this.props.id}
@@ -136,9 +139,9 @@ class ProductCardPanel extends React.PureComponent {
           <Div className='product-card-content'>
             <div className='product-card-name'>
               <span className='product-card-name_brand'>
-                {prod.vendor}
+                {products[productId].vendor}
               </span>
-              <span className='product-card-name_product'>{prod.model}</span>
+              <span className='product-card-name_product'>{products[productId].model}</span>
             </div>
             <div className='product-card_attribute'>
               <div className='product-card_attribute-color'>
@@ -148,7 +151,7 @@ class ProductCardPanel extends React.PureComponent {
                 <ProductSizeChartView params={params} curSize={currentSize} setData={onSize} />
               </div>
               <div className='product-card_attribute-sex'>
-                {prod.gender}
+                {products[productId].gender}
               </div>
             </div>
             <div className='product-card-price_wrap'>
@@ -162,8 +165,12 @@ class ProductCardPanel extends React.PureComponent {
             </div>
             <div className='product-card-share_wrap'>
               <div className='product-card-share_wrap-btn'>
-                <RoundSizeButton iconSvg={<IconHeartPink />} />
-                <RoundSizeButton func={this.handleOpenNotificationModal} iconSvg={<IconNotification />} />
+                <RoundSizeButton
+                  func={setLike} goTo={productId} iconSvg={<IconHeartSet color={colorHeart} />}
+                />
+                <RoundSizeButton
+                  func={this.handleOpenNotificationModal} iconSvg={<IconNotificationOff />}
+                />
                 <RectangleButton iconSvg={<IconQuestion />}
                   title='Поделиться' />
               </div>
@@ -183,9 +190,10 @@ class ProductCardPanel extends React.PureComponent {
 export default reduxConnect(
   state => ({
     offers: state.user.offersByModel,
+    products: state.user.products,
+    productId: state.user.productId,
     modelsParams: state.user.modelsParams,
-    prod: state.user.currentProduct,
-    currentId: state.user.currentId,
+    modelId: state.user.modelId,
     currentColor: state.user.currentColor,
     currentSize: state.user.currentSize
   }),
@@ -194,6 +202,7 @@ export default reduxConnect(
     setDataOnChangeColor: (color, size, id, offers) => (
       dispatch(setDataOnChangeColor(color, size, id, offers))
     ),
-    setDataOnChangeSize: (size, id, offers) => dispatch(setDataOnChangeSize(size, id, offers))
+    setDataOnChangeSize: (size, id, offers) => dispatch(setDataOnChangeSize(size, id, offers)),
+    setLike: id => dispatch(setLike(id))
   })
 )(ProductCardPanel);

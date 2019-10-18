@@ -1,6 +1,5 @@
 import React from 'react';
-import {IOS, platform, View} from "@vkontakte/vkui";
-
+import { IOS, platform, View } from "@vkontakte/vkui";
 import StartPanelOne from "../../panels/startPanel/startPanelOne/StartPanelOne";
 import StartPanelTwo from "../../panels/startPanel/StartPanelTwo/StartPanelTwo";
 import StartPanelThree from "../../panels/startPanel/startPanelThree/StartPanelThree";
@@ -21,23 +20,18 @@ class StartView extends React.Component {
   }
 
   goPanel = (go) => {
-    this.setState({activePanel: go})
+    this.setState({ activePanel: go })
   };
 
   render() {
-    const {goView} = this.props;
+    const { goView } = this.props;
     return (
-      <View id={this.props.id}
-            header={false}
-            activePanel={this.state.activePanel}
-            style={fontStyleGlobal}>
-        <StartPanelOne id='start-1'
-                       goPanel={this.goPanel}/>
-        <StartPanelTwo id='start-2'
-                       goPanel={this.goPanel}/>
-        <StartPanelThree goView={goView}
-                         id='start-3'
-                         goPanel={this.goPanel}/>
+      <View
+        id={this.props.id} header={false} activePanel={this.state.activePanel} style={fontStyleGlobal}
+      >
+        <StartPanelOne id='start-1' goPanel={this.goPanel} />
+        <StartPanelTwo id='start-2' goPanel={this.goPanel} />
+        <StartPanelThree goView={goView} id='start-3' goPanel={this.goPanel} />
       </View>
     )
   }

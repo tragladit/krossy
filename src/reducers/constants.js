@@ -10,6 +10,9 @@ export const SET_NEW_INIT_DATA = 'SET_NEW_INIT_DATA';
 export const SET_CURRENT_ID = 'SET_CURRENT_ID';
 export const SET_DATA_ON_CHANGE_COLOR = 'SET_DATA_ON_CHANGE_COLOR';
 export const SET_DATA_ON_CHANGE_SIZE = 'SET_DATA_ON_CHANGE_SIZE';
+export const SET_SIZE_CHART = 'SET_SIZE_CHART';
+export const SET_LIKE = 'SET_LIKE';
+
 
 
 

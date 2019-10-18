@@ -9,9 +9,11 @@ export const parseData = (data, metod, val) => {
   }
 }
 
+export const toArray = (data) => Object.keys(data).map(k => data[k])
+
 export const filterBrands = (data) => Object.keys(data).filter(el => data[el])
 
-export const normalizeProducts = (data) => {
+export const normalizeProductsByBrand = (data) => {
   return data.reduce((res, el) => {
     const name = el.vendor.toUpperCase()
     if (!(name in res)) {
@@ -19,10 +21,10 @@ export const normalizeProducts = (data) => {
     }
     res[name].push(el)
     return res
-  }, {})  
+  }, {})
 }
 
-export const filterNormalizeProducts = (brands, products) => {
+export const filterProductsByBrand = (brands, products) => {
   return brands.reduce((res, el) => {
     const name = el.toUpperCase()
     res.push(...products[name])
@@ -34,8 +36,8 @@ export const filterDiscount = (data) => data.filter(el => el.discount)
 
 export const filterPrice = (data, start, end) => data.filter(el => el.price >= start && el.price <= end)
 
-export const sortPrice = (metod, data) => {
-  return data.sort((a, b) => metod === 'ASC' ? a.price - b.price : b.price - a.price)
-}
+export const sortPrice = (metod, data) => (
+  data.sort((a, b) => metod === 'ASC' ? a.price - b.price : b.price - a.price)
+)
 
 
