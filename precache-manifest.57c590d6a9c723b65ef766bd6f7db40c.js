@@ -1,23 +1,23 @@
 self.__precacheManifest = [
   {
-    "revision": "eaa30eed6fe9b6cbe219",
-    "url": "/krossy/static/css/main.28b51ef5.chunk.css"
+    "revision": "0efa2c75b1d9deb32146",
+    "url": "/krossy/static/css/main.a0381386.chunk.css"
   },
   {
-    "revision": "eaa30eed6fe9b6cbe219",
-    "url": "/krossy/static/js/main.eaa30eed.chunk.js"
+    "revision": "0efa2c75b1d9deb32146",
+    "url": "/krossy/static/js/main.0efa2c75.chunk.js"
   },
   {
     "revision": "5ebd78a4d372e3aee23c",
     "url": "/krossy/static/js/runtime~main.5ebd78a4.js"
   },
   {
-    "revision": "b2a9b7c0b1f034a04b5e",
+    "revision": "7d96b56bc77172811bdf",
     "url": "/krossy/static/css/2.4a7b8c3f.chunk.css"
   },
   {
-    "revision": "b2a9b7c0b1f034a04b5e",
-    "url": "/krossy/static/js/2.b2a9b7c0.chunk.js"
+    "revision": "7d96b56bc77172811bdf",
+    "url": "/krossy/static/js/2.7d96b56b.chunk.js"
   },
   {
     "revision": "81ec8c101b6bc92f7ae4e69db407f8eb",
@@ -40,6 +40,10 @@ self.__precacheManifest = [
     "url": "/krossy/static/media/SFUIText-Light.dcf70311.woff"
   },
   {
+    "revision": "49d167fd00ec879e285af5661cc763aa",
+    "url": "/krossy/static/media/SFUIText-Bold.49d167fd.ttf"
+  },
+  {
     "revision": "1e1d803a7a614c854ce213acf143edc2",
     "url": "/krossy/static/media/SFUIText-Regular.1e1d803a.ttf"
   },
@@ -50,10 +54,6 @@ self.__precacheManifest = [
   {
     "revision": "34dfe822161ceb31dc5889d742ab591c",
     "url": "/krossy/static/media/SFUIText-Semibold.34dfe822.ttf"
-  },
-  {
-    "revision": "49d167fd00ec879e285af5661cc763aa",
-    "url": "/krossy/static/media/SFUIText-Bold.49d167fd.ttf"
   },
   {
     "revision": "0e943850ffe77597e9570f008d7cae78",
@@ -68,7 +68,7 @@ self.__precacheManifest = [
     "url": "/krossy/static/media/iOS 3.c988a16c.svg"
   },
   {
-    "revision": "e5a3fe90a89d3c2424a2bf3f3739b8d9",
+    "revision": "e59b7438cae7e5831e2b995598c537e8",
     "url": "/krossy/index.html"
   }
 ];
