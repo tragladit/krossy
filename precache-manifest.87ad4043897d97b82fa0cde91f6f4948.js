@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "84466c3d18aad3de3f22",
-    "url": "/krossy/static/css/main.34ef91c2.chunk.css"
+    "revision": "e2e8a9b7feae6161551a",
+    "url": "/krossy/static/css/main.27496d1e.chunk.css"
   },
   {
-    "revision": "84466c3d18aad3de3f22",
-    "url": "/krossy/static/js/main.84466c3d.chunk.js"
+    "revision": "e2e8a9b7feae6161551a",
+    "url": "/krossy/static/js/main.e2e8a9b7.chunk.js"
   },
   {
     "revision": "5ebd78a4d372e3aee23c",
@@ -40,16 +40,16 @@ self.__precacheManifest = [
     "url": "/krossy/static/media/SFUIText-Light.dcf70311.woff"
   },
   {
+    "revision": "34dfe822161ceb31dc5889d742ab591c",
+    "url": "/krossy/static/media/SFUIText-Semibold.34dfe822.ttf"
+  },
+  {
     "revision": "e4286ca7dd7b3af5fad228ebcb84842b",
     "url": "/krossy/static/media/SFUIText-Medium.e4286ca7.ttf"
   },
   {
     "revision": "1e1d803a7a614c854ce213acf143edc2",
     "url": "/krossy/static/media/SFUIText-Regular.1e1d803a.ttf"
-  },
-  {
-    "revision": "34dfe822161ceb31dc5889d742ab591c",
-    "url": "/krossy/static/media/SFUIText-Semibold.34dfe822.ttf"
   },
   {
     "revision": "49d167fd00ec879e285af5661cc763aa",
@@ -68,7 +68,7 @@ self.__precacheManifest = [
     "url": "/krossy/static/media/iOS 3.c988a16c.svg"
   },
   {
-    "revision": "90b53a4c533916523aba759b469b36be",
+    "revision": "be5bd765dab17c42280a3b222f9c47fa",
     "url": "/krossy/index.html"
   }
 ];
