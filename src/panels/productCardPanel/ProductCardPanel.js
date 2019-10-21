@@ -1,5 +1,5 @@
 import React from 'react';
-import { Panel, Gallery, platform, IOS, Div } from '@vkontakte/vkui';
+import { Panel, Gallery, HorizontalScroll, platform, IOS, Div } from '@vkontakte/vkui';
 import Header from '../../components/header/Header';
 import './ProductCardPanel.css';
 import RoundSizeButton from '../../components/buttons/roundSizeButton/RoundSizeButton';
@@ -131,11 +131,11 @@ class ProductCardPanel extends React.PureComponent {
             null
         }
         <div style={this.state.isOpenNotification ? blurStyle : null} className='product-card_wrap'>
-          <Div className='product-card-image_wrap'>
+          <div className='product-card-image_wrap'>
             <Gallery slideIndex={this.state.slideIndex} bullets='dark' >
               {getGallery()}
             </Gallery>
-          </Div>
+          </div>
           <Div className='product-card_attribute'>
             <div className='product-card-name'>
               <span className='product-card-name_brand'>
@@ -143,23 +143,25 @@ class ProductCardPanel extends React.PureComponent {
               </span>
               <span className='product-card-name_product'>{products[productId].model}</span>
             </div >
-            <div className='product-card_attribute-color'>
-              {getProductColorView()}
-            </div>
-            <div className='product-card_attribute-size-sex-price' >
+            <HorizontalScroll>
+              <div className='product-card_attribute-color'>
+                {getProductColorView()}
+              </div>
+            </HorizontalScroll>
+            <div className='product-card_attribute-size-sex' >
               <ProductSizeChartView params={params} curSize={currentSize} setData={onSize} />
               <div className='product-card_attribute-sex'>
                 {products[productId].gender}
               </div>
-              <div className='product-card-price_wrap'>
-                {
-                  offers.length > 0 ?
-                    <ProductPriceView
-                      price={offers[0].price} oldPrice={offers[0].oldPrice} discount={offers[0].discount}
-                    />
-                    : null
-                }
-              </div>
+            </div>
+            <div className='product-card-price_wrap'>
+              {
+                offers.length > 0 ?
+                  <ProductPriceView
+                    price={offers[0].price} oldPrice={offers[0].oldPrice} discount={offers[0].discount}
+                  />
+                  : null
+              }
             </div>
             <div className='product-card-share_wrap'>
               <RoundSizeButton

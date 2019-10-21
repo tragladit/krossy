@@ -1,9 +1,9 @@
 .product-price_wrap {
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
-
+  justify-content: flex-end;
   font-size: 12px;
+  margin-right: 20px;
 }
 
 .product-price_old {
@@ -26,13 +26,10 @@
   justify-content: center;
   align-self: center;
   align-items: center;
-
   width: 26px;
   height: 12px;
-
   background-color: #404040;
   border-radius: 7px;
-
   color: #ffffff;
   font-size: 8px;
   font-weight: 500;
