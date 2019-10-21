@@ -6,15 +6,10 @@
   align-items: center;
   background-image: url("../../../assets/background/iOS 3.svg");
   background-repeat: no-repeat;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   background-size: cover;
   background-color: #4986CC;
-}
-
-.start-panel-three-circle-button_wrap {
-  align-self: flex-start;
-  margin: 12px;
 }
 
 .start-panel-three_content {
@@ -58,15 +53,20 @@
   width: 62.33%;
 }
 
-.start-panel-three_wrap .rectangle-button {
+.start-panel-three-setting-rectangle-button-wrap {
   margin-bottom: 66px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
 }
 
-.Panel--ios .start-panel-three_wrap .rectangle-button {
+.Panel--ios .start-panel-three-setting-rectangle-button-wrap .rectangle-button {
   width: 39.47%;
 }
 
-.Panel--android .start-panel-three_wrap .rectangle-button {
+.Panel--android .start-panel-three-setting-rectangle-button-wrap .rectangle-button {
   width: 35.73%;
 }
 

@@ -5,11 +5,10 @@ import RectangleButton from "../../../components/buttons/rectangleButton/Rectang
 import IconHome from "../../../components/icon/IconHome";
 import IconSearch from "../../../components/icon/IconSearch";
 import IconKross from "../../../components/icon/IconKross";
+// import IconStarBar from '../../../components/icon/IconStarBar';
 import IconHeart from "../../../components/icon/IconHeart";
 import IconSetting from "../../../components/icon/IconSetting";
 import IconArrowRight from "../../../components/icon/IconArrowRight";
-import RoundSizeButton from "../../../components/buttons/roundSizeButton/RoundSizeButton";
-import IconArrowAndroidBack from "../../../components/icon/IconArrowAndroisBack";
 import ApiService from "../../../api/krossy-api";
 import DotsSlide from "../../../components/dotsSlide/DotsSlide";
 import { connect } from "react-redux";
@@ -23,13 +22,6 @@ class StartPanelThree extends React.PureComponent {
     return (
       <Panel id={id} >
         <div className='start-panel-three_wrap'>
-          <div className='start-panel-three-circle-button_wrap'>
-            <RoundSizeButton
-              func={goPanel}
-              goTo='start-2'
-              iconSvg={<IconArrowAndroidBack currentColor='#ffffff' />}
-            />
-          </div>
           <div className='start-panel-three_content'>
             <div className='start-panel-three_title'>Готово!</div>
             <div className='start-panel-three_text start-panel-three_text-1'>
@@ -60,7 +52,10 @@ class StartPanelThree extends React.PureComponent {
               <IconSetting currentColor='#ffffff' />
             </div>
           </div>
-          <RectangleButton title='Приступить' func={goView} />
+          <div className='start-panel-three-setting-rectangle-button-wrap'>
+            <RectangleButton title='Назад' func={goPanel} goTo='start-2' />
+            <RectangleButton title='Приступить' func={goView} />
+          </div>
           <DotsSlide />
         </div>
       </Panel>
