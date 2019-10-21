@@ -62,6 +62,10 @@
   width: 100%;
 }
 
+.start-panel-three-setting-rectangle-button-wrap .rectangle-button {
+  padding: 0px 20px;
+}
+
 /* .Panel--ios .start-panel-three-setting-rectangle-button-wrap .rectangle-button {
   width: 39.47%;
 }
