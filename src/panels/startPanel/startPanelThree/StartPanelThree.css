@@ -62,13 +62,13 @@
   width: 100%;
 }
 
-.Panel--ios .start-panel-three-setting-rectangle-button-wrap .rectangle-button {
+/* .Panel--ios .start-panel-three-setting-rectangle-button-wrap .rectangle-button {
   width: 39.47%;
 }
 
 .Panel--android .start-panel-three-setting-rectangle-button-wrap .rectangle-button {
   width: 35.73%;
-}
+} */
 
 .start-panel-three-setting {
   position: relative;
