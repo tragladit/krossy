@@ -25,7 +25,7 @@ class ProductCardLikeBrand extends React.Component {
           <div className='like-brand-title_text'>Нравиться</div>
           <div className='like-brand-title_text like-brand-title_color'>Nike?</div>
         </div>
-        <div className='product-cards-like-brand' >
+        <HorizontalScroll>
           <div className='product-card-like-brand'>
             <ProductCardSmall />
             <ProductCardSmall />
@@ -36,7 +36,7 @@ class ProductCardLikeBrand extends React.Component {
             <ProductCardSmall />
             <ProductCardSmall />
           </div>
-        </div>
+        </HorizontalScroll>
       </div >
     )
   }

@@ -5,15 +5,19 @@
   width: auto;
 }
 
+.product-card-like-brand_wrap .HorizontalScroll {
+  background-color: #F7F8F9;
+}
+
 .product-card-like-brand-title {
   display: flex;
   align-items: center;
-  height: 64px;
+  height: 56px;
   padding: 0 24px;
 }
 
 .like-brand-title_text {
-  margin-right: 5px;
+  margin-right: 6px;
   font-weight: 500;
   color: #AEBFCF;
 }
@@ -24,33 +28,24 @@
 
 .Panel--android .like-brand-title_text {
   font-size: 12px;
-  text-transform: uppercase;
-}
-
-.Panel--android .like-brand-title_color {
-  color: #404040;
-}
-
-.product-cards-like-brand {
-  width: auto;
-  padding: 12px;
-  background-color: #F7F8F9;
-  border-top: 1px solid #EDEFF2;
 }
 
 .product-card-like-brand {
   justify-items: center;
   align-items: center;
   display: grid;
-  width: auto;
+  width: 100%;
+  height: auto;
   grid-auto-columns: min-content;
   grid-auto-flow: column;
   column-gap: 20px;
+  padding: 12px;
 }
 
 .product-card-like-brand .product-card-small_wrap {
   display: flex;
-  height: max-content;
+  width: 100px;
+  height: auto;
   flex-shrink: 0;
   padding: 0;
   margin: 0;

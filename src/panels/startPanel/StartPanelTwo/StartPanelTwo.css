@@ -113,8 +113,7 @@
 .start-panel-two_horizontal_wrap {
   margin-top: 35px;
   display: grid;
-  width: auto;
-  height: 100%;
+  width: 100%;
   align-items: center;
   grid-auto-columns: min-content;
   grid-auto-flow: column;

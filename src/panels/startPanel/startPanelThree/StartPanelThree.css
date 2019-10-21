@@ -13,8 +13,8 @@
 }
 
 .start-panel-three-circle-button_wrap {
-  align-self: flex-end;
-  margin: 52px 32px 32px 0;
+  align-self: flex-start;
+  margin: 12px;
 }
 
 .start-panel-three_content {

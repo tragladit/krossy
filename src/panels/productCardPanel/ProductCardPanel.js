@@ -179,9 +179,7 @@ class ProductCardPanel extends React.PureComponent {
             func={this.handleOpenSelect} isOpen={this.state.isOpenShopList} count={offers.length}
           />
           {this.state.isOpenShopList ? <ShopList /> : null}
-          <HorizontalScroll>
-            <ProductCardLikeBrand />
-          </HorizontalScroll>
+          <ProductCardLikeBrand />
         </div>
       </Panel>
     )
