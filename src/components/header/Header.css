@@ -1,7 +1,11 @@
+.main-header {
+  height: 48px;
+}
+
 .header-left {
   flex-grow: 0;
 }
-.header-right-button-block {
+/* .header-right-button-block {
   display: flex;
   flex-direction: row;
   align-self: center;
@@ -41,7 +45,7 @@
 
 .HeaderButton--android {
   line-height: 0;
-}
+} */
 
 .svg-icon-more, .svg-icon-close {
   align-self: center;
@@ -68,10 +72,10 @@
   opacity: 1;
 }
 
-.PanelHeader--ios #panel-header-tinder .PanelHeader-left-in .HeaderButton > *:not(.Icon) {
+/* .PanelHeader--ios #panel-header-tinder .PanelHeader-left-in .HeaderButton > *:not(.Icon) {
  padding-left: 0;
   margin-left: 16px;
-}
+} */
 
 #panel-header-tinder .PanelHeaderContent--android {
   width: 100%;
@@ -107,6 +111,6 @@
   height: 34px;
 }
 
-.PanelHeader--android .PanelHeader-bg {
+/* .PanelHeader--android .PanelHeader-bg {
   box-shadow:0 0 16px rgba(64,64,64,0.05);
-}
+} */

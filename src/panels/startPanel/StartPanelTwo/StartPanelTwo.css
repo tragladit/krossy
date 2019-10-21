@@ -112,6 +112,8 @@
 
 .start-panel-two_horizontal_wrap {
   margin-top: 35px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   display: grid;
   width: 100%;
   align-items: center;
@@ -120,9 +122,9 @@
   column-gap: 4px;
 }
 
-/* .start-panel-two_horizontal_wrap::-webkit-scrollbar {
+.start-panel-two_horizontal_wrap::-webkit-scrollbar {
   display: none;
-} */
+}
 
 .start-panel-two_size {
   display: flex;

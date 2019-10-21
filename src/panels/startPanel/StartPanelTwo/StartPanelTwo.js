@@ -1,5 +1,5 @@
 import React from 'react';
-import { Panel, HorizontalScroll } from '@vkontakte/vkui';
+import { Panel } from '@vkontakte/vkui';
 import { connect } from "react-redux";
 import './StartPanelTwo.css';
 import RectangleButton from "../../../components/buttons/rectangleButton/RectangleButton";
@@ -96,21 +96,19 @@ class StartPanelTwo extends React.PureComponent {
                 <div>Выберете до 3-х интересующих Вас размеров кроссовок</div>
             }
           </div>
-          <HorizontalScroll>
-            <div onClick={this.onChangeSize} className='start-panel-two_horizontal_wrap'>
-              {
-                data.sizeChart.map(item => {
-                  return <div key={item.id}
-                    data-id={item.id}
-                    className='start-panel-two_size'
-                    style={item.isSelected ? { borderColor: "#ffffff", boxShadow: "0 0 4px 0 #fff" } : {}}
-                  >
-                    {item.size}
-                  </div>
-                })
-              }
-            </div>
-          </HorizontalScroll>
+          <div onClick={this.onChangeSize} className='start-panel-two_horizontal_wrap'>
+            {
+              data.sizeChart.map(item => {
+                return <div key={item.id}
+                  data-id={item.id}
+                  className='start-panel-two_size'
+                  style={item.isSelected ? { borderColor: "#ffffff", boxShadow: "0 0 4px 0 #fff" } : {}}
+                >
+                  {item.size}
+                </div>
+              })
+            }
+          </div>
           <div className='start-panel-two-button_bottom'>
             <RectangleButton title='Далее'
               secondAction={this.saveUserSettings}
