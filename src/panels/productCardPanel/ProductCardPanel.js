@@ -131,51 +131,48 @@ class ProductCardPanel extends React.PureComponent {
             null
         }
         <div style={this.state.isOpenNotification ? blurStyle : null} className='product-card_wrap'>
-          <div className='product-card-image_wrap'>
+          <Div className='product-card-image_wrap'>
             <Gallery slideIndex={this.state.slideIndex} bullets='dark' >
               {getGallery()}
             </Gallery>
-          </div>
-          <Div className='product-card-content'>
+          </Div>
+          <Div className='product-card_attribute'>
             <div className='product-card-name'>
               <span className='product-card-name_brand'>
                 {products[productId].vendor}
               </span>
               <span className='product-card-name_product'>{products[productId].model}</span>
+            </div >
+            <div className='product-card_attribute-color'>
+              {getProductColorView()}
             </div>
-            <div className='product-card_attribute'>
-              <div className='product-card_attribute-color'>
-                {getProductColorView()}
-              </div>
-              <div className='product-card_attribute-size'>
-                <ProductSizeChartView params={params} curSize={currentSize} setData={onSize} />
-              </div>
+            <div className='product-card_attribute-size-sex-price' >
+              <ProductSizeChartView params={params} curSize={currentSize} setData={onSize} />
               <div className='product-card_attribute-sex'>
                 {products[productId].gender}
               </div>
-            </div>
-            <div className='product-card-price_wrap'>
-              {
-                offers.length > 0 ?
-                  <ProductPriceView
-                    price={offers[0].price} oldPrice={offers[0].oldPrice} discount={offers[0].discount}
-                  />
-                  : null
-              }
-            </div>
-            <div className='product-card-share_wrap'>
-              <div className='product-card-share_wrap-btn'>
-                <RoundSizeButton
-                  func={setLike} goTo={productId} iconSvg={<IconHeartSet color={colorHeart} />}
-                />
-                <RoundSizeButton
-                  func={this.handleOpenNotificationModal} iconSvg={<IconNotificationOff />}
-                />
-                <RectangleButton iconSvg={<IconQuestion />}
-                  title='Поделиться' />
+              <div className='product-card-price_wrap'>
+                {
+                  offers.length > 0 ?
+                    <ProductPriceView
+                      price={offers[0].price} oldPrice={offers[0].oldPrice} discount={offers[0].discount}
+                    />
+                    : null
+                }
               </div>
             </div>
+            <div className='product-card-share_wrap'>
+              <RoundSizeButton
+                func={setLike} goTo={productId} iconSvg={<IconHeartSet color={colorHeart} />}
+              />
+              <RoundSizeButton
+                func={this.handleOpenNotificationModal} iconSvg={<IconNotificationOff />}
+              />
+              <RectangleButton iconSvg={<IconQuestion />} title='Поделиться' />
+            </div>
           </Div>
+        </div>
+        <div className='product-select-shop_wrap' >
           <ProductSelectShop
             func={this.handleOpenSelect} isOpen={this.state.isOpenShopList} count={offers.length}
           />

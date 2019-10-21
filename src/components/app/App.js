@@ -13,7 +13,6 @@ import StartView from "../../view/startView/StartView";
 import IconHome from "../icon/IconHome";
 import IconSearch from "../icon/IconSearch";
 import IconKross from '../icon/IconKross';
-import IconHeart from '../icon/IconHeart';
 import IconStarBar from '../icon/IconStarBar';
 import IconSetting from '../icon/IconSetting';
 import { getUserInfo, isChangeBoolean, onChangeGender, onChooseSizeBySize } from "../../reducers/user";
@@ -32,7 +31,9 @@ class App extends React.Component {
   initApp = async () => {
     this.props.isLoad(true);
     connect.send("VKWebAppGetUserInfo", {})
-      .then(e => this.props.init(e.data))
+      .then(e => {
+        this.props.init(e.data)
+      })
       .then(() => this.props.isLoad(false))
   };
 
@@ -49,7 +50,10 @@ class App extends React.Component {
         <ConfigProvider isWebView={true}>
           <Epic activeStory={this.state.activeStory}
             tabbar={
-              <Tabbar className={this.state.activeStory === 'welcome' ? 'main-tabbar-hidden' : 'main-tabbar-show'}>
+              <Tabbar 
+                className={this.state.activeStory === 'welcome' ? 'main-tabbar-hidden' : 'main-tabbar-show'}
+                shadow={false}
+              >
                 <TabbarItem
                   onClick={this.onStoryChange} selected={this.state.activeStory === 'homeView'}
                   data-story='homeView'

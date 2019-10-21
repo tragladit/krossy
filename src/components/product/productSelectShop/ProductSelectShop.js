@@ -1,10 +1,10 @@
 import React from 'react';
 import './ProductSelectShop.css';
-import {IOS, platform} from "@vkontakte/vkui";
+import { IOS, platform } from "@vkontakte/vkui";
 import IconChevronDownIOS from "../../icon/IconDropDownIOS";
 import IconChevronAndroidRight from "../../icon/IconChevronAndroidRight";
 
-const ProductSelectShop = ({func, isOpen, count}) => {
+const ProductSelectShop = ({ func, isOpen, count }) => {
   const osname = platform();
   const fontStyleAndroid = {
     fontFamily: 'Roboto, sans-serif',
@@ -27,22 +27,21 @@ const ProductSelectShop = ({func, isOpen, count}) => {
   const iconColorStyle = isOpen ? '#AEBFCF' : '#fff';
 
   return (
-    <div onClick={func}
-         style={osname === IOS ? fontStyleIOS : fontStyleAndroid}
-         className='product-card-select_wrap'>
+    <div
+      className='product-card-select_wrap' onClick={func}
+      style={osname === IOS ? fontStyleIOS : fontStyleAndroid}
+    >
       <div style={colorStyle} className='product-card-select_count'>
         Купить в
-        <div style={colorCountStyle} className='product-card-select_count_color'>
+        <span style={colorCountStyle} className='product-card-select_count_color'>
           {count}
-        </div>
+        </span>
         магазинах
       </div>
       <div className='product-card-select-icon_wrap'>
         {osname === IOS ?
-          <IconChevronDownIOS currentColor={iconColorStyle}
-                              rotate={isOpen ? '-180' : '0'}/> :
-          <IconChevronAndroidRight rotate={isOpen ? '-90' : '90'}
-                                   currentColor={iconColorStyle} />
+          <IconChevronDownIOS currentColor={iconColorStyle} rotate={isOpen ? '-180' : '0'} /> :
+          <IconChevronAndroidRight rotate={isOpen ? '-90' : '90'} currentColor={iconColorStyle} />
         }
       </div>
     </div>
