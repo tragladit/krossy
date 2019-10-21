@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "61e58b40f4bd687d0101",
-    "url": "/krossy/static/css/main.53c9e12e.chunk.css"
+    "revision": "fc8c397667dce00aba49",
+    "url": "/krossy/static/css/main.bb1d6043.chunk.css"
   },
   {
-    "revision": "61e58b40f4bd687d0101",
-    "url": "/krossy/static/js/main.61e58b40.chunk.js"
+    "revision": "fc8c397667dce00aba49",
+    "url": "/krossy/static/js/main.fc8c3976.chunk.js"
   },
   {
     "revision": "5ebd78a4d372e3aee23c",
@@ -68,7 +68,7 @@ self.__precacheManifest = [
     "url": "/krossy/static/media/iOS 3.c988a16c.svg"
   },
   {
-    "revision": "a952bd2e9f27f4ee6b457ecc5a44a401",
+    "revision": "aad2929cca0f7103daa4265715bde36f",
     "url": "/krossy/index.html"
   }
 ];
