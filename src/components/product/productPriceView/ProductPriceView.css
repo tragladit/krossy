@@ -1,24 +1,26 @@
 .product-price_wrap {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: flex-start;
   font-size: 12px;
-  margin-right: 20px;
+}
+
+.product-price_new {
+  font-weight: 400;
+  margin-right: 6px;
+}
+
+.product-price_currency {
+  font-weight: 500;
+  font-size: 8px;
+  margin-right: 16px;
 }
 
 .product-price_old {
   color: rgba(174, 191, 207, 0.4);
   font-weight: 500;
   text-decoration: line-through;
-}
-
-.product-price_new {
-  font-weight: 400;
-}
-
-.product-price_currency {
-  font-weight: 500;
-  font-size: 8px;
+  margin-right: 12px;
 }
 
 .product-price_discount {

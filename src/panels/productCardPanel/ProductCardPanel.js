@@ -143,6 +143,15 @@ class ProductCardPanel extends React.PureComponent {
               </span>
               <span className='product-card-name_product'>{products[productId].model}</span>
             </div >
+            <div className='product-card-price_wrap'>
+              {
+                offers.length > 0 ?
+                  <ProductPriceView
+                    price={offers[0].price} oldPrice={offers[0].oldPrice} discount={offers[0].discount}
+                  />
+                  : null
+              }
+            </div>
             <HorizontalScroll>
               <div className='product-card_attribute-color'>
                 {getProductColorView()}
@@ -153,15 +162,6 @@ class ProductCardPanel extends React.PureComponent {
               <div className='product-card_attribute-sex'>
                 {products[productId].gender}
               </div>
-            </div>
-            <div className='product-card-price_wrap'>
-              {
-                offers.length > 0 ?
-                  <ProductPriceView
-                    price={offers[0].price} oldPrice={offers[0].oldPrice} discount={offers[0].discount}
-                  />
-                  : null
-              }
             </div>
             <div className='product-card-share_wrap'>
               <RoundSizeButton
@@ -179,7 +179,9 @@ class ProductCardPanel extends React.PureComponent {
             func={this.handleOpenSelect} isOpen={this.state.isOpenShopList} count={offers.length}
           />
           {this.state.isOpenShopList ? <ShopList /> : null}
-          <ProductCardLikeBrand />
+          <HorizontalScroll>
+            <ProductCardLikeBrand />
+          </HorizontalScroll>
         </div>
       </Panel>
     )

@@ -6,16 +6,25 @@
   align-items: center;
   background-image: url("../../../assets/background/iOS 2.svg");
   background-repeat: no-repeat;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   background-size: cover;
   background-color: #4986CC;
 }
 
 .start-panel-two_title {
+  color: #ffffff; 
+}
+
+.Panel--ios .start-panel-two_title {
   font-size: 24px;
-  color: #ffffff;
   font-weight: 500;
+}
+
+.Panel--android .start-panel-two_title {
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: 80px;
 }
 
 .start-panel-two_text {
@@ -27,17 +36,33 @@
 }
 
 .start-panel-two_text-1 {
-  margin-top: 110px;
+  margin-top: 90px;
 }
 
 .start-panel-two_text-2 {
   margin-top: 50px;
 }
 
+.Panel--ios .start-panel-two_text-2 {
+  width: 66.5%;
+}
+
+.Panel--android .start-panel-two_text-2 {
+  width: 56.9%;
+}
+
 .start-panel-two-buttons_wrap {
   display: flex;
   justify-content: space-between;
   margin-top: 25px;
+}
+
+.Panel--ios .start-panel-two-buttons_wrap {
+  width: 74.14%;
+}
+
+.Panel--android .start-panel-two-buttons_wrap {
+  width: 77.22%;
 }
 
 .start-panel-two_radio {
@@ -81,42 +106,24 @@
   font-weight: 500;
 }
 
-.start-panel-two-carusel_wrap {
-  margin-top: 35px;
-}
-
-.Panel--ios .start-panel-two_text-2 {
-  width: 66.5%;
-}
-
-.Panel--android .start-panel-two_text-2 {
-  width: 56.9%;
-}
-
-.Panel--ios .start-panel-two-buttons_wrap {
-  width: 74.14%;
-}
-
-.Panel--android .start-panel-two-buttons_wrap {
-  width: 77.22%;
-}
-
 .start-panel-two-buttons_wrap .start-panel-two_radio_label {
   width: 47.12%;
 }
 
 .start-panel-two_horizontal_wrap {
   margin-top: 35px;
-  display: flex;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+  display: grid;
   width: auto;
-  height: auto;
+  height: 100%;
+  align-items: center;
+  grid-auto-columns: min-content;
+  grid-auto-flow: column;
+  column-gap: 4px;
 }
 
-.start-panel-two_horizontal_wrap::-webkit-scrollbar {
+/* .start-panel-two_horizontal_wrap::-webkit-scrollbar {
   display: none;
-}
+} */
 
 .start-panel-two_size {
   display: flex;
@@ -128,7 +135,6 @@
   border: 2px solid #8EC8FF;
   border-radius: 50%;
   flex-shrink: 0;
-  margin: 4px;
 }
 
 .start-panel-two_wrap .dots-slide_dot:nth-child(2) {

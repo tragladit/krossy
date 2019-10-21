@@ -1,7 +1,7 @@
 import React from 'react';
 import './ProductCardLikeBrand.css';
 import ProductCardSmall from '../productCardSmall/ProductCardSmall';
-import { platform, IOS, Gallery } from '@vkontakte/vkui';
+import { platform, IOS, HorizontalScroll } from '@vkontakte/vkui';
 
 class ProductCardLikeBrand extends React.Component {
   constructor(props) {
@@ -32,9 +32,12 @@ class ProductCardLikeBrand extends React.Component {
             <ProductCardSmall />
             <ProductCardSmall />
             <ProductCardSmall />
+            <ProductCardSmall />
+            <ProductCardSmall />
+            <ProductCardSmall />
           </div>
         </div>
-      </div>
+      </div >
     )
   }
 };

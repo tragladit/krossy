@@ -69,20 +69,17 @@
   margin: 20px 0px 0px 0px;
 }
 
-.product-card-price_wrap .product-price_old {
-  font-size: 24px;
-  margin-right: 18px;
-}
-
 .product-card-price_wrap .product-price_new {
   font-size: 24px;
-  margin-right: 8px;
 }
 
 .product-card-price_wrap .product-price_currency {
   font-size: 12px;
   align-self: center;
-  margin-right: 14px;
+}
+
+.product-card-price_wrap .product-price_old {
+  font-size: 24px;
 }
 
 .product-card-price_wrap .product-price_discount {
