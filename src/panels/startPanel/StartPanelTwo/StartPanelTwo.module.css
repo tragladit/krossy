@@ -111,8 +111,7 @@
 }
 
 .button_next_wrap {
-  width: max-content;
-  padding: 0px 20px;
+  display: contents;
 }
 
 /* .button_next .rectangle-button {

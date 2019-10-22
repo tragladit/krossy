@@ -50,8 +50,12 @@ class StartPanelThree extends React.PureComponent {
             </div>
           </div>
           <div className={css.buttons_next_back}>
-            <RectangleButton title='Назад' func={goPanel} goTo='start-2' />
-            <RectangleButton title='Приступить' func={goView} />
+            <div className={css.button_next_back_wrap}>
+              <RectangleButton title='Назад' func={goPanel} goTo='start-2' />
+            </div>
+            <div className={css.button_next_back_wrap}>
+              <RectangleButton title='Приступить' func={goView} />
+            </div>
             <SlideDots dot={3} />
           </div>
         </div>
