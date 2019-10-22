@@ -3,10 +3,10 @@ import {
   PanelHeader, platform, IOS,
   PanelHeaderContent, HeaderContext, List, Cell
 } from "@vkontakte/vkui";
-// import '@vkontakte/vkui/dist/vkui.css';
 import IconDropDownAndroid from "../icon/IconDropDownAndroid";
 import IconDropDownIOS from "../icon/IconDropDownIOS";
 import Icon24Done from '@vkontakte/icons/dist/24/done';
+import '../header/Header.css'
 
 const osname = platform();
 

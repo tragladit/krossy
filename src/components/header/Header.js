@@ -1,10 +1,10 @@
 import React from 'react';
 import { PanelHeader, platform, IOS, PanelHeaderContent, HeaderButton } from "@vkontakte/vkui";
-// import '@vkontakte/vkui/dist/vkui.css';
 import IconArrowAndroidBack from "../icon/IconArrowAndroisBack";
 import IconChevronIOSBack from "../icon/IconChevronIOSBack";
 import IconDropDownAndroid from "../icon/IconDropDownAndroid";
 import IconDropDownIOS from "../icon/IconDropDownIOS";
+import './Header.css'
 
 const osname = platform();
 
