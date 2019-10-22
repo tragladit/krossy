@@ -110,13 +110,29 @@
   margin-bottom: 40px;
 }
 
-.Panel--ios .rectangle-button {
+.button_next .rectangle-button {
+  width: 30%;
+  margin-bottom: 66px;
+}
+
+.Panel--android .button_next .rectangle-button_text {
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+}
+
+.Panel--ios .button_next .rectangle-button_text {
+  font-weight: 500;
+}
+
+/* .Panel--ios .rectangle-button {
   width: 47.70%;
+  padding: 0px 20px;
 }
 
 .Panel--android .rectangle-button {
   width: 49.70%;
-}
+  padding: 0px 20px;
+} */
 
 
 

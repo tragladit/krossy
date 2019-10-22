@@ -1,11 +1,8 @@
 import React from 'react';
-import './HeaderFavorite.css';
 import {
   PanelHeader, platform, IOS,
   PanelHeaderContent, HeaderContext, List, Cell
 } from "@vkontakte/vkui";
-import IconMoreHorizontal from '../icon/IconMoreHorizontal';
-import IconClose from '../icon/IconClose';
 import IconDropDownAndroid from "../icon/IconDropDownAndroid";
 import IconDropDownIOS from "../icon/IconDropDownIOS";
 import Icon24Done from '@vkontakte/icons/dist/24/done';
@@ -17,16 +14,8 @@ const HeaderFavorite = ({ toggleContext, select, contextOpened, mode, len }) => 
     color: `${mode === 'favorite' ? '#FF5C7B' : '#8DE6C9'}`
   };
   return (
-    <React.Fragment>
-      <PanelHeader
-        theme='alternate' className='main-header'
-        right={[
-          <div className='header-right-button-block'>
-            <IconMoreHorizontal />
-            <IconClose />
-          </div>
-        ]}
-      >
+    <>
+      <PanelHeader theme='alternate'>
         <PanelHeaderContent
           onClick={toggleContext} className='header header-home-panel'
           aside={
@@ -59,7 +48,7 @@ const HeaderFavorite = ({ toggleContext, select, contextOpened, mode, len }) => 
           </Cell>
         </List>
       </HeaderContext>
-    </React.Fragment>
+    </>
   )
 };
 
