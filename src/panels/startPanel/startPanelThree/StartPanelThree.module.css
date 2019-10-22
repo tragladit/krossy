@@ -26,22 +26,6 @@
   text-align: center;
 }
 
-/* .Panel--ios .start-panel-three_text-1 {
-  width: 73.6%;
-}
-
-.Panel--android .start-panel-three_text-1 {
-  width: 62.33%;
-}
-
-.Panel--ios .start-panel-three_text-2 {
-  width: 73.6%;
-}
-
-.Panel--android .start-panel-three_text-2 {
-  width: 62.33%;
-} */
-
 .icon_arrow {
   display: flex;
   justify-content: center;
@@ -89,14 +73,5 @@
   width: auto;
   padding: 0px 20px;
 }
-
-/* .Panel--ios .start-panel-three-setting-rectangle-button-wrap .rectangle-button {
-  width: 39.47%;
-}
-
-.Panel--android .start-panel-three-setting-rectangle-button-wrap .rectangle-button {
-  width: 35.73%;
-} */
-
 
 

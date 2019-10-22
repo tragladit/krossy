@@ -102,7 +102,9 @@ class StartPanelTwo extends React.PureComponent {
             }
           </div>
           <div className={css.button_next}>
-            <RectangleButton title='Далее' secondAction={this.saveUserSettings} goTo={'start-3'} />
+            <div className={css.button_next_wrap}>
+              <RectangleButton title='Далее' secondAction={this.saveUserSettings} goTo={'start-3'} />
+            </div>
             <SlideDots dot={2} />
           </div>
         </div>

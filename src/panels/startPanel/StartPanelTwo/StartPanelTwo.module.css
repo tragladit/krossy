@@ -110,7 +110,12 @@
   margin-bottom: 40px;
 }
 
-.button_next .rectangle-button {
+.button_next_wrap {
+  width: max-content;
+  padding: 0px 20px;
+}
+
+/* .button_next .rectangle-button {
   width: 30%;
   margin-bottom: 66px;
 }
@@ -122,16 +127,6 @@
 
 .Panel--ios .button_next .rectangle-button_text {
   font-weight: 500;
-}
-
-/* .Panel--ios .rectangle-button {
-  width: 47.70%;
-  padding: 0px 20px;
-}
-
-.Panel--android .rectangle-button {
-  width: 49.70%;
-  padding: 0px 20px;
 } */
 
 

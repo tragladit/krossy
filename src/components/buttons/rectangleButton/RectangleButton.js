@@ -10,7 +10,7 @@ const RectangleButton = ({title, func, icon, goTo, iconSvg, secondAction}) => {
     pic = <img alt='logo' className='round-size-btn_image' src={icon}/>
   }
   else if (iconSvg) {
-    pic = <React.Fragment>{iconSvg}</React.Fragment>
+    pic = <>{iconSvg}</>
   }
 
   const onPress = (e) => {

@@ -3,6 +3,7 @@ import {
   PanelHeader, platform, IOS,
   PanelHeaderContent, HeaderContext, List, Cell
 } from "@vkontakte/vkui";
+import '@vkontakte/vkui/dist/vkui.css';
 import IconDropDownAndroid from "../icon/IconDropDownAndroid";
 import IconDropDownIOS from "../icon/IconDropDownIOS";
 import Icon24Done from '@vkontakte/icons/dist/24/done';
@@ -25,7 +26,7 @@ const HeaderFavorite = ({ toggleContext, select, contextOpened, mode, len }) => 
           }
         >
           <div className='header-title'>
-            {mode === 'favorite' ? 'Избранное' : osname === IOS ? 'Нравиться' : 'Мне нравиться'}
+            {mode === 'favorite' ? 'Избранное' : (osname === IOS ? 'Нравиться' : 'Мне нравиться')}
           </div>
           <div style={divStyle} className='header-title-counter'>
             {len}
