@@ -52,7 +52,6 @@ class App extends React.Component {
             tabbar={
               <Tabbar 
                 className={this.state.activeStory === 'welcome' ? 'main-tabbar-hidden' : 'main-tabbar-show'}
-                shadow={false}
               >
                 <TabbarItem
                   onClick={this.onStoryChange} selected={this.state.activeStory === 'homeView'}
