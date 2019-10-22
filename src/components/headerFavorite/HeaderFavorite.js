@@ -6,7 +6,7 @@ import {
 import IconDropDownAndroid from "../icon/IconDropDownAndroid";
 import IconDropDownIOS from "../icon/IconDropDownIOS";
 import Icon24Done from '@vkontakte/icons/dist/24/done';
-import '../header/Header.css'
+import './HeaderFavorite.css'
 
 const osname = platform();
 
