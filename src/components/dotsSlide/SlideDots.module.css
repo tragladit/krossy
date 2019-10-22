@@ -1,0 +1,15 @@
+.slide_dots {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 46px;
+    height: 6px;
+    top: 95%;
+}
+
+.slide_dot {
+    width: 6px;
+    height: 6px;
+    background-color: white;
+    border-radius: 50%;
+}

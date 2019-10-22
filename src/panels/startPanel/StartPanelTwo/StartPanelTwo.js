@@ -1,10 +1,10 @@
 import React from 'react';
 import { Panel } from '@vkontakte/vkui';
 import { connect } from "react-redux";
-import './StartPanelTwo.css';
+import css from './StartPanelTwo.module.css';
 import RectangleButton from "../../../components/buttons/rectangleButton/RectangleButton";
 import { isChangeBoolean, onChangeGender, onChooseSize } from "../../../reducers/user";
-import DotsSlide from "../../../components/dotsSlide/DotsSlide";
+import SlideDots from "../../../components/dotsSlide/SlideDots";
 import ApiService from "../../../api/krossy-api";
 
 
@@ -58,63 +58,54 @@ class StartPanelTwo extends React.PureComponent {
   render() {
     const { id, data } = this.props;
     return (
-      <Panel id={id}>
-        <div className='start-panel-two_wrap'>
-          <div className='start-panel-two_title'>Персонализация</div>
-          <div className='start-panel-two_text start-panel-two_text-1'>
+      <Panel id={id} >
+        <div className={css.start_panel_two}>
+          <div className={css.text_title}>Персонализация</div>
+          <div className={css.text}>
             Какие кроссовки Вам интересны?
           </div>
-          <div className='start-panel-two-buttons_wrap'>
-            <input className='start-panel-two_radio'
-              type='radio'
-              onChange={this.onChangeGender}
-              name='gender'
-              value='male'
-              id='genderMale'
-              checked={data.gender === "male"}
+          <div className={css.buttons_male_female}>
+            <input
+              className={css.buttons_male_female_radio} type='radio' name='gender' value='male'
+              id='genderMale' onChange={this.onChangeGender} checked={data.gender === "male"}
             />
-            <label htmlFor='genderMale'
-              className='start-panel-two_radio_label'>
+            <label htmlFor='genderMale' className={css.buttons_male_female_radio_label}>
               Мужские
             </label>
-            <input className='start-panel-two_radio'
-              type='radio'
-              onChange={this.onChangeGender}
-              name='gender'
-              value='female'
-              id='genderFemale'
-              checked={data.gender === "female"}
+            <input
+              className={css.buttons_male_female_radio} type='radio' name='gender' value='female'
+              id='genderFemale' onChange={this.onChangeGender} checked={data.gender === "female"}
             />
-            <label htmlFor='genderFemale' className='start-panel-two_radio_label'>
+            <label htmlFor='genderFemale' className={css.buttons_male_female_radio_label}>
               Женские
             </label>
           </div>
-          <div className='start-panel-two_text start-panel-two_text-2'>
+          <div className={css.text}>
             {
               this.state.isSelectedSizes ?
-                <div className="start-panel-two_warning">Нужно выбрать до 3-х интересующих Вас размеров</div> :
+                <div className={css.warning}>Нужно выбрать до 3-х интересующих Вас размеров</div> :
                 <div>Выберете до 3-х интересующих Вас размеров кроссовок</div>
             }
           </div>
-          <div onClick={this.onChangeSize} className='start-panel-two_horizontal_wrap'>
+          <div onClick={this.onChangeSize} className={css.horizontal_sizes}>
             {
               data.sizeChart.map(item => {
-                return <div key={item.id}
-                  data-id={item.id}
-                  className='start-panel-two_size'
-                  style={item.isSelected ? { borderColor: "#ffffff", boxShadow: "0 0 4px 0 #fff" } : {}}
-                >
-                  {item.size}
-                </div>
+                return (
+                  <div
+                    className={css.buttons_sizes} key={item.id} data-id={item.id}
+                    style={item.isSelected ? { borderColor: "#ffffff", boxShadow: "0 0 4px 0 #fff" } : {}}
+                  >
+                    {item.size}
+                  </div>
+                )
               })
             }
           </div>
-          <div className='start-panel-two-button_bottom'>
-            <RectangleButton title='Далее'
-              secondAction={this.saveUserSettings}
-              goTo={'start-3'} />
+          <div className={css.button_next}>
+            <RectangleButton title='Далее' secondAction={this.saveUserSettings} goTo={'start-3'} />
+            <SlideDots dot={2} />
           </div>
-          <DotsSlide />
+          {/* <SlideDots dot={2} /> */}
         </div>
       </Panel>
     )
