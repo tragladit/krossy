@@ -40,9 +40,7 @@ class StartPanelOne extends React.Component {
               Сервис «Кроссы» - это отличный помощник в нелегкой задаче поиска своих самых любимых кросовок!
             </div>
           </div>
-          <div className='start-panel-one-button_next'>
-            <RectangleButton title='Далее' goTo='start-2' func={this.props.goPanel} />
-          </div>
+          <RectangleButton title='Далее' goTo='start-2' func={this.props.goPanel} />
           <DotsSlide />
         </div>
       </Panel>

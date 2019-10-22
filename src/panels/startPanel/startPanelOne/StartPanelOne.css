@@ -13,12 +13,9 @@
 }
 
 .start-panel-one_wrap .rectangle-button {
-  /* width: 26.13%; */
+  width: auto;
+  padding: 0px 40px;
   margin-bottom: 66px;
-}
-
-.start-panel-one-button_next {
-  display: contents;
 }
 
 .Panel--android .start-panel-one_wrap .rectangle-button_text {
