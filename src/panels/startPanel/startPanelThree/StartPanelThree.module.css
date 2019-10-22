@@ -1,0 +1,102 @@
+.start_panel_three {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  font-size: 100%;
+  color: #ffffff;
+  background-size: cover;
+  background-color: #4986CC;
+  background-image: url("../../../assets/background/iOS 3.svg");
+  background-repeat: no-repeat;
+  display: grid;
+  align-items: center;
+  grid-template-rows: repeat(6, 1fr);
+}
+
+.text_title {
+  font-size: 1.2em;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.text {
+  font-size: 0.7em;
+  font-weight: 300;
+  text-align: center;
+}
+
+/* .Panel--ios .start-panel-three_text-1 {
+  width: 73.6%;
+}
+
+.Panel--android .start-panel-three_text-1 {
+  width: 62.33%;
+}
+
+.Panel--ios .start-panel-three_text-2 {
+  width: 73.6%;
+}
+
+.Panel--android .start-panel-three_text-2 {
+  width: 62.33%;
+} */
+
+.icon_arrow {
+  display: flex;
+  justify-content: center;
+  width: auto;
+}
+
+.icon_arrow svg {
+  transform: rotate(90deg);
+  width: 14px;
+  height: 16px;
+}
+
+.setting {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: auto;
+}
+
+.setting_icon_setting {
+  opacity: 0.2;
+}
+
+.setting_icon_home {
+  opacity: 0.2;
+}
+
+.setting_icon_search {
+  opacity: 0.4;
+}
+
+.setting_icon_heart {
+  opacity: 0.4;
+}
+
+.buttons_next_back {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 40px;
+}
+
+.buttons_next_back .rectangle-button {
+  width: auto;
+  padding: 0px 20px;
+}
+
+/* .Panel--ios .start-panel-three-setting-rectangle-button-wrap .rectangle-button {
+  width: 39.47%;
+}
+
+.Panel--android .start-panel-three-setting-rectangle-button-wrap .rectangle-button {
+  width: 35.73%;
+} */
+
+
+

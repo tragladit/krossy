@@ -1,16 +1,15 @@
 import React from 'react';
 import { Panel } from '@vkontakte/vkui';
-import './StartPanelThree.css';
+import css from './StartPanelThree.module.css';
 import RectangleButton from "../../../components/buttons/rectangleButton/RectangleButton";
 import IconHome from "../../../components/icon/IconHome";
 import IconSearch from "../../../components/icon/IconSearch";
 import IconKross from "../../../components/icon/IconKross";
-// import IconStarBar from '../../../components/icon/IconStarBar';
 import IconHeart from "../../../components/icon/IconHeart";
 import IconSetting from "../../../components/icon/IconSetting";
 import IconArrowRight from "../../../components/icon/IconArrowRight";
 import ApiService from "../../../api/krossy-api";
-import DotsSlide from "../../../components/dotsSlide/DotsSlide";
+import SlideDots from "../../../components/dotsSlide/SlideDots";
 import { connect } from "react-redux";
 
 class StartPanelThree extends React.PureComponent {
@@ -21,42 +20,40 @@ class StartPanelThree extends React.PureComponent {
     const { id, goPanel, goView } = this.props;
     return (
       <Panel id={id} >
-        <div className='start-panel-three_wrap'>
-          <div className='start-panel-three_content'>
-            <div className='start-panel-three_title'>Готово!</div>
-            <div className='start-panel-three_text start-panel-three_text-1'>
-              Сервис «Кроссы» - это отличный помощник в нелегкой
-              задаче поиска своих самых любимых кросовок!
-            </div>
-            <div className='start-panel-three_text start-panel-three_text-2'>
-              Особенно рекомендуем наш Tinder для кроссовок - очень кашерно!
-            </div>
+        <div className={css.start_panel_three}>
+          <div className={css.text_title}>Готово!</div>
+          <div className={css.text}>
+            Сервис «Кроссы» - это отличный помощник в нелегкой
+            задаче поиска своих самых любимых кросовок!
           </div>
-          <div className='start-panel-three-icon_arrow'>
+          <div className={css.text}>
+            Особенно рекомендуем наш Tinder для кроссовок - очень кашерно!
+          </div>
+          <div className={css.icon_arrow}>
             <IconArrowRight />
           </div>
-          <div className='start-panel-three-setting'>
-            <div className='start-panel-three-setting-icon_wrap '>
+          <div className={css.setting}>
+            <div className={css.setting_icon_home}>
               <IconHome currentColor='#ffffff' />
             </div>
-            <div className='start-panel-three-setting-icon-wrap'>
+            <div className={css.setting_icon_search}>
               <IconSearch currentColor='#ffffff' />
             </div>
-            <div className='start-panel-three-setting-icon-wrap'>
+            <div className={css.setting_icon_kross}>
               <IconKross currentColor='#ffffff' />
             </div>
-            <div className='start-panel-three-setting-icon-wrap'>
+            <div className={css.setting_icon_heart}>
               <IconHeart currentColor='#ffffff' />
             </div>
-            <div className='start-panel-three-setting-icon-wrap'>
+            <div className={css.setting_icon_setting}>
               <IconSetting currentColor='#ffffff' />
             </div>
           </div>
-          <div className='start-panel-three-setting-rectangle-button-wrap'>
+          <div className={css.buttons_next_back}>
             <RectangleButton title='Назад' func={goPanel} goTo='start-2' />
             <RectangleButton title='Приступить' func={goView} />
+            <SlideDots dot={3} />
           </div>
-          <DotsSlide />
         </div>
       </Panel>
     )

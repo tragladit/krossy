@@ -1,15 +1,10 @@
 import React from 'react';
 import { PanelHeader, platform, IOS, PanelHeaderContent, HeaderButton } from "@vkontakte/vkui";
-// import './Header.css';
 import '@vkontakte/vkui/dist/vkui.css';
 import IconArrowAndroidBack from "../icon/IconArrowAndroisBack";
 import IconChevronIOSBack from "../icon/IconChevronIOSBack";
-// import IconMoreHorizontal from '../icon/IconMoreHorizontal';
-// import IconClose from '../icon/IconClose';
 import IconDropDownAndroid from "../icon/IconDropDownAndroid";
 import IconDropDownIOS from "../icon/IconDropDownIOS";
-// import IconBackIos from '@vkontakte/icons/dist/28/chevron_back';
-// import IconBackAndroid from '@vkontakte/icons/dist/24/back';
 
 const osname = platform();
 
@@ -20,7 +15,7 @@ class Header extends React.Component {
     const { func, goTo, title, asideShow, iconIOS, iconAndroid } = this.props;
 
     return (
-      <PanelHeader theme='alternate' //className='main-header'
+      <PanelHeader theme='alternate'
         left={<HeaderButton
           onClick={func}
           data-to={goTo}>
@@ -28,12 +23,6 @@ class Header extends React.Component {
             iconIOS ? <IconChevronIOSBack /> : null :
             iconAndroid ? <IconArrowAndroidBack /> : null}
         </HeaderButton>}
-      // right={[
-      //   <div className='header-right-button-block'>
-      //     <IconMoreHorizontal />
-      //     <IconClose />
-      //   </div>
-      // ]}
       >
         <PanelHeaderContent onClick={this.toggleContext}
           className='header header-home-panel'

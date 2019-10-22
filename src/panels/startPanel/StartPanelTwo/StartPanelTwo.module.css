@@ -17,7 +17,7 @@
   font-size: 1.2em;
   font-weight: 500;
   text-align: center;
-  margin-top: 60px;
+  margin-top: 100px;
 }
 
 .Panel--ios .text_title {
@@ -78,22 +78,6 @@
   box-shadow: 0 0 8px 0 #ffffff;
 }
 
-/* .Panel--ios .start-panel-two-buttons_wrap {
-  width: 74.14%;
-}
-
-.Panel--android .start-panel-two-buttons_wrap {
-  width: 77.22%;
-} */
-
-/* .Panel--ios .start-panel-two_wrap label {
-  font-weight: 500;
-} */
-
-/* .start-panel-two-buttons_wrap .start-panel-two_radio_label {
-  width: 47.12%;
-} */
-
 .horizontal_sizes {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
@@ -126,33 +110,13 @@
   margin-bottom: 40px;
 }
 
-/* .dots_wrap {
-  display: flex;
-  justify-content: center; 
-} */
-
-/* .start_panel_two .slide_dot2 {
-  opacity: 1;
-} */
-
-/* .button_next .rectangle-button{
-  font-family: SF Pro Text, sans-serif;
-  font-size: 1em;
-} */
-
-/* .button_next .rectangle-button{
-  justify-content: center;
-} */
-
-/* .start-panel-two-button_bottom .rectangle-button {
-  width: 100%;
+.Panel--ios .rectangle-button {
+  width: 47.70%;
 }
 
-.Panel--android .start-panel-two_wrap .rectangle-button_text {
-  font-family: Roboto, sans-serif;
-  font-weight: 500;
-} */
-
+.Panel--android .rectangle-button {
+  width: 49.70%;
+}
 
 
 
