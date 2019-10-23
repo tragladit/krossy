@@ -5,7 +5,7 @@ import StartPanelButton from "../../../components/buttons/startPanelButton/Start
 import IconHome from "../../../components/icon/IconHome";
 import IconSearch from "../../../components/icon/IconSearch";
 import IconKross from "../../../components/icon/IconKross";
-import IconHeart from "../../../components/icon/IconHeart";
+import IconStarBar from "../../../components/icon/IconStarBar";
 import IconSetting from "../../../components/icon/IconSetting";
 import IconArrowRight from "../../../components/icon/IconArrowRight";
 import ApiService from "../../../api/krossy-api";
@@ -42,8 +42,8 @@ class StartPanelThree extends React.PureComponent {
             <div className={css.setting_icon_kross}>
               <IconKross currentColor='#ffffff' />
             </div>
-            <div className={css.setting_icon_heart}>
-              <IconHeart currentColor='#ffffff' />
+            <div className={css.setting_icon_star}>
+              <IconStarBar currentColor='#ffffff' />
             </div>
             <div className={css.setting_icon_setting}>
               <IconSetting currentColor='#ffffff' />

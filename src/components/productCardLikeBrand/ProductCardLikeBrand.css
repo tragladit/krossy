@@ -39,7 +39,7 @@
   grid-auto-columns: min-content;
   grid-auto-flow: column;
   column-gap: 20px;
-  padding: 12px;
+  padding: 20px 12px;
 }
 
 .product-card-like-brand .product-card-small_wrap {
