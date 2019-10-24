@@ -2,25 +2,24 @@
   height: 44px;
 }
 
+.PanelHeader-left-in {
+  display: flex;
+  align-items: center;
+}
+
 .tinder-header-icon-count {
   display: flex;
   align-items: center;
   height: 32px;
   border-radius: 20px;
   background-color: rgb(141, 230, 201);
-  margin: 6px 0px 0px 12px;
+  margin-left: 12px;
   padding: 0px 12px;
-}
-
-.PanelHeader .PanelHeader-left-in {
-  font-size: 16px;
-  font-weight: 500;
-  height: auto;
 }
 
 .tinder-header-count-likes {
   color: white;
-  padding-left: 6px;
+  padding-left: 8px;
 }
 
 .PanelHeaderContent--android .PanelHeaderContent__children{
