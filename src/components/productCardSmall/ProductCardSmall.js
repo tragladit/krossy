@@ -67,17 +67,16 @@ class ProductCardSmall extends React.PureComponent {
         </div>
         <div className='product-card-small-brand_wrap'>
           {product ?
-            <ProductBrandView
-              name={product.name}
-              model={product.model}
-              logo={brandLogo} /> : null
+            <ProductBrandView name={product.name} model={product.model} logo={brandLogo} /> :
+            null
           }
         </div>
         <div className='product-card-small-price_wrap'>
           {product ?
-            <ProductPriceView price={product.price}
-              oldPrice={product.oldPrice}
-              discount={product.discount} /> : null
+            <ProductPriceView
+              price={product.price} oldPrice={product.oldPrice} discount={product.discount}
+            /> :
+            null
           }
         </div>
         <div className='product-card-small_footer'>

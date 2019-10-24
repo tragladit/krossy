@@ -1,0 +1,38 @@
+.tinder-button {
+  box-sizing: border-box;
+  font-family: SF Pro Text, sans-serif;
+  color: #aebfcf;
+  border: none;
+  box-shadow: 0 3px 16px rgba(174, 191, 207, 0.3);
+  width: 30%;
+  height: 48px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tinder-button:active {
+  border-color: #ffffff;
+  box-shadow: 0 0 8px 0 #ffffff;
+}
+
+.tinder-button_wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tinder-button__selected {
+  border-color: #ffffff;
+  box-shadow: 0 0 8px 0 #ffffff;
+}
+
+.tinder-button_icon {
+  padding-right: 10px;
+}
+
+.tinder-button_text {
+  font-weight: 500;
+}
+

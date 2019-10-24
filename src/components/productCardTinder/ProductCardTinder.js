@@ -2,36 +2,30 @@ import React from 'react';
 import ProductBrandView from "../product/productBrandView/ProductBrandView";
 import logo from "../../assets/image/adidas.png";
 import ProductPriceView from "../product/productPriceView/ProductPriceView";
-import ProductSizeChartView from "../product/productSizeChartView/ProductSizeChartView";
+import ProductSizeChartViewSmall from "../product/productSizeChartViewSmall/ProductSizeChartViewSmall";
 import ProductCountShopView from "../product/productCountShopView/ProductCountShopView";
-import RoundSizeButton from "../buttons/roundSizeButton/RoundSizeButton";
-import IconArrowRight from "../icon/IconArrowRight";
 import './ProductCardTinder.css';
-import image from '../../assets/image/Rectangle 1533@2x.png';
 
-const ProductCardTinder = ({isWelcome}) => {
+const ProductCardTinder = ({ product, isWelcome }) => {
 
-  let divStyleBlur = {
-    filter: 'blur(9px)'
-  };
+  const divStyleBlur = { filter: 'blur(9px)' }
+
+  const sizes = product.sizes.sort((a, b) => a - b)
+
   return (
-    <div style={isWelcome ? divStyleBlur : null}
-         className='tinder-page-product'>
+    <div style={isWelcome ? divStyleBlur : null} className='tinder-page-product'>
       <div className='tinder-page-product-header'>
         <div className='tinder-page-product-header_left'>
-          <ProductBrandView logo={logo}/>
-          <ProductPriceView/>
-        </div>
-        <div className='tinder-page-product-header_right'>
-          <RoundSizeButton iconSvg={<IconArrowRight/>}/>
+          <ProductBrandView name={product.name} model={product.model} logo={logo} />
+          <ProductPriceView price={product.price} oldPrice={product.oldPrice} discount={product.discount} />
         </div>
       </div>
       <div className='tinder-page-product-footer'>
-        <ProductSizeChartView/>
-        <ProductCountShopView/>
+        <ProductSizeChartViewSmall sizes={sizes} />
+        <ProductCountShopView shops={product.shops} />
       </div>
       <div className='tinder-page-product-image_wrap'>
-        <img className='tinder-page-product-image' src={image}/>
+        <img className='tinder-page-product-image' src={product.pictures[0]} alt='pic_tinder' />
       </div>
     </div>
   )
