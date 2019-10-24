@@ -46,25 +46,27 @@ class TinderPanel extends React.Component {
     return (
       <Panel style={osname === IOS ? fontStyleIOS : fontStyleAndroid} id={this.props.id} theme='white'>
         <HeaderTinder title='Кроссы ' page='tinder' />
-        <Div className='tinder_page'>
-          {
-            cards.length > 0 &&
-            <Swipeable
-              buttons={({ left, right }) => (
-                <div className='tinder_buttons_wrap'>
-                  <TinderButton func={left} title='Не нравится' iconSvg={<IconDislike />} />
-                  <TinderButton func={right} title='Нравится' iconSvg={<IconLike />} />
-                </div>
-              )}
-              onAfterSwipe={delCard}
-            >
-              <Card>
-                <ProductCardTinder product={products[ids[0]]} isWelcome={this.state.isWelcome} />
-              </Card>
-            </Swipeable>
-          }
-          {this.state.isWelcome ? <ProductCardTinderWelcome closeModal={this.handleCloseModal} /> : null}
-        </Div>
+        <div className='tinder_page'>
+          <div className='tinder_page_wrap'>
+            {
+              cards.length > 0 &&
+              <Swipeable
+                buttons={({ left, right }) => (
+                  <div className='tinder_buttons_wrap'>
+                    <TinderButton func={left} title='Не нравится' iconSvg={<IconDislike />} />
+                    <TinderButton func={right} title='Нравится' iconSvg={<IconLike />} />
+                  </div>
+                )}
+                onAfterSwipe={delCard}
+              >
+                <Card>
+                  <ProductCardTinder product={products[ids[0]]} isWelcome={this.state.isWelcome} />
+                </Card>
+              </Swipeable>
+            }
+            {this.state.isWelcome ? <ProductCardTinderWelcome closeModal={this.handleCloseModal} /> : null}
+          </div>
+        </div>
         {cards.length <= 1 && <Card zIndex={-2}>No more cards</Card>}
       </Panel>
     )

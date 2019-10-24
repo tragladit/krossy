@@ -1,7 +1,13 @@
 .tinder_page {
   display: flex;
+  justify-content: center;
+  padding: 12px 0px;
+}
+
+.tinder_page_wrap {
+  display: flex;
   flex-direction: column;
-  padding: 12px 24px;
+  width: 80%;
 }
 
 .tinder_buttons_wrap {
@@ -16,7 +22,7 @@
   position: absolute;
   background-color: #4986CC;
   border-radius: 32px;
-  top: 40%;
+  top: 30%;
   width: 75%;
   left: 12.5%;
   z-index: 3;

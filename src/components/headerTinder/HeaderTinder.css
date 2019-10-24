@@ -1,4 +1,5 @@
 .PanelHeader--android .PanelHeader-bg {
+  height: 44px;
   box-shadow: none;
 }
 
