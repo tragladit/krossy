@@ -1,31 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "57f815fb4fd6ebf531055709ebe5ec22",
+    "revision": "cf92c7f769a71fdc3867415d64495090",
     "url": "/krossy/index.html"
   },
   {
-    "revision": "00c0d5ce63ebf6711044",
+    "revision": "23aec51f09bf56294da8",
     "url": "/krossy/static/css/2.7214840c.chunk.css"
   },
   {
-    "revision": "5d1a50ebef1d3e2df751",
-    "url": "/krossy/static/css/main.5a85b792.chunk.css"
+    "revision": "33f3a2584ba479d67d4b",
+    "url": "/krossy/static/css/main.063da3a8.chunk.css"
   },
   {
-    "revision": "00c0d5ce63ebf6711044",
-    "url": "/krossy/static/js/2.7ed18e3a.chunk.js"
+    "revision": "23aec51f09bf56294da8",
+    "url": "/krossy/static/js/2.a3a29919.chunk.js"
   },
   {
-    "revision": "5d1a50ebef1d3e2df751",
-    "url": "/krossy/static/js/main.70e7750e.chunk.js"
+    "revision": "33f3a2584ba479d67d4b",
+    "url": "/krossy/static/js/main.bfa894f3.chunk.js"
   },
   {
     "revision": "3d159f25f5167fd4be43",
     "url": "/krossy/static/js/runtime-main.3baf317b.js"
-  },
-  {
-    "revision": "7d2485413e1afa5c9d986e1388b89ac3",
-    "url": "/krossy/static/media/Rectangle 1533@2x.7d248541.png"
   },
   {
     "revision": "49d167fd00ec879e285af5661cc763aa",
