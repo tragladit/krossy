@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/krossy/static/css/main.12dea276.chunk.css",
-    "main.js": "/krossy/static/js/main.3f7dd405.chunk.js",
-    "main.js.map": "/krossy/static/js/main.3f7dd405.chunk.js.map",
+    "main.js": "/krossy/static/js/main.4397347d.chunk.js",
+    "main.js.map": "/krossy/static/js/main.4397347d.chunk.js.map",
     "runtime-main.js": "/krossy/static/js/runtime-main.3baf317b.js",
     "runtime-main.js.map": "/krossy/static/js/runtime-main.3baf317b.js.map",
     "static/css/2.7214840c.chunk.css": "/krossy/static/css/2.7214840c.chunk.css",
     "static/js/2.a3a29919.chunk.js": "/krossy/static/js/2.a3a29919.chunk.js",
     "static/js/2.a3a29919.chunk.js.map": "/krossy/static/js/2.a3a29919.chunk.js.map",
     "index.html": "/krossy/index.html",
-    "precache-manifest.aea66aae604d7759210d4c1e1e7ebf64.js": "/krossy/precache-manifest.aea66aae604d7759210d4c1e1e7ebf64.js",
+    "precache-manifest.5ba63811316a2fce46a571a433ea79d5.js": "/krossy/precache-manifest.5ba63811316a2fce46a571a433ea79d5.js",
     "service-worker.js": "/krossy/service-worker.js",
     "static/css/2.7214840c.chunk.css.map": "/krossy/static/css/2.7214840c.chunk.css.map",
     "static/css/main.12dea276.chunk.css.map": "/krossy/static/css/main.12dea276.chunk.css.map",
@@ -26,6 +26,6 @@
     "static/css/2.7214840c.chunk.css",
     "static/js/2.a3a29919.chunk.js",
     "static/css/main.12dea276.chunk.css",
-    "static/js/main.3f7dd405.chunk.js"
+    "static/js/main.4397347d.chunk.js"
   ]
 }
