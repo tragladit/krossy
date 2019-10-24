@@ -6,9 +6,9 @@
 .tinder_buttons_wrap {
   display: grid;
   justify-items: center;
-  margin: 20px 20px 0px 20px;
+  margin-top: 20px;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 60px;
+  grid-gap: 40px;
 }
 
 .tinder-page-welcome {
