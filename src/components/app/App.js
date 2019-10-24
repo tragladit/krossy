@@ -50,7 +50,8 @@ class App extends React.Component {
         <ConfigProvider isWebView={true}>
           <Epic activeStory={this.state.activeStory}
             tabbar={
-              <Tabbar 
+              <Tabbar
+                shadow={false} 
                 className={this.state.activeStory === 'welcome' ? 'main-tabbar-hidden' : 'main-tabbar-show'}
               >
                 <TabbarItem
