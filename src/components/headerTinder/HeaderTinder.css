@@ -1,5 +1,4 @@
-.PanelHeader {
-  /* --separator_alpha: none; */
+.PanelHeader--android .PanelHeader-bg {
   box-shadow: none;
 }
 
