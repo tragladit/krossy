@@ -1,5 +1,6 @@
-.main-header {
-  height: 44px;
+.PanelHeader {
+  /* --separator_alpha: none; */
+  box-shadow: none;
 }
 
 .PanelHeader-left-in {

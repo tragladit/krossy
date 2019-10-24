@@ -1,21 +1,22 @@
 .tinder_page {
-  position: relative;
-  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  padding: 12px 24px;
 }
 
 .tinder_buttons_wrap {
   display: grid;
   justify-items: center;
-  margin-top: 20px;
+  margin-top: 12px;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 40px;
+  grid-gap: 20px;
 }
 
 .tinder-page-welcome {
   position: absolute;
   background-color: #4986CC;
   border-radius: 32px;
-  top: 78px;
+  top: 40%;
   width: 75%;
   left: 12.5%;
   z-index: 3;

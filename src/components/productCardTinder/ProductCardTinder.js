@@ -15,14 +15,14 @@ const ProductCardTinder = ({ product, isWelcome }) => {
   return (
     <div style={isWelcome ? divStyleBlur : null} className='tinder-page-product'>
       <div className='tinder-page-product-header'>
-        <div className='tinder-page-product-header_left'>
-          <ProductBrandView name={product.name} model={product.model} logo={logo} />
-          <ProductPriceView price={product.price} oldPrice={product.oldPrice} discount={product.discount} />
+        <ProductBrandView name={product.name} model={product.model} logo={logo} />
+        <ProductPriceView price={product.price} oldPrice={product.oldPrice} discount={product.discount} />
+        <div className='tinder-page-size-shop-wrap'>
+          <ProductSizeChartViewSmall sizes={sizes} />
+          <ProductCountShopView shops={product.shops} />
         </div>
-      </div>
-      <div className='tinder-page-product-footer'>
-        <ProductSizeChartViewSmall sizes={sizes} />
-        <ProductCountShopView shops={product.shops} />
+        {/* <div className='tinder-page-product-header_left'>  
+        </div> */}
       </div>
       <div className='tinder-page-product-image_wrap'>
         <img className='tinder-page-product-image' src={product.pictures[0]} alt='pic_tinder' />
