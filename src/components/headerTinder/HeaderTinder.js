@@ -7,7 +7,8 @@ const HeaderTinder = ({ title }) => {
   
   return (
     <>
-      <PanelHeader theme='alternate'
+      <PanelHeader
+        theme='alternate' noShadow
         left={
           <div className='tinder-header-icon-count'>
             <IconLike currentColor='white' />
