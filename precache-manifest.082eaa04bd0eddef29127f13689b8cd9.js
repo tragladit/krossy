@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c0258c1992ce58aec097c39c41c03f9c",
+    "revision": "9af2250c1ad1e82b7294f97ccdb36985",
     "url": "/krossy/index.html"
   },
   {
@@ -8,16 +8,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/krossy/static/css/2.7214840c.chunk.css"
   },
   {
-    "revision": "f491e1ec42c7c88197b1",
-    "url": "/krossy/static/css/main.4f75891c.chunk.css"
+    "revision": "c7b5e5284d42d7f1c2be",
+    "url": "/krossy/static/css/main.44f05cdd.chunk.css"
   },
   {
     "revision": "23aec51f09bf56294da8",
     "url": "/krossy/static/js/2.a3a29919.chunk.js"
   },
   {
-    "revision": "f491e1ec42c7c88197b1",
-    "url": "/krossy/static/js/main.36556566.chunk.js"
+    "revision": "c7b5e5284d42d7f1c2be",
+    "url": "/krossy/static/js/main.3f7dd405.chunk.js"
   },
   {
     "revision": "3d159f25f5167fd4be43",
