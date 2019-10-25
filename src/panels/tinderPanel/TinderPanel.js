@@ -1,6 +1,6 @@
 import React from 'react';
 import './TinderPanel.css';
-import { Panel, Div, platform, IOS } from "@vkontakte/vkui";
+import { Panel, FixedLayout, platform, IOS } from "@vkontakte/vkui";
 import ProductCardTinder from "../../components/productCardTinder/ProductCardTinder";
 import ProductCardTinderWelcome from "../../components/productCardTinderWelcome/ProductCardTinderWelcome";
 import Swipeable from "react-swipy"
