@@ -13,17 +13,19 @@ const ProductCardTinder = ({ product, isWelcome }) => {
   const sizes = product.sizes.sort((a, b) => a - b)
 
   return (
-    <div style={isWelcome ? divStyleBlur : null} className='tinder-page-product'>
-      <div className='tinder-page-product-header'>
-        <ProductBrandView name={product.name} model={product.model} logo={logo} />
-        <ProductPriceView price={product.price} oldPrice={product.oldPrice} discount={product.discount} />
-        <div className='tinder-page-size-shop-wrap'>
-          <ProductSizeChartViewSmall sizes={sizes} />
-          <ProductCountShopView shops={product.shops} />
+    <div className='tinder_page_product_wrap'>
+      <div style={isWelcome ? divStyleBlur : null} className='tinder-page-product'>
+        <div className='tinder-page-product-header'>
+          <ProductBrandView name={product.name} model={product.model} logo={logo} />
+          <ProductPriceView price={product.price} oldPrice={product.oldPrice} discount={product.discount} />
+          <div className='tinder-page-size-shop-wrap'>
+            <ProductSizeChartViewSmall sizes={sizes} />
+            <ProductCountShopView shops={product.shops} />
+          </div>
         </div>
-      </div>
-      <div className='tinder-page-product-image_wrap'>
-        <img className='tinder-page-product-image' src={product.pictures[0]} alt='pic_tinder' />
+        <div className='tinder-page-product-image_wrap'>
+          <img className='tinder-page-product-image' src={product.pictures[0]} alt='pic_tinder' />
+        </div>
       </div>
     </div>
   )

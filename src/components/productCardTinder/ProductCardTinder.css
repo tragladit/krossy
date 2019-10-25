@@ -1,9 +1,12 @@
-.tinder-page-product {
+.tinder_page_product_wrap {
   display: flex;
-  flex-direction: column;
-  width: 90%;
+  justify-content: center;
+}
+
+.tinder-page-product {
   box-shadow: 0 3px 16px rgba(174, 191, 207, 0.3);
   border-radius: 18px;
+  width: 80%;
 }
 
 .tinder-page-product-header {

@@ -1,39 +1,21 @@
-.tinder_page .PanelHeader--android {
+.tinder_page .PanelHeader--android .PanelHeader-bg {
   box-shadow: none;
 }
 
-/* .View--ios.View--header .tinder_page {
-  padding-top: calc(var(--panelheader_height_ios) + var(--safe-area-inset-top));
-}
-
-.Epic .tinder_page {
-  padding-bottom: calc(var(--safe-area-inset-bottom) + var(--tabbar_height));
-} */
-
-/*.View--ios .tinder_page {
-  padding-bottom: var(--safe-area-inset-bottom);
-}
-
-.View--ios .tinder_page {
-  padding-bottom: var(--safe-area-inset-bottom);
-} */
-
-/* .Panel--ios .tinder_page {
-  padding-top: calc(var(--panelheader_height_ios) + var(--safe-area-inset-top));
-} */
-
-/* .Panel--android .tinder_page {
-  padding-top: calc(var(--panelheader_height_android) + var(--safe-area-inset-top));
-} */
-
 .tinder_page {
-  /* display: grid;
-  grid-template-rows: 1fr 64px; */
-  z-index: 2;
-  position: relative;
-  box-sizing: border-box;
-  width: 100%;
-  min-height: 100%;
+  height:
+    calc(
+      100vh -
+      (var(--safe-area-inset-bottom) + var(--tabbar_height)) -
+      (var(--panelheader_height_android) + var(--safe-area-inset-top))
+    );
+}
+
+.tinder_page_wrap {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  justify-items: center;
+  align-items: center;
 }
 
 .tinder_buttons_wrap {
@@ -42,6 +24,8 @@
   align-items: center;
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
+  width: 80%;
+  height: 40px;
 }
 
 .tinder-page-welcome {

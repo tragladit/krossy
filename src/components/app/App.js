@@ -51,7 +51,6 @@ class App extends React.Component {
           <Epic activeStory={this.state.activeStory}
             tabbar={
               <Tabbar
-                shadow={false}
                 className={this.state.activeStory === 'welcome' ? 'main-tabbar-hidden' : 'main-tabbar-show'}
               >
                 <TabbarItem

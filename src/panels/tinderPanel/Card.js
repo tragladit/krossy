@@ -1,8 +1,10 @@
 import React from "react"
 
 const cardStyles = {
-  width: "auto",
-  height: "auto",
+  // width: "auto",
+  // height: "auto",
+  // display: 'flex',
+  // width: '80%',
   cursor: "pointer",
   userSelect: "none"
 }
