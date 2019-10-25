@@ -46,7 +46,7 @@ class TinderPanel extends React.Component {
       <Panel style={osname === IOS ? fontStyleIOS : fontStyleAndroid} id={this.props.id} theme='white'>
         <HeaderTinder title='Кроссы ' page='tinder' />
         <div className='tinder_page'>
-          <div className='tinder_page_wrap'>
+          {/* <div className='tinder_page_wrap'> */}
             {
               cards.length > 0 &&
               <Swipeable
@@ -64,7 +64,7 @@ class TinderPanel extends React.Component {
               </Swipeable>
             }
             {this.state.isWelcome ? <ProductCardTinderWelcome closeModal={this.handleCloseModal} /> : null}
-          </div>
+          {/* </div> */}
         </div>
         {cards.length <= 1 && <Card zIndex={-2}>No more cards</Card>}
       </Panel>

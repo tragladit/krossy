@@ -21,8 +21,6 @@ const ProductCardTinder = ({ product, isWelcome }) => {
           <ProductSizeChartViewSmall sizes={sizes} />
           <ProductCountShopView shops={product.shops} />
         </div>
-        {/* <div className='tinder-page-product-header_left'>  
-        </div> */}
       </div>
       <div className='tinder-page-product-image_wrap'>
         <img className='tinder-page-product-image' src={product.pictures[0]} alt='pic_tinder' />

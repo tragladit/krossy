@@ -1,13 +1,11 @@
-.main-header {
-  height: 44px;
-}
-
 .PanelHeaderContent--ios .PanelHeaderContent__aside {
+  display: flex;
   margin-left: 12px;
   height: 2px;
 }
 
 .PanelHeaderContent--android .PanelHeaderContent__aside {
+  display: flex;
   margin-left: 12px;
   height: 2px;
 }

@@ -4,11 +4,11 @@ import './HeaderTinder.css'
 import IconLike from '../../panels/tinderPanel/icons/IconLike';
 
 const HeaderTinder = ({ title }) => {
-  
+
   return (
     <>
       <PanelHeader
-        theme='alternate' noShadow
+        theme='alternate'
         left={
           <div className='tinder-header-icon-count'>
             <IconLike currentColor='white' />
