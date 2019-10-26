@@ -2,6 +2,10 @@
   box-shadow: none;
 }
 
+#header-bg-tinder {
+  box-shadow: none;
+}
+
 .PanelHeader-left-in {
   display: flex;
   align-items: center;
