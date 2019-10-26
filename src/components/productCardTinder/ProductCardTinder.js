@@ -12,6 +12,13 @@ const ProductCardTinder = ({ product, isWelcome }) => {
 
   const sizes = product.sizes.sort((a, b) => a - b)
 
+  const style = {
+    background: "url('https://www.basketshop.ru/files/catalog/14600/vee3blk%20(2).JPG')",
+    backgroundPosition: 'bottom',
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat'
+  }
+
   return (
     <div className='tinder_page_product_wrap'>
       <div style={isWelcome ? divStyleBlur : null} className='tinder-page-product'>
@@ -23,9 +30,8 @@ const ProductCardTinder = ({ product, isWelcome }) => {
             <ProductCountShopView shops={product.shops} />
           </div>
         </div>
-        <div className='tinder-page-product-image_wrap'>
-          <img className='tinder-page-product-image' src={product.pictures[0]} alt='pic_tinder' />
-        </div>
+        <div className='tinder-page-product-image' style={style} ></div>
+        {/* <img className='tinder-page-product-image' src={product.pictures[0]} alt='pic_tinder' /> */}
       </div>
     </div>
   )

@@ -63,7 +63,11 @@ class TinderPanel extends React.Component {
                 </Card>
               </Swipeable>
             }
-            {this.state.isWelcome ? <ProductCardTinderWelcome closeModal={this.handleCloseModal} /> : null}
+            {
+              this.state.isWelcome ?
+                <ProductCardTinderWelcome closeModal={this.handleCloseModal} /> :
+                null
+            }
           </div>
         </div>
         {cards.length <= 1 && <Card zIndex={-2}>No more cards</Card>}

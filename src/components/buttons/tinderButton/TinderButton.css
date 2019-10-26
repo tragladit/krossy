@@ -17,12 +17,6 @@
   box-shadow: 0 0 8px 0 #ffffff;
 }
 
-/* .tinder-button_wrap {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
-
 .tinder-button__selected {
   border-color: #ffffff;
   box-shadow: 0 0 8px 0 #ffffff;

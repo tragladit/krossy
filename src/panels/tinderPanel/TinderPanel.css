@@ -3,6 +3,8 @@
 }
 
 .tinder_page {
+  display: flex;
+  justify-content: center;
   height:
     calc(
       100vh -
@@ -14,8 +16,10 @@
 .tinder_page_wrap {
   display: grid;
   grid-template-rows: 1fr auto;
-  justify-items: center;
-  align-items: center;
+  grid-gap: 20px;
+  margin-top: 20px;
+  height: 80%;
+  width: 90%;
 }
 
 .tinder_buttons_wrap {
@@ -24,17 +28,18 @@
   align-items: center;
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
-  width: 80%;
-  height: 40px;
+  width: 100%;
+  height: 44px;
 }
 
 .tinder-page-welcome {
   position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   background-color: #4986CC;
   border-radius: 32px;
-  top: 25%;
-  width: 75%;
-  left: 12.5%;
+  width: 60%;
   z-index: 3;
 }
 
