@@ -20,6 +20,7 @@ import { connect as reduxConnect } from "react-redux";
 import { getData, setDataOnChangeColor, setDataOnChangeSize, setLike } from '../../reducers/user';
 import { sortMinPrice } from "../../reducers/selectors";
 import ApiService from "../../api/krossy-api";
+import sendShare from '../../api/vk-api';
 
 class ProductCardPanel extends React.PureComponent {
 
@@ -170,7 +171,7 @@ class ProductCardPanel extends React.PureComponent {
               <RoundSizeButton
                 func={this.handleOpenNotificationModal} iconSvg={<IconNotificationOff />}
               />
-              <RectangleButton iconSvg={<IconQuestion />} title='Поделиться' />
+              <RectangleButton iconSvg={<IconQuestion />} title='Поделиться' secondAction={sendShare} />
             </div>
           </Div>
         </div>
