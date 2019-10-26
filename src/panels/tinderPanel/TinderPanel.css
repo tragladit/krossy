@@ -2,13 +2,31 @@
   display: flex;
   justify-content: center;
   width: auto;
-  height:
+  /* height:
     calc(
       100vh - 40px -
       (var(--safe-area-inset-bottom) + var(--tabbar_height)) -
       (var(--panelheader_height_android) + var(--safe-area-inset-top))
-    );
+    ); */
   padding: 24px;
+}
+
+.View--ios .tinder_page {
+  height: 
+    calc(
+      100vh - 48px -
+      (var(--safe-area-inset-bottom) + var(--tabbar_height)) -
+      (var(--panelheader_height_ios) + var(--safe-area-inset-top))
+    ) 
+}
+
+.View--android .tinder_page {
+  height: 
+    calc(
+      100vh - 48px -
+      (var(--safe-area-inset-bottom) + var(--tabbar_height)) -
+      (var(--panelheader_height_android) + var(--safe-area-inset-top))
+    ) 
 }
 
 .tinder_page_wrap {
