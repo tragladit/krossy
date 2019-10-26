@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/krossy/precache-manifest.118ba3e91f56cd14db6fd13569b9b661.js"
+  "/krossy/precache-manifest.0819a5a19358c884b8e3902ddf1af237.js"
 );
 
 self.addEventListener('message', (event) => {
