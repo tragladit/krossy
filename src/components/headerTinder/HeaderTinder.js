@@ -3,16 +3,16 @@ import { PanelHeader, PanelHeaderContent } from "@vkontakte/vkui";
 import './HeaderTinder.css'
 import IconLike from '../../panels/tinderPanel/icons/IconLike';
 
-const HeaderTinder = ({ title }) => {
+const HeaderTinder = ({ title, countLikes }) => {
 
   return (
     <>
       <PanelHeader
-        theme='alternate'
+        className='tinder_header' theme='alternate'
         left={
-          <div className='tinder-header-icon-count'>
+          <div className='tinder_header_count_icon'>
             <IconLike currentColor='white' />
-            <span className='tinder-header-count-likes'>5</span>
+            <span className='tinder_header_count_likes'>{countLikes}</span>
           </div>
         }
       >

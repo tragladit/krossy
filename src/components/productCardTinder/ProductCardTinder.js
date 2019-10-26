@@ -12,10 +12,12 @@ const ProductCardTinder = ({ product, isWelcome }) => {
 
   const sizes = product.sizes.sort((a, b) => a - b)
 
+  const url = `url('${product.pictures[0]}')`
+  
   const style = {
-    background: "url('https://www.basketshop.ru/files/catalog/14600/vee3blk%20(2).JPG')",
-    backgroundPosition: 'bottom',
-    backgroundSize: 'cover',
+    background: url,
+    backgroundPosition: 'center center',
+    backgroundSize: '100% auto',
     backgroundRepeat: 'no-repeat'
   }
 
@@ -37,4 +39,5 @@ const ProductCardTinder = ({ product, isWelcome }) => {
   )
 };
 
+// 'https://www.basketshop.ru/files/catalog/14600/vee3blk%20(2).JPG'
 export default ProductCardTinder;

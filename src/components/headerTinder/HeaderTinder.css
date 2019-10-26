@@ -1,9 +1,13 @@
+#header-bg-tinder .PanelHeader--android .PanelHeader-bg {
+  box-shadow: none;
+}
+
 .PanelHeader-left-in {
   display: flex;
   align-items: center;
 }
 
-.tinder-header-icon-count {
+.tinder_header_count_icon {
   display: flex;
   align-items: center;
   height: 32px;
@@ -13,7 +17,7 @@
   padding: 0px 12px;
 }
 
-.tinder-header-count-likes {
+.tinder_header_count_likes {
   color: white;
   padding-left: 8px;
 }
@@ -21,7 +25,3 @@
 .PanelHeaderContent--android .PanelHeaderContent__children{
   font-size: 16px;
 }
-
-/* #header-title-favorites .PanelHeaderContent__children span{
-  display: flex;
-} */

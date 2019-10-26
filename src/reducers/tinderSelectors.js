@@ -1,6 +1,11 @@
-export const removeCard = data => {
-  const newData = data.slice(1, data.length)
-  return newData
+export const parseSwipe = (cards, swipes) => {
+
+  const swipe = cards[0]
+  const NewSwipes = swipes.length ? [...swipes] : []
+  NewSwipes.push(swipe)
+  const newCards = cards.slice(1, cards.length)
+
+  return { cards: newCards, swipes: NewSwipes }
 }
 
 
