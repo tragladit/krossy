@@ -1,6 +1,6 @@
 import React from "react"
 
-const cardsOk = { cursor: 'pointer', userSelect: 'none' } 
+const cardsOk = { display: 'grid', width: '100%', height: '100%', cursor: 'pointer', userSelect: 'none' } 
 
 const cardsNo = {
   display: 'flex', justifyContent: 'center', position: 'absolute', left: '50%', top: '50%',

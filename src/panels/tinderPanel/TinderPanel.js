@@ -65,29 +65,27 @@ class TinderPanel extends React.Component {
       <Panel style={osname === IOS ? fontStyleIOS : fontStyleAndroid} id={this.props.id} theme='white'>
         <HeaderTinder title='Кроссы ' page='tinder' countLikes={this.state.countLikes} />
           <div className='tinder_page_wrap'>
-            <div className='tinder_page'>
-              {
-                cards.length > 0 &&
-                <Swipeable
-                  buttons={({ left, right }) => (
-                    <div className='tinder_buttons_wrap'>
-                      <TinderButton func={left} title='Не нравится' iconSvg={<IconDislike />} />
-                      <TinderButton func={right} title='Нравится' iconSvg={<IconLike />} />
-                    </div>
-                  )}
-                  onSwipe={(val) => this.setSwipe(val)}
-                >
-                  <Card>
-                    <ProductCardTinder product={products[ids[0]]} isWelcome={this.state.isWelcome} />
-                  </Card>
-                </Swipeable>
-              }
-              {
-                this.state.isWelcome ?
-                  <ProductCardTinderWelcome closeModal={this.handleCloseModal} /> :
-                  null
-              }
-            </div>
+            {
+              cards.length > 0 &&
+              <Swipeable
+                buttons={({ left, right }) => (
+                  <div className='tinder_buttons_wrap'>
+                    <TinderButton func={left} title='Не нравится' iconSvg={<IconDislike />} />
+                    <TinderButton func={right} title='Нравится' iconSvg={<IconLike />} />
+                  </div>
+                )}
+                onSwipe={(val) => this.setSwipe(val)}
+              >
+                <Card>
+                  <ProductCardTinder product={products[ids[0]]} isWelcome={this.state.isWelcome} />
+                </Card>
+              </Swipeable>
+            }
+            {
+              this.state.isWelcome ?
+                <ProductCardTinderWelcome closeModal={this.handleCloseModal} /> :
+                null
+            }
           </div>
         {!lenCards && <Card endCards={true} />}
       </Panel>
