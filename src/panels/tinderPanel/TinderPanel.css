@@ -1,22 +1,24 @@
-.tinder_page {
-  display: flex;
-  align-items: center;
-  height: -webkit-fill-available;
-  padding: 0 6vw;
+.View--ios .tinder_page_wrap {
+  height: calc(100vh - var(--tabbar_height) - var(--panelheader_height_ios)); 
 }
 
-/* .View--ios .tinder_page {
-  height: calc(100vh - 48px - var(--tabbar_height) - var(--panelheader_height_ios)); 
+.View--android .tinder_page_wrap {
+  height: calc(100vh - var(--tabbar_height) - var(--panelheader_height_android)); 
 }
-
-.View--android .tinder_page {
-  height: calc(100vh - 48px - var(--tabbar_height) - var(--panelheader_height_android)); 
-} */
 
 .tinder_page_wrap {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  justify-content: center;
+  margin: 0 2vh;
+}
+
+.tinder_page {
+  display: grid;
+  grid-template-rows: 1fr 9vw;
+  grid-gap: 2vh;
+  padding: 6px 0;
+  /* max-height: calc(100vh - 12px); */
 }
 
 .tinder_buttons_wrap {
@@ -25,9 +27,6 @@
   align-items: center;
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
-  padding-top: 24px;
-  width: 100%;
-  height: 6.8vh;
 }
 
 .tinder-page-welcome {
