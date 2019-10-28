@@ -1,6 +1,6 @@
 .tinder-page-product {
   display: grid;
-  grid-template-rows: max-content auto;
+  grid-template-rows: max-content 1fr;
   box-shadow: 0 3px 16px rgba(174, 191, 207, 0.3);
   border-radius: 18px;
   width: 100%;
@@ -14,7 +14,7 @@
   display: flex;
   flex-direction: column;
   align-items: start;
-  padding: 16px;
+  padding: 8px 8px 8px 12px;
   width: 100%;
 }
 
@@ -22,7 +22,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding-right: 16px;
+  padding-right: 12px;
 }
 
 .tinder-page-product-header .product-brand-view-name {
@@ -77,6 +77,7 @@
 .tinder-page-product-image-wrap {
   display: flex;
   height: calc(100vw - 40px);
+  max-height: 100%;
 }
 
 .tinder-page-product-image {
