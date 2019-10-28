@@ -5,6 +5,8 @@ import ProductPriceView from "../product/productPriceView/ProductPriceView";
 import ProductSizeChartViewSmall from "../product/productSizeChartViewSmall/ProductSizeChartViewSmall";
 import ProductCountShopView from "../product/productCountShopView/ProductCountShopView";
 import './ProductCardTinder.css';
+import RoundSizeButton from '../buttons/roundSizeButton/RoundSizeButton';
+import IconArrowRight from '../icon/IconArrowRight';
 
 const ProductCardTinder = ({ product, isWelcome }) => {
 
@@ -17,6 +19,7 @@ const ProductCardTinder = ({ product, isWelcome }) => {
   return (
     <div style={isWelcome ? divStyleBlur : null} className='tinder-page-product'>
       <div className='tinder-page-product-header'>
+        <RoundSizeButton iconSvg={<IconArrowRight />} />
         <ProductBrandView name={product.name} model={product.model} logo={logo} />
         <ProductPriceView price={product.price} oldPrice={product.oldPrice} discount={product.discount} />
         <div className='tinder-page-size-shop-wrap'>

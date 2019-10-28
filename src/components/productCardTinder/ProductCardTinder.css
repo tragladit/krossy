@@ -71,3 +71,11 @@
   border-bottom-left-radius: 18px;
 }
 
+.tinder-page-product-header .round-size-btn {
+  position: absolute;
+  background-color: rgb(33, 131, 201);
+  border: none;
+  top: 7%;
+  right: 7%;
+}
+
