@@ -15,21 +15,19 @@ const ProductCardTinder = ({ product, isWelcome }) => {
   const style = { backgroundImage: `url('${product.pictures[0]}')` }
 
   return (
-    // <div className='tinder_page_product_wrap'>
-      <div style={isWelcome ? divStyleBlur : null} className='tinder-page-product'>
-        <div className='tinder-page-product-header'>
-          <ProductBrandView name={product.name} model={product.model} logo={logo} />
-          <ProductPriceView price={product.price} oldPrice={product.oldPrice} discount={product.discount} />
-          <div className='tinder-page-size-shop-wrap'>
-            <ProductSizeChartViewSmall sizes={sizes} />
-            <ProductCountShopView shops={product.shops} />
-          </div>
-        </div>
-        <div className='tinder-page-product-image-wrap'>
-          <div className='tinder-page-product-image' style={style}></div>
+    <div style={isWelcome ? divStyleBlur : null} className='tinder-page-product'>
+      <div className='tinder-page-product-header'>
+        <ProductBrandView name={product.name} model={product.model} logo={logo} />
+        <ProductPriceView price={product.price} oldPrice={product.oldPrice} discount={product.discount} />
+        <div className='tinder-page-size-shop-wrap'>
+          <ProductSizeChartViewSmall sizes={sizes} />
+          <ProductCountShopView shops={product.shops} />
         </div>
       </div>
-    // </div>
+      <div className='tinder-page-product-image-wrap'>
+        <div className='tinder-page-product-image' style={style}></div>
+      </div>
+    </div>
   )
 };
 

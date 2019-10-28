@@ -1,6 +1,4 @@
-import React from "react"
-
-const cardsOk = { display: 'grid', width: '100%', height: '100%', cursor: 'pointer', userSelect: 'none' } 
+import React from "react" 
 
 const cardsNo = {
   display: 'flex', justifyContent: 'center', position: 'absolute', left: '50%', top: '50%',
@@ -12,7 +10,7 @@ const Card = ({ endCards, children }) => {
   return (
     endCards ?
       <div style={cardsNo}>Вы всё просмотрели</div> :
-      <div className='swipeable_card' style={cardsOk}>{children}</div>
+      <div className='swipeable_card'>{children}</div>
   )
 }
 

@@ -1,8 +1,9 @@
 .tinder-page-product {
   display: grid;
-  grid-template-rows: max-content 1fr;
+  grid-template-rows: max-content minmax(calc(100vw - 100px), calc(100vw - 24px));
   box-shadow: 0 3px 16px rgba(174, 191, 207, 0.3);
   border-radius: 18px;
+  width: 100%;
 }
 
 .tinder-page-product-header {
@@ -55,7 +56,9 @@
 
 .tinder-page-product-image-wrap {
   display: flex;
-  height: 100%;
+  height: auto;
+  position: relative;
+  overflow: hidden;
 }
 
 .tinder-page-product-image {

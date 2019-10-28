@@ -68,6 +68,7 @@ class TinderPanel extends React.Component {
             {
               cards.length > 0 &&
               <Swipeable
+                className='swip'
                 buttons={({ left, right }) => (
                   <div className='tinder_buttons_wrap'>
                     <TinderButton func={left} title='Не нравится' iconSvg={<IconDislike />} />
