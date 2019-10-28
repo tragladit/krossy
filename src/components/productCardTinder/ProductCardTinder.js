@@ -28,7 +28,7 @@ const ProductCardTinder = ({ product, isWelcome }) => {
           </div>
         </div>
         <div className='tinder-page-product-header-button'>
-          <RoundSizeButton iconSvg={<IconArrowRight />} />
+          <RoundSizeButton func={() => console.log('tinder button')} iconSvg={<IconArrowRight />} />
         </div>
       </div>
       <div className='tinder-page-product-image-wrap'>

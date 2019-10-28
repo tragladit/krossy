@@ -76,7 +76,7 @@
 
 .tinder-page-product-image-wrap {
   display: flex;
-  height: calc(100vw - 24px);
+  height: calc(100vw - 40px);
 }
 
 .tinder-page-product-image {
