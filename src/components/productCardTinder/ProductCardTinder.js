@@ -20,7 +20,7 @@ const ProductCardTinder = ({ product, isWelcome }) => {
       imgHeight = pageHeight - headerHeight
     }
     document.getElementById('tppiw').style.height = `${imgHeight}px`
-  }, [])
+  })
 
   const divStyleBlur = { filter: 'blur(9px)' }
 
