@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ProductBrandView from "../product/productBrandView/ProductBrandView";
 import logo from "../../assets/image/adidas.png";
 import ProductPriceView from "../product/productPriceView/ProductPriceView";
@@ -10,6 +10,18 @@ import IconArrowRight from '../icon/IconArrowRight';
 
 const ProductCardTinder = ({ product, isWelcome }) => {
 
+  useEffect(() => {
+    const page = document.getElementById('tpw')
+    const header = document.getElementById('tpph')
+    const pageHeight = page.clientHeight - 82
+    const headerHeight = header.clientHeight
+    let imgHeight = header.clientWidth
+    if (imgHeight + headerHeight > pageHeight) {
+      imgHeight = pageHeight - headerHeight
+    }
+    document.getElementById('tppiw').style.height = `${imgHeight}px`
+  }, [])
+
   const divStyleBlur = { filter: 'blur(9px)' }
 
   const sizes = product.sizes.sort((a, b) => a - b)
@@ -18,8 +30,8 @@ const ProductCardTinder = ({ product, isWelcome }) => {
 
   return (
     <div style={isWelcome ? divStyleBlur : null} className='tinder-page-product'>
-      <div className='tinder-page-product-header'>
-        <div className='tinder-page-product-header-info'> 
+      <div id='tpph' className='tinder-page-product-header'>
+        <div className='tinder-page-product-header-info'>
           <ProductBrandView name={product.name} model={product.model} logo={logo} />
           <ProductPriceView price={product.price} oldPrice={product.oldPrice} discount={product.discount} />
           <div className='tinder-page-size-shop-wrap'>
@@ -31,7 +43,7 @@ const ProductCardTinder = ({ product, isWelcome }) => {
           <RoundSizeButton func={() => console.log('tinder button')} iconSvg={<IconArrowRight />} />
         </div>
       </div>
-      <div className='tinder-page-product-image-wrap'>
+      <div id='tppiw' className='tinder-page-product-image-wrap'>
         <div className='tinder-page-product-image' style={style}></div>
       </div>
     </div>

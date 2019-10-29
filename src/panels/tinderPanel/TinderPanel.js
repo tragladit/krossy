@@ -64,30 +64,29 @@ class TinderPanel extends React.Component {
     return (
       <Panel style={osname === IOS ? fontStyleIOS : fontStyleAndroid} id={this.props.id} theme='white'>
         <HeaderTinder title='Кроссы ' page='tinder' countLikes={this.state.countLikes} />
-          <div className='tinder_page_wrap'>
-            {
-              cards.length > 0 &&
-              <Swipeable
-                className='swip'
-                buttons={({ left, right }) => (
-                  <div className='tinder_buttons_wrap'>
-                    <TinderButton func={left} title='Не нравится' iconSvg={<IconDislike />} />
-                    <TinderButton func={right} title='Нравится' iconSvg={<IconLike />} />
-                  </div>
-                )}
-                onSwipe={(val) => this.setSwipe(val)}
-              >
-                <Card>
-                  <ProductCardTinder product={products[ids[0]]} isWelcome={this.state.isWelcome} />
-                </Card>
-              </Swipeable>
-            }
-            {
-              this.state.isWelcome ?
-                <ProductCardTinderWelcome closeModal={this.handleCloseModal} /> :
-                null
-            }
-          </div>
+        <div id='tpw' className='tinder_page_wrap'>
+          {
+            cards.length > 0 &&
+            <Swipeable
+              buttons={({ left, right }) => (
+                <div className='tinder_buttons_wrap'>
+                  <TinderButton func={left} title='Не нравится' iconSvg={<IconDislike />} />
+                  <TinderButton func={right} title='Нравится' iconSvg={<IconLike />} />
+                </div>
+              )}
+              onSwipe={(val) => this.setSwipe(val)}
+            >
+              <Card>
+                <ProductCardTinder product={products[ids[0]]} isWelcome={this.state.isWelcome} />
+              </Card>
+            </Swipeable>
+          }
+          {
+            this.state.isWelcome ?
+              <ProductCardTinderWelcome closeModal={this.handleCloseModal} /> :
+              null
+          }
+        </div>
         {!lenCards && <Card endCards={true} />}
       </Panel>
     )
