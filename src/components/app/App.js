@@ -30,7 +30,6 @@ class App extends React.Component {
 
   initApp = async () => {
     this.props.isLoad(true)
-    connect.send("VKWebAppInit", {})
     connect.send("VKWebAppGetUserInfo", {})
       .then(e => {
         this.props.init(e.data)
