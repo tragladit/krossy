@@ -29,13 +29,15 @@ class App extends React.Component {
   }
 
   initApp = async () => {
-    this.props.isLoad(true);
+    this.props.isLoad(true)
+    connect.send("VKWebAppInit", {})
     connect.send("VKWebAppGetUserInfo", {})
       .then(e => {
         this.props.init(e.data)
       })
       .then(() => this.props.isLoad(false))
-  };
+  }
+
 
   goView = () => this.setState({ activeStory: 'homeView' });
 
@@ -75,7 +77,7 @@ class App extends React.Component {
                   onClick={this.onStoryChange} selected={this.state.activeStory === 'favoritesView'}
                   data-story='favoritesView'
                 >
-                  <IconStarBar active={this.state.activeStory === 'favoritesView'}/>
+                  <IconStarBar active={this.state.activeStory === 'favoritesView'} />
                 </TabbarItem>
                 <TabbarItem
                   onClick={this.onStoryChange} selected={this.state.activeStory === 'settingsView'}
