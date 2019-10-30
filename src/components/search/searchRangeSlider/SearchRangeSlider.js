@@ -4,9 +4,6 @@ import { connect as reduxConnect } from "react-redux";
 import { setPrice } from '../../../reducers/search';
 
 class SearchRangeSlider extends React.Component {
-  constructor(props) {
-    super(props)
-  }
 
   changeRange = (e) => {
     this.props.setPrice('prices', { startValue: Math.round(e[0]), endValue: Math.round(e[1]) })

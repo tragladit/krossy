@@ -2,7 +2,7 @@ import React from 'react';
 import { Panel } from '@vkontakte/vkui';
 import { connect } from "react-redux";
 import css from './StartPanelTwo.module.css';
-import StartPanelButton from "../../../components/buttons/startPanelButton/StartPanelButton";
+import FlexButton from "../../../components/buttons/flexButton/FlexButton";
 import { isChangeBoolean, onChangeGender, onChooseSize } from "../../../reducers/user";
 import SlideDots from "../../../components/dotsSlide/SlideDots";
 import ApiService from "../../../api/krossy-api";
@@ -102,7 +102,7 @@ class StartPanelTwo extends React.PureComponent {
             }
           </div>
           <div className={css.button_next}>
-            <StartPanelButton title='Далее' secondAction={this.saveUserSettings} goTo={'start-3'} />
+            <FlexButton title='Далее' secondAction={this.saveUserSettings} goTo={'start-3'} />
             <SlideDots dot={2} />
           </div>
         </div>
@@ -120,5 +120,4 @@ export default connect(
     onChangeGender: value => dispatch(onChangeGender(value)),
     onPickSize: id => dispatch(onChooseSize(id))
   })
-)
-  (StartPanelTwo);
+)(StartPanelTwo);

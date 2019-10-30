@@ -28,7 +28,7 @@ const SettingPanelThree = ({id, goPanel}) => {
           <div className='setting-page-three-image_wrap'>
             <img className='setting-page-three-image'
                  src={pic}
-                 alt='image'/>
+                 alt='image_page_three'/>
             <div className='setting-page-three_text'>
               ASICS Gel-Rocket 8
             </div>
@@ -43,7 +43,7 @@ const SettingPanelThree = ({id, goPanel}) => {
           <div className='setting-page-three-image_wrap'>
             <img className='setting-page-three-image'
                  src={pic}
-                 alt='image'/>
+                 alt='image_page_three'/>
             <div className='setting-page-three_text'>
               ASICS Gel-Rocket 8
             </div>
@@ -58,7 +58,7 @@ const SettingPanelThree = ({id, goPanel}) => {
           <div className='setting-page-three-image_wrap'>
             <img className='setting-page-three-image'
                  src={pic}
-                 alt='image'/>
+                 alt='image_page_three'/>
             <div className='setting-page-three_text'>
               ASICS Gel-Rocket 8
             </div>

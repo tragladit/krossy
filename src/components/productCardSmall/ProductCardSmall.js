@@ -1,5 +1,4 @@
 import React from 'react';
-import { platform } from "@vkontakte/vkui"; //IOS
 import brandLogo from '../../assets/image/adidas.png';
 import './ProductCardSmall.css';
 import ProductSizeChartViewSmall from "../product/productSizeChartViewSmall/ProductSizeChartViewSmall";
@@ -11,8 +10,6 @@ import ApiService from "../../api/krossy-api";
 import { connect as reduxConnect } from "react-redux";
 import { isChangeBoolean, setNewInitData } from "../../reducers/user";
 import { getNormalizeData } from "../../reducers/selectors";
-
-const osname = platform();
 
 class ProductCardSmall extends React.PureComponent {
 

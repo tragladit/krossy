@@ -2,7 +2,6 @@ import React from 'react';
 import { Panel, Div, PullToRefresh } from "@vkontakte/vkui";
 import ProductCardSmall from '../../components/productCardSmall/ProductCardSmall';
 import './HomePanel.css';
-import { platform, IOS } from "@vkontakte/vkui";
 import HeaderHome from "../../components/headerHome/HeaderHome";
 import { connect as reduxConnect } from "react-redux";
 import ApiService from "../../api/krossy-api";
@@ -10,8 +9,6 @@ import {
   filterModeProducts, getSettingsSizes, getNormalizeProducts
 } from '../../reducers/selectors';
 import { isChangeBoolean, getData } from '../../reducers/user';
-
-const osname = platform();
 
 class HomePanel extends React.Component {
 

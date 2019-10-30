@@ -1,8 +1,8 @@
 import React from 'react';
 import { Panel } from '@vkontakte/vkui';
 import './StartPanelOne.css';
-import RectangleButton from "../../../components/buttons/rectangleButton/RectangleButton";
-import DotsSlide from "../../../components/dotsSlide/DotsSlide";
+import FlexButton from "../../../components/buttons/flexButton/FlexButton";
+import SlideDots from "../../../components/dotsSlide/SlideDots";
 import ApiService from "../../../api/krossy-api";
 import { connect as reduxConnect } from "react-redux";
 import {
@@ -16,16 +16,18 @@ class StartPanelOne extends React.Component {
   loadSettings = (id) => {
     this.props.isLoad(true);
     this.Service.loadSetting(id)
-      .then(res => { //todo сделать проверку на загрузку юзера
-        const { gender, size } = res.result
-        this.props.gender(gender);
-        size.forEach(s => this.props.size(s));
-        this.props.isLoad(false);
+      .then(res => {
+        if (res.ok) {
+          const { gender, size } = res.result
+          this.props.gender(gender);
+          size.forEach(s => this.props.size(s));
+          this.props.isLoad(false);
+        }
       })
   };
 
   componentDidMount() {
-    if (this.props.data.userInfo) { // проверка на загругку данных их VK
+    if (this.props.data.userInfo) {
       this.loadSettings(this.props.data.userInfo.id);
     }
   }
@@ -40,8 +42,10 @@ class StartPanelOne extends React.Component {
               Сервис «Кроссы» - это отличный помощник в нелегкой задаче поиска своих самых любимых кросовок!
             </div>
           </div>
-          <RectangleButton title='Далее' goTo='start-2' func={this.props.goPanel} />
-          <DotsSlide />
+          <div className='start_panel_one_button_next_wrap'>
+            <FlexButton title='Далее' goTo='start-2' func={this.props.goPanel}/>
+          </div>
+          <SlideDots dot={1} />
         </div>
       </Panel>
     )

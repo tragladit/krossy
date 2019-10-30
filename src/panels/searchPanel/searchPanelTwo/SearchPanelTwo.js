@@ -7,9 +7,6 @@ import { connect as reduxConnect } from "react-redux";
 import { setBrands } from '../../../reducers/search';
 
 class SearchPanelTwo extends React.PureComponent {
-  constructor(props) {
-    super(props)
-  }
 
   onSelect = (e) => {
     const target = e.target.textContent

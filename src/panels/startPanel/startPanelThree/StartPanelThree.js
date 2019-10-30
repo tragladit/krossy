@@ -1,7 +1,7 @@
 import React from 'react';
 import { Panel } from '@vkontakte/vkui';
 import css from './StartPanelThree.module.css';
-import StartPanelButton from "../../../components/buttons/startPanelButton/StartPanelButton";
+import FlexButton from "../../../components/buttons/flexButton/FlexButton";
 import IconHome from "../../../components/icon/IconHome";
 import IconSearch from "../../../components/icon/IconSearch";
 import IconKross from "../../../components/icon/IconKross";
@@ -50,8 +50,8 @@ class StartPanelThree extends React.PureComponent {
             </div>
           </div>
           <div className={css.buttons_next_back}>
-            <StartPanelButton title='Назад' func={goPanel} goTo='start-2' />
-            <StartPanelButton title='Приступить' func={goView} />
+            <FlexButton title='Назад' func={goPanel} goTo='start-2' width='40%' />
+            <FlexButton title='Приступить' func={goView} width='40%' />
             <SlideDots dot={3} />
           </div>
         </div>

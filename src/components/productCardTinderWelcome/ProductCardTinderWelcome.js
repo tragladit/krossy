@@ -12,7 +12,7 @@ const ProductCardTinderWelcome = ({closeModal}) => {
         «Не нравится» - и все получится! Или еще проще:
       </div>
       <div className='tinder-page-welcome-image_wrap'>
-        <img src={pic} alt='image' />
+        <img src={pic} alt='image_tinder_page_welcome' />
       </div>
       <div className='tinder-page-welcome_button'>
         <RectangleButton func={closeModal} title='Понятно'/>

@@ -1,0 +1,28 @@
+.flex_button {
+  box-sizing: border-box;
+  font-family: SF Pro Text, sans-serif;
+  color: #fff;
+  border: 2px solid #8EC8FF;
+  height: 48px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex_button:active {
+  border-color: #ffffff;
+  box-shadow: 0 0 8px 0 #ffffff;
+}
+
+.flex_button_wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex_button__selected {
+  border-color: #ffffff;
+  box-shadow: 0 0 8px 0 #ffffff;
+}
+

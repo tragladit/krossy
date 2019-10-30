@@ -13,7 +13,7 @@
 .tinder-page-product-header-info {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
   padding: 8px 8px 8px 12px;
   width: 100%;
 }

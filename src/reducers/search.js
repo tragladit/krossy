@@ -45,8 +45,9 @@ const search = (state = initialState, action) => {
       return { ...state, colors: parseData(state.colors, action.metod, action.val) };
     case RES_STATE:
       return initialState;
+    default:
+      return state;
   }
-  return state;
 }
 
 export default search

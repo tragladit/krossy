@@ -26,14 +26,11 @@ const sortName = 'search_sort'
 const sortTitles = ['Не сортировать', 'По возрастанию цены', 'По убыванию цены']
 
 class SearchPanelOne extends React.Component {
-  constructor(props) {
-    super(props)
-  }
 
   changeSwitch = (e) => this.props.setDiscount(e.target.checked);
 
   changeSort = (val) => this.props.setSort(val)
-  
+
   render() {
     const { discount, sort } = this.props
 

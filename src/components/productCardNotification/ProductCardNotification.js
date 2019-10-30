@@ -27,7 +27,7 @@ const ProductCardNotification = ({ isOpen, userId, modelId, offers }) => {
       style={osname === IOS ? fontStyleIOS : fontStyleAndroid} className='card-notification_wrap'
     >
       <div className='card-notification-image_wrap'>
-        <img src={pic} alt='image' />
+        <img src={pic} alt='image_notification' />
       </div>
       <div className='card-notification-text'>
         Сообщите мне,<br />

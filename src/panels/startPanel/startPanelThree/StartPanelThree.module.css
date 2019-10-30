@@ -9,8 +9,9 @@
   background-image: url("../../../assets/background/iOS 3.svg");
   background-repeat: no-repeat;
   display: grid;
-  align-items: center;
-  grid-template-rows: repeat(6, 1fr);
+  align-items: flex-end;
+  justify-items: center;
+  grid-template-rows: 2fr 1fr 1fr auto auto 1fr var(--tabbar_height);
 }
 
 .text_title {
@@ -24,12 +25,14 @@
   font-size: 0.7em;
   font-weight: 300;
   text-align: center;
+  width: 80%;
 }
 
 .icon_arrow {
   display: flex;
   justify-content: center;
   width: auto;
+  margin: 20px 0;
 }
 
 .icon_arrow svg {
@@ -44,7 +47,7 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  width: auto;
+  width: 100%;
 }
 
 .setting_icon_setting {
@@ -66,7 +69,7 @@
 .buttons_next_back {
   display: flex;
   justify-content: space-evenly;
-  margin-bottom: 40px;
+  width: 100%;
 }
 
 

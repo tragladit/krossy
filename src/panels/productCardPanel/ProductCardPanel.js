@@ -71,7 +71,6 @@ class ProductCardPanel extends React.PureComponent {
     const params = modelsParams[currentColor].params
 
     const osname = platform();
-    let heightStyle = osname === IOS ? 236 : 220;
 
     const fontStyleAndroid = {
       fontFamily: 'Roboto, sans-serif',

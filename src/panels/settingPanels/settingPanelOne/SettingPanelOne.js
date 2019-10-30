@@ -12,9 +12,6 @@ import { onChangeGender } from '../../../reducers/user';
 import { filterSizes } from '../../../reducers/selectors';
 
 class SettingPanelOne extends React.Component {
-  constructor(props) {
-    super(props)
-  }
 
   render() {
     const osname = platform();
