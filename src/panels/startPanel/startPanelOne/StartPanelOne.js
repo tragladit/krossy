@@ -1,5 +1,5 @@
 import React from 'react';
-import { Panel } from '@vkontakte/vkui'; //ScreenSpinner
+import { Panel } from '@vkontakte/vkui';
 import './StartPanelOne.css';
 import RectangleButton from "../../../components/buttons/rectangleButton/RectangleButton";
 import DotsSlide from "../../../components/dotsSlide/DotsSlide";

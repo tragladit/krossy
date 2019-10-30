@@ -1,5 +1,5 @@
 import React from 'react';
-import connect from '@vkontakte/vkui-connect-promise';
+import connect from '@vkontakte/vk-connect';
 import { ConfigProvider, TabbarItem, Tabbar, Epic } from '@vkontakte/vkui';
 import '@vkontakte/vkui/dist/vkui.css';
 import './App.css';
@@ -30,13 +30,12 @@ class App extends React.Component {
 
   initApp = async () => {
     this.props.isLoad(true)
-    connect.send("VKWebAppGetUserInfo", {})
-      .then(e => {
-        this.props.init(e.data)
+    connect.sendPromise("VKWebAppGetUserInfo", {})
+      .then(data => {
+        this.props.init(data)
       })
       .then(() => this.props.isLoad(false))
   }
-
 
   goView = () => this.setState({ activeStory: 'homeView' });
 
