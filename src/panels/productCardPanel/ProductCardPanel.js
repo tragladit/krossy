@@ -57,7 +57,7 @@ class ProductCardPanel extends React.PureComponent {
   };
 
   goBack = () => {
-    this.props.go('homePanel')
+    this.props.go(this.props.goBack)
   };
 
   render() {

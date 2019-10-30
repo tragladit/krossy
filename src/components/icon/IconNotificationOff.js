@@ -18,7 +18,7 @@ const IconNotification = () => {
       </svg>
       <svg xmlns="http://www.w3.org/2000/svg" width="2.576" height="2.576" viewBox="0 0 2.576 2.576">
         <path id="Path_640" data-name="Path 640" d="M1.288,0A1.288,1.288,0,1,1,0,1.288,1.288,1.288,0,0,1,1.288,0Z"
-              transform="translate(0)" fill="#aebfcf" fillWidth="2"/> 
+              transform="translate(0)" fill="#aebfcf" strokeWidth="2"/> 
       </svg>
     </div>
 

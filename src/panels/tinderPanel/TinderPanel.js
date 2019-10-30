@@ -35,7 +35,6 @@ class TinderPanel extends React.Component {
   }
 
   componentWillUnmount() {
-    console.log('likes', this.props.likes, 'dislikes', this.props.dislikes)
     this.setState({ countLikes: 0 })
     this.props.resTinderData()
   }
@@ -55,7 +54,7 @@ class TinderPanel extends React.Component {
 
   render() {
 
-    const { products, cards } = this.props;
+    const { products, go, cards } = this.props;
 
     const ids = cards ? cards : Object.keys(products)
 
@@ -77,7 +76,7 @@ class TinderPanel extends React.Component {
               onSwipe={(val) => this.setSwipe(val)}
             >
               <Card>
-                <ProductCardTinder product={products[ids[0]]} isWelcome={this.state.isWelcome} />
+                <ProductCardTinder product={products[ids[0]]} go={go} isWelcome={this.state.isWelcome} />
               </Card>
             </Swipeable>
           }

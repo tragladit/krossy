@@ -7,8 +7,14 @@ import ProductCountShopView from "../product/productCountShopView/ProductCountSh
 import './ProductCardTinder.css';
 import RoundSizeButton from '../buttons/roundSizeButton/RoundSizeButton';
 import IconArrowRight from '../icon/IconArrowRight';
+import { connect as reduxConnect } from "react-redux";
+import { isChangeBoolean, setNewInitData } from '../../reducers/user';
+import { getNormalizeData } from '../../reducers/selectors';
+import ApiService from '../../api/krossy-api';
 
-const ProductCardTinder = ({ product, isWelcome }) => {
+const ProductCardTinder = ({ userId, isLoad, setNewInitData, product, go, isWelcome }) => {
+
+  const Service = new ApiService()
 
   useEffect(() => {
     const page = document.getElementById('tpw')
@@ -21,6 +27,25 @@ const ProductCardTinder = ({ product, isWelcome }) => {
     }
     document.getElementById('tppiw').style.height = `${imgHeight}px`
   })
+
+  const goProduct = async () => {
+    try {
+      const goTo = 'productCardPanel'
+      const target = product.id
+      isLoad(true);
+      const resModels = await Service.getModels(target, userId)
+      if (resModels.ok) {
+        const nmzData = getNormalizeData(resModels.result, product.pictureModelId)
+        setNewInitData(nmzData.models, target, nmzData.current)
+        isLoad(false)
+        go(goTo)
+      } else {
+        console.log('#ProductCardTinder.goProduct.findCurrentModel# Model not find')
+      }
+    } catch (err) {
+      console.log('#ProductCardTinder.goProduct#', err)
+    }
+  };
 
   const divStyleBlur = { filter: 'blur(9px)' }
 
@@ -40,7 +65,7 @@ const ProductCardTinder = ({ product, isWelcome }) => {
           </div>
         </div>
         <div className='tinder-page-product-header-button'>
-          <RoundSizeButton func={() => console.log('tinder button')} iconSvg={<IconArrowRight />} />
+          <RoundSizeButton func={goProduct} iconSvg={<IconArrowRight />} />
         </div>
       </div>
       <div id='tppiw' className='tinder-page-product-image-wrap'>
@@ -50,4 +75,14 @@ const ProductCardTinder = ({ product, isWelcome }) => {
   )
 };
 
-export default ProductCardTinder;
+export default reduxConnect(
+  state => ({
+    userId: state.user.userInfo.id
+  }),
+  dispatch => ({
+    isLoad: bool => dispatch(isChangeBoolean('isLoadModels', bool)),
+    setNewInitData: (modelsParams, currentProduct, current) => {
+      dispatch(setNewInitData(modelsParams, currentProduct, current))
+    }
+  })
+)(ProductCardTinder);

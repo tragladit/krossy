@@ -42,7 +42,7 @@ class HomeView extends React.Component {
       isLoadProducts ? <ScreenSpinner /> :
         <View id={this.props.id} activePanel={this.state.activePanel}>
           <HomePanel id='homePanel' go={this.go} />
-          <ProductCardPanel id='productCardPanel' go={this.go} />
+          <ProductCardPanel id='productCardPanel' go={this.go} goBack='homePanel' />
         </View>
     )
   }
