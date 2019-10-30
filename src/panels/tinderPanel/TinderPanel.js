@@ -6,8 +6,6 @@ import ProductCardTinderWelcome from "../../components/productCardTinderWelcome/
 import Swipeable from "react-swipy"
 import Card from './Card';
 import TinderButton from '../../components/buttons/tinderButton/TinderButton';
-import { connect as reduxConnect } from "react-redux";
-import { setInitialCards, resTinderData, setLikeTinder, setDislikeTinder } from '../../reducers/tinder';
 import IconDislike from './icons/IconDislike';
 import IconLike from './icons/IconLike';
 import HeaderTinder from '../../components/headerTinder/HeaderTinder';
@@ -23,27 +21,9 @@ const fontStyleIOS = {
 };
 
 class TinderPanel extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = { isWelcome: true, countLikes: 0 }
-  }
-
-  componentDidMount() {
-    if (!this.props.cards) {
-      this.props.setInitialCards(Object.keys(this.props.products))
-    }
-  }
-
-  componentWillUnmount() {
-    this.setState({ countLikes: 0 })
-    this.props.resTinderData()
-  }
-
-  handleCloseModal = () => this.setState({ isWelcome: false });
 
   setSwipe = val => {
     if (val === 'right') {
-      this.setState({ countLikes: this.state.countLikes + 1 })
       this.props.setLikeTinder()
     } else if (val === 'left') {
       this.props.setDislikeTinder()
@@ -54,15 +34,13 @@ class TinderPanel extends React.Component {
 
   render() {
 
-    const { products, go, cards } = this.props;
-
-    const ids = cards ? cards : Object.keys(products)
+    const { isWelcome, products, go, cards, likes, onCloseModal } = this.props;
 
     const lenCards = cards.length
 
     return (
       <Panel style={osname === IOS ? fontStyleIOS : fontStyleAndroid} id={this.props.id} theme='white'>
-        <HeaderTinder title='Кроссы ' page='tinder' countLikes={this.state.countLikes} />
+        <HeaderTinder title='Кроссы ' page='tinder' countLikes={likes.length} />
         <div id='tpw' className='tinder_page_wrap'>
           {
             cards.length > 0 &&
@@ -76,15 +54,11 @@ class TinderPanel extends React.Component {
               onSwipe={(val) => this.setSwipe(val)}
             >
               <Card>
-                <ProductCardTinder product={products[ids[0]]} go={go} isWelcome={this.state.isWelcome} />
+                <ProductCardTinder product={products[cards[0]]} go={go} isWelcome={isWelcome} />
               </Card>
             </Swipeable>
           }
-          {
-            this.state.isWelcome ?
-              <ProductCardTinderWelcome closeModal={this.handleCloseModal} /> :
-              null
-          }
+          {isWelcome ? <ProductCardTinderWelcome closeModal={onCloseModal} /> : null}
         </div>
         {!lenCards && <Card endCards={true} />}
       </Panel>
@@ -92,17 +66,4 @@ class TinderPanel extends React.Component {
   }
 }
 
-export default reduxConnect(
-  state => ({
-    products: state.user.products,
-    cards: state.tinder.cards,
-    likes: state.tinder.likes,
-    dislikes: state.tinder.dislikes
-  }),
-  dispatch => ({
-    setInitialCards: data => dispatch(setInitialCards(data)),
-    resTinderData: () => dispatch(resTinderData()),
-    setLikeTinder: () => dispatch(setLikeTinder()),
-    setDislikeTinder: () => dispatch(setDislikeTinder())
-  })
-)(TinderPanel);
+export default TinderPanel;

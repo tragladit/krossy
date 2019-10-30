@@ -1,7 +1,6 @@
 import React from 'react';
 import {
-  PanelHeader, platform, IOS,
-  PanelHeaderContent, HeaderContext, List, Cell
+  PanelHeader, platform, IOS, PanelHeaderContent, HeaderContext, List, Cell
 } from "@vkontakte/vkui";
 import IconDropDownAndroid from "../icon/IconDropDownAndroid";
 import IconDropDownIOS from "../icon/IconDropDownIOS";
@@ -43,7 +42,7 @@ const HeaderFavorite = ({ toggleContext, select, contextOpened, mode, len }) => 
           </Cell>
           <Cell
             asideContent={mode === 'like' ? <Icon24Done fill="var(--accent)" /> : null}
-            onClick={select} data-mode="like" style={{ pointerEvents: 'none', opacity: 0.5 }}
+            onClick={select} data-mode="like"
           >
             {osname === IOS ? 'Нравиться' : 'Мне нравиться'}
           </Cell>
@@ -52,6 +51,6 @@ const HeaderFavorite = ({ toggleContext, select, contextOpened, mode, len }) => 
     </>
   )
 };
-
+// style={{ pointerEvents: 'none', opacity: 0.5 }}
 export default HeaderFavorite;
 

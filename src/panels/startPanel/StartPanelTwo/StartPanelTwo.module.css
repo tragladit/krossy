@@ -87,7 +87,8 @@
   grid-auto-columns: auto;
   grid-auto-flow: column;
   column-gap: 4px;
-  margin: 6px;
+  padding: 6px 0;
+  width: 100%;
 }
 
 .horizontal_sizes::-webkit-scrollbar {

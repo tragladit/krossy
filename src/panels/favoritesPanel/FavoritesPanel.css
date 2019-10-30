@@ -2,6 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   background-color: #F7F8F9;
+  height: 100%;
 }
 
 .Panel--ios .favorites-page_wrap {

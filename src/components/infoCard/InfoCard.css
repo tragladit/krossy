@@ -1,0 +1,15 @@
+.info_card {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 18px;
+  box-shadow: 0 3px 16px rgba(174, 191, 207, 0.3);
+  font-size: 26px;
+  color: #aebfcf;
+  padding: 40px 10px;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  z-index: -2;
+}

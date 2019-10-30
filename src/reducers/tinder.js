@@ -1,15 +1,19 @@
 import { parseSwipe } from './tinderSelectors'
 
+const SET_IS_WELCOME = 'SET_IS_WELCOME'
 const SET_LIKE_TINDER = 'SET_LIKE_TINDER'
 const SET_DISLIKE_TINDER = 'SET_DISLIKE_TINDER'
 const SET_INITIAL_DATA = 'SET_INITIAL_DATA'
 const RES_TINDER_DATA = 'RES_TINDER_DATA'
 
 const initialState = {
+  isWelcome: true,
   cards: false,
   likes: [],
   dislikes: []
 };
+
+export const setIsWelcome = () => ({ type: SET_IS_WELCOME })
 
 export const setInitialCards = data => ({ type: SET_INITIAL_DATA, data })
 
@@ -21,6 +25,8 @@ export const setDislikeTinder = () => ({ type: SET_DISLIKE_TINDER })
 
 const tinder = (state = initialState, action) => {
   switch (action.type) {
+    case SET_IS_WELCOME:
+      return { ...state, isWelcome: false };
     case SET_LIKE_TINDER:
       const lk = parseSwipe(state.cards, state.likes)
       return { ...state, cards: lk.cards, likes: lk.swipes };

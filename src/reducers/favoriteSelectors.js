@@ -7,4 +7,6 @@ export const filterFavorite = (data) => {
   }, [])
 }
 
+export const filterLike = (keys, data) => keys.map(k => data[k])
+
 

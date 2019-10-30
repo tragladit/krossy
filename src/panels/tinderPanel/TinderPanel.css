@@ -30,8 +30,7 @@
 }
 
 .tinder-page-welcome {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   align-items: center;
   justify-items: center;
   position: absolute;
@@ -40,20 +39,22 @@
   transform: translate(-50%, -50%);
   background-color: #4986CC;
   border-radius: 32px;
-  width: 70%;
+  width: 80vw;
+  height: 80vw;
+  padding: 12px 0;
   z-index: 3;
+  grid-template-rows: 1fr 1fr 1fr 1fr max-content;
+  grid-row-gap: 4px;
 }
 
 .tinder-page-welcome_title {
   font-family: Roboto, sans-serif;
-  margin: 40px 0px;
   color: #ffffff;
   font-size: 20px;
 }
 
 .tinder-page-welcome_text {
   font-family: Roboto, sans-serif;
-  margin: 0px 20px 40px 20px;
   color: #ffffff;
   font-size: 12px;
   font-weight: 300;
@@ -64,11 +65,11 @@
 .tinder-page-welcome_button {
   display: flex;
   justify-content: center;
-  margin-bottom: 40px;
+  width: 100%;
 }
 
 .tinder-page-welcome_button .rectangle-button {
-  width: 114px;
+  width: 40%;
   box-shadow: none;
   border: 2px solid #8EC8FF;
   color: #fff;
@@ -76,8 +77,29 @@
 
 .tinder-page-welcome-image_wrap {
   display: flex;
+}
+
+.tinder-page-welcome_ckeckbox .Checkbox {
+  padding: 4px;
+}
+
+.tinder-page-welcome_ckeckbox .Checkbox__icon {
+  display: flex;
+  align-items: center;
   justify-content: center;
-  margin-bottom: 30px;
+  background-color: #fff;
+  border: none;
+}
+
+.tinder-page-welcome_ckeckbox .Checkbox__input:checked~.Checkbox__container .Checkbox__icon {
+  background-color: #fff;
+  color: black;
+}
+
+.tinder-page-welcome_ckeckbox .Checkbox__content {
+  color: #fff;
+  font-size: 14px;
+  line-height: 22px;
 }
 
 .Panel--android .tinder-page-welcome_button .rectangle-button_text {

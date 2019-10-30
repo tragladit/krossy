@@ -4,7 +4,8 @@ import { Panel, Div } from "@vkontakte/vkui";
 import ProductCardSmall from "../../components/productCardSmall/ProductCardSmall";
 import HeaderFavorite from "../../components/headerFavorite/HeaderFavorite";
 import { connect as reduxConnect } from "react-redux";
-import { filterFavorite } from '../../reducers/favoriteSelectors';
+import { filterFavorite, filterLike } from '../../reducers/favoriteSelectors';
+import InfoCard from '../../components/infoCard/InfoCard';
 
 class FavoritesPanel extends React.Component {
 
@@ -27,21 +28,33 @@ class FavoritesPanel extends React.Component {
   render() {
 
     const { contextOpened, mode } = this.state;
-    const { products } = this.props
-    const favorite = filterFavorite(products)
-    const lenFavorite = favorite.length
+    const { products, likes } = this.props
+
+    const getData = () => {
+      if (mode === 'favorite') {
+        return filterFavorite(products)
+      } else if (mode === 'like') {
+        if (likes.length) {
+          return filterLike(likes, products)
+        }
+        return []
+      }
+    }
+
+    const dataCards = getData()
+
+    const lenData = dataCards.length
 
     const Cards = () => {
-
-      if (lenFavorite) {
-        return favorite.map(el => (
+      if (lenData) {
+        return dataCards.map(el => (
           <ProductCardSmall
             key={el.id} formSticker='round' nameSticker={mode === 'favorite' ? 'like' : 'star'}
             prodId={el.id} product={el}
           />
         ))
       } else {
-        return []
+        return <InfoCard text='Ничего не найдено' />
       }
     }
 
@@ -49,11 +62,11 @@ class FavoritesPanel extends React.Component {
       <Panel id={this.props.id} className='favorites-page'>
         <HeaderFavorite
           toggleContext={this.toggleContext} select={this.select}
-          contextOpened={contextOpened} mode={mode} len={lenFavorite}
+          contextOpened={contextOpened} mode={mode} len={lenData}
         />
-        <Div className='favorites-page_wrap'>
+        <div className='favorites-page_wrap'>
           {Cards()}
-        </Div>
+        </div>
       </Panel>
     )
   }
@@ -61,7 +74,8 @@ class FavoritesPanel extends React.Component {
 
 export default reduxConnect(
   state => ({
-    products: state.user.products
+    products: state.user.products,
+    likes: state.tinder.likes
   }),
   null
 )(FavoritesPanel);

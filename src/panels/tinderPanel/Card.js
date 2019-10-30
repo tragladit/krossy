@@ -1,15 +1,10 @@
-import React from "react" 
-
-const cardsNo = {
-  display: 'flex', justifyContent: 'center', position: 'absolute', left: '50%', top: '50%',
-  borderRadius: '18px', boxShadow: '0 3px 16px rgba(174, 191, 207, 0.3)', fontSize: '26px',
-  color: '#aebfcf', padding: '40px 10px', transform: 'translate(-50%, -50%)', width: '80%', zIndex: '-2'
-}
+import React from "react"
+import InfoCard from "../../components/infoCard/InfoCard"
 
 const Card = ({ endCards, children }) => {
   return (
     endCards ?
-      <div style={cardsNo}>Вы всё просмотрели</div> :
+      <InfoCard text='Вы всё просмотрели' /> :
       <div className='swipeable_card'>{children}</div>
   )
 }
