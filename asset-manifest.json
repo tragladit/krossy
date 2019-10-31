@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/krossy/static/css/main.e9eecce0.chunk.css",
-    "main.js": "/krossy/static/js/main.4b620473.chunk.js",
-    "main.js.map": "/krossy/static/js/main.4b620473.chunk.js.map",
+    "main.css": "/krossy/static/css/main.ede3d0ff.chunk.css",
+    "main.js": "/krossy/static/js/main.bb0e8892.chunk.js",
+    "main.js.map": "/krossy/static/js/main.bb0e8892.chunk.js.map",
     "runtime-main.js": "/krossy/static/js/runtime-main.3baf317b.js",
     "runtime-main.js.map": "/krossy/static/js/runtime-main.3baf317b.js.map",
     "static/css/2.7214840c.chunk.css": "/krossy/static/css/2.7214840c.chunk.css",
     "static/js/2.6691a48b.chunk.js": "/krossy/static/js/2.6691a48b.chunk.js",
     "static/js/2.6691a48b.chunk.js.map": "/krossy/static/js/2.6691a48b.chunk.js.map",
     "index.html": "/krossy/index.html",
-    "precache-manifest.ae8ee8c57532486a275963af3f31c58c.js": "/krossy/precache-manifest.ae8ee8c57532486a275963af3f31c58c.js",
+    "precache-manifest.f5ee7b9ed4a3182c5a06c91298be4ad1.js": "/krossy/precache-manifest.f5ee7b9ed4a3182c5a06c91298be4ad1.js",
     "service-worker.js": "/krossy/service-worker.js",
     "static/css/2.7214840c.chunk.css.map": "/krossy/static/css/2.7214840c.chunk.css.map",
-    "static/css/main.e9eecce0.chunk.css.map": "/krossy/static/css/main.e9eecce0.chunk.css.map",
+    "static/css/main.ede3d0ff.chunk.css.map": "/krossy/static/css/main.ede3d0ff.chunk.css.map",
     "static/media/fonts.css": "/krossy/static/media/SFUIText-Semibold.34dfe822.ttf",
     "static/media/backTinder.svg": "/krossy/static/media/backTinder.8d3b5751.svg",
     "static/media/StartPanelOne.css": "/krossy/static/media/iOS 1.0e943850.svg",
@@ -25,7 +25,7 @@
     "static/js/runtime-main.3baf317b.js",
     "static/css/2.7214840c.chunk.css",
     "static/js/2.6691a48b.chunk.js",
-    "static/css/main.e9eecce0.chunk.css",
-    "static/js/main.4b620473.chunk.js"
+    "static/css/main.ede3d0ff.chunk.css",
+    "static/js/main.bb0e8892.chunk.js"
   ]
 }
