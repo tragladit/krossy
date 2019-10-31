@@ -10,13 +10,13 @@
   background-repeat: no-repeat;
   display: grid;
   align-items: flex-end;
-  justify-items: center;
   grid-template-rows: 2fr 1fr 1fr 1fr 1fr 1fr var(--tabbar_height);
 }
 
 .text_title {
   font-size: 1.2em;
   font-weight: 500;
+  justify-self: center;
 }
 
 .Panel--ios .text_title {
@@ -33,12 +33,14 @@
   font-size: 0.7em;
   font-weight: 300;
   text-align: center;
+  justify-self: center;
   width: 80%;
 }
 
 .warning {
   color: red;
   font-weight: 500;
+  justify-self: center;
 }
 
 .Panel--ios .text {
@@ -84,11 +86,10 @@
   -webkit-overflow-scrolling: touch;
   display: grid;
   align-items: center;
-  grid-auto-columns: auto;
+  grid-auto-columns: min-content;
   grid-auto-flow: column;
   column-gap: 4px;
-  padding: 6px 0;
-  width: 100%;
+  padding: 4px 0;
 }
 
 .horizontal_sizes::-webkit-scrollbar {
@@ -109,6 +110,7 @@
 .button_next {
   display: flex;
   justify-content: center;
+  justify-self: center;
   width: 40%;
 }
 
