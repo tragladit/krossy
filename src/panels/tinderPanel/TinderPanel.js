@@ -22,10 +22,15 @@ const fontStyleIOS = {
 
 class TinderPanel extends React.Component {
 
-  setSwipe = val => {
-    if (val === 'right') {
+  constructor(props) {
+    super(props);
+    this.state = { direction: '' };
+  }
+
+  setSwipe = () => {
+    if (this.state.direction === 'right') {
       this.props.setLikeTinder()
-    } else if (val === 'left') {
+    } else if (this.state.direction === 'left') {
       this.props.setDislikeTinder()
     } else {
       console.log('#TinderPanel.setSwipe# Error swipe val')
@@ -51,7 +56,8 @@ class TinderPanel extends React.Component {
                   <TinderButton func={right} title='Нравится' iconSvg={<IconLike />} />
                 </div>
               )}
-              onSwipe={(val) => this.setSwipe(val)}
+              onSwipe={(val) => this.setState({ direction: val })}
+              onAfterSwipe={this.setSwipe}
             >
               <Card>
                 <ProductCardTinder product={products[cards[0]]} go={go} isWelcome={isWelcome} />
