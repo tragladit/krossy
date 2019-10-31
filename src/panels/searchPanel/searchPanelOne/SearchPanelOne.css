@@ -195,6 +195,20 @@
 .search-page-button_wrap {
   display: flex;
   justify-content: center;
+  position: absolute;
+  width: 100%;
+}
+
+.Panel--ios .search-page-button_wrap {
+  top:
+    calc(100vh - var(--tabbar_height) - var(--panelheader_height_ios) -
+    var(--safe-area-inset-top) - var(--safe-area-inset-bottom) - 14px);
+}
+
+.Panel--android .search-page-button_wrap {
+  top:
+    calc(100vh - var(--tabbar_height) - var(--panelheader_height_android) -
+    var(--safe-area-inset-top) - var(--safe-area-inset-bottom) - 14px);
 }
 
 .search-page-button_wrap .rectangle-button {

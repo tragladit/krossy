@@ -66,9 +66,10 @@ class SearchPanelOne extends React.Component {
         <Div className='search-page-checkbox-group search-border-bottom'>
           {SortPriceButtons()}
         </Div>
-        <Div className='search-page-button_wrap'>
+        <div className='search-page-button_wrap'>
+          <div></div>
           <RectangleButton title='Найти' func={this.props.goPanel} goTo='search-3' />
-        </Div>
+        </div>
       </Panel>
     )
   }
