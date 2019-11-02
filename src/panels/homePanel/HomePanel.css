@@ -1,8 +1,10 @@
+.Panel--tm-gray .Panel__in {
+  background-color: #F7F8F9;
+}
+
 .all-product-page_wrap {
   display: flex;
   flex-direction: column;
-  height: -webkit-fill-available;
-  background-color: #F7F8F9;
   padding: 16px 16px 0 16px;
 }
 

@@ -131,11 +131,16 @@
   padding-bottom: 0;
 }
 
-.search-page-color-pick {
+.search-page-color {
   display: flex;
   flex-direction: column;
-  margin-bottom: 25px;
+  margin-bottom: calc(var(--tabbar_height) + 12px);
   padding: 0;
+}
+
+.search-page-color-pick {
+  display: flex;
+  margin: 0 6px 25px 6px;
 }
 
 .search-page-color-handle {
@@ -170,6 +175,7 @@
 
 .search-page-color-pick .Gallery {
   height: 48px;
+  overflow: auto;
 }
 
 .color-handle-text {

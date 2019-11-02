@@ -9,6 +9,7 @@ import {
   filterModeProducts, getSettingsSizes, getNormalizeProducts
 } from '../../reducers/selectors';
 import { isChangeBoolean, getData } from '../../reducers/user';
+import InfoCard from '../../components/infoCard/InfoCard';
 
 class HomePanel extends React.Component {
 
@@ -94,22 +95,25 @@ class HomePanel extends React.Component {
           toggleContext={this.toggleContext} select={this.select}
           contextOpened={contextOpened} mode={mode}
         />
-        <Div className='all-product-page_wrap'>
-          <PullToRefresh onRefresh={this.onRefresh}
-            isFetching={this.state.fetching}>
-            <div className='all-product-page_content'>
-              {products ?
-                Object.keys(products).map(k => {
-                  return <ProductCardSmall
-                    key={k} formSticker='round' nameSticker='star' goTo='productCardPanel'
-                    func={this.props.go} prodId={k} product={products[k]}
-                  />
-                }) :
-                <div>Ничего не найдено</div>
-              }
-            </div>
-          </PullToRefresh>
-        </Div>
+        {
+          Object.keys(products).length ?
+            <Div className='all-product-page_wrap'>
+              <PullToRefresh onRefresh={this.onRefresh}
+                isFetching={this.state.fetching}>
+                <div className='all-product-page_content'>
+                  {
+                    Object.keys(products).map(k => {
+                      return <ProductCardSmall
+                        key={k} formSticker='round' nameSticker='star' goTo='productCardPanel'
+                        func={this.props.go} prodId={k} product={products[k]}
+                      />
+                    })
+                  }
+                </div>
+              </PullToRefresh>
+            </Div> : 
+            <InfoCard text='Ничего не найдено' />
+        }
       </Panel>
     )
   }

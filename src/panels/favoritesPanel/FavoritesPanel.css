@@ -1,8 +1,6 @@
 .favorites-page_wrap {
   display: flex;
   flex-wrap: wrap;
-  background-color: #F7F8F9;
-  height: -webkit-fill-available;
 }
 
 .Panel--ios .favorites-page_wrap {
