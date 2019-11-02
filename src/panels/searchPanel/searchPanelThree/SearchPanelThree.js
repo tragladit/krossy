@@ -9,14 +9,6 @@ import {
   filterPrice, sortPrice
 } from '../../../reducers/searchSelectors';
 
-//   brands: {Nike: true, Air Jordan: false, Adidas: true, Off-White: false, Asics: false, …}
-// color: false
-// colors: []
-// discount: false
-// price: true
-// prices: {startValue: 3000, endValue: 9589.743589743588}
-// sort: "По возрастанию цены"
-
 const formSticker = 'round'
 const nameSticker = 'star'
 
@@ -55,7 +47,7 @@ const SearchPanelThree = ({ id, goPanel, products, searchParams }) => {
   return (
     <Panel id={id} className='search-panel-three'>
       <Header
-        func={goPanel} goTo='search-1' title={`Найдено ${cards.length}`} iconIOS={true} iconAndroid={true}
+        func={goPanel} goTo='search-1' title='Найдено' len={cards.length} iconIOS={true} iconAndroid={true}
       />
       <Div className='search-panel-three_wrap'>
         {cards}

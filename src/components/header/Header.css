@@ -4,6 +4,11 @@
   height: 2px;
 }
 
+.len_items {
+  color: #8EC8FF;
+  padding-left: 6px;
+}
+
 .PanelHeaderContent--android .PanelHeaderContent__aside {
   display: flex;
   margin-left: 12px;

@@ -15,11 +15,11 @@
 }
 
 .Panel--ios .all-product-page_content {
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .Panel--android .all-product-page_content {
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 

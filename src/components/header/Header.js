@@ -12,7 +12,7 @@ class Header extends React.Component {
 
   render() {
 
-    const { func, goTo, title, asideShow, iconIOS, iconAndroid } = this.props;
+    const { func, goTo, title, len, asideShow, iconIOS, iconAndroid } = this.props;
 
     return (
       <PanelHeader theme='alternate'
@@ -29,7 +29,10 @@ class Header extends React.Component {
           aside={asideShow ? osname === IOS ?
             <IconDropDownIOS currentColor='#AEBFCF' /> :
             <IconDropDownAndroid currentColor='#404040' /> : null}>
-          <div>{title}</div>
+          <div>
+            {title}
+            {len === undefined ? null : <span className='len_items'>{len}</span>}
+          </div>
         </PanelHeaderContent>
       </PanelHeader>
     )
