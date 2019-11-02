@@ -64,9 +64,9 @@ class FavoritesPanel extends React.Component {
           toggleContext={this.toggleContext} select={this.select}
           contextOpened={contextOpened} mode={mode} len={lenData}
         />
-        <div className='favorites-page_wrap'>
+        <Div className='favorites-page_wrap'>
           {Cards()}
-        </div>
+        </Div>
       </Panel>
     )
   }

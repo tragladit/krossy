@@ -134,6 +134,7 @@
 .search-page-color-pick {
   display: flex;
   flex-direction: column;
+  margin-bottom: 25px;
   padding: 0;
 }
 
@@ -151,10 +152,6 @@
 .Panel--android .search-page-color-handle {
   height: 47px;
   margin: 0 16px 25px 16px;
-}
-
-.search-page-color-pick {
-  margin-bottom: 25px;
 }
 
 .search-page-color-pick .Gallery__slide {
@@ -195,20 +192,6 @@
 .search-page-button_wrap {
   display: flex;
   justify-content: center;
-  position: absolute;
-  width: 100%;
-}
-
-.Panel--ios .search-page-button_wrap {
-  top:
-    calc(100vh - var(--tabbar_height) - var(--panelheader_height_ios) -
-    var(--safe-area-inset-top) - var(--safe-area-inset-bottom) - 14px);
-}
-
-.Panel--android .search-page-button_wrap {
-  top:
-    calc(100vh - var(--tabbar_height) - var(--panelheader_height_android) -
-    var(--safe-area-inset-top) - var(--safe-area-inset-bottom) - 14px);
 }
 
 .search-page-button_wrap .rectangle-button {
@@ -224,10 +207,6 @@
 
 .Slider__dragger::before {
   background: linear-gradient(-90deg, #74BBFF, #B0FCE3);
-}
-
-.search-page-button_wrap .rectangle-button {
-  box-shadow: 0 6px 16px rgba(73, 134, 204, 0.5);
 }
 
 .Panel--ios .search-page-button_wrap .rectangle-button {

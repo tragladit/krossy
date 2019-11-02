@@ -4,6 +4,7 @@ import './SearchPanelOne.css';
 import IconChevronIOSRight from '../../../components/icon/IconChevronIOSRight';
 import IconChevronAndroidRight from '../../../components/icon/IconChevronAndroidRight';
 import SearchRangeSlider from '../../../components/search/searchRangeSlider/SearchRangeSlider';
+import SearchColorPick from '../../../components/search/searchColorPick/searchColorPick';
 import RectangleButton from '../../../components/buttons/rectangleButton/RectangleButton';
 import RadioButton from "../../../components/radioButtonRedux/RadioButtonRedux";
 import Header from "../../../components/header/Header";
@@ -66,10 +67,12 @@ class SearchPanelOne extends React.Component {
         <Div className='search-page-checkbox-group search-border-bottom'>
           {SortPriceButtons()}
         </Div>
-        <div className='search-page-button_wrap'>
-          <div></div>
-          <RectangleButton title='Найти' func={this.props.goPanel} goTo='search-3' />
-        </div>
+        <Div className='search-page-color-pick'>
+          <SearchColorPick />
+          <div className='search-page-button_wrap'>
+            <RectangleButton title='Найти' func={this.props.goPanel} goTo='search-3' />
+          </div>
+        </Div>
       </Panel>
     )
   }

@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   background-color: #F7F8F9;
-  height: 100%;
+  height: -webkit-fill-available;
 }
 
 .Panel--ios .favorites-page_wrap {
@@ -10,5 +10,5 @@
 }
 
 .Panel--android .favorites-page_wrap {
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
