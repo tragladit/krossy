@@ -36,7 +36,7 @@ const ProductColorView = ({ color, curColor, setData }) => {
 
   const style = {
     display: 'flex', alignItems: 'center', justifyContent: 'center',
-    width: '40px', height: '40px', background: styleColor, borderRadius: '50%',
+    width: '36px', height: '36px', background: styleColor, borderRadius: '50%',
     boxSizing: 'border-box', border: border
   };
 

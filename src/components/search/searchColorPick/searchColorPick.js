@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Switch, List, Cell } from "@vkontakte/vkui";
+import { Switch, List, Cell, HorizontalScroll } from "@vkontakte/vkui";
 import Icon16Done from '@vkontakte/icons/dist/16/done';
 
 const multi = 'linear-gradient(90deg, blue 0%, red 25%, green 50%, yellow 75%, gray 100%)'
@@ -93,9 +93,11 @@ const SearchColorPick = () => {
       </div>
       <div className='search-page-color-pick'>
         <List style={checked ? styleList : styleListDisabled} onChange={onChange}>
-          <div className='search-page-colors-items'>
-            {getColorsItems()}
-          </div>
+          <HorizontalScroll>
+            <div className='search-page-colors-items'>
+              {getColorsItems()}
+            </div>
+          </HorizontalScroll>
         </List>
       </div>
     </div>
