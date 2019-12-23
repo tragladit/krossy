@@ -241,6 +241,7 @@
   box-sizing: border-box;
 }
 
-.Cell__before {
+.Cell--ios .Cell__before,
+.Cell--android .Cell__before {
   display: none;
 }
