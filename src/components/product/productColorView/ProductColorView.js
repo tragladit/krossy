@@ -1,5 +1,6 @@
 import React from 'react';
 import './ProductColorView.css';
+import Icon16Done from '@vkontakte/icons/dist/16/done';
 
 const multi = 'linear-gradient(90deg, blue 0%, red 25%, green 50%, yellow 75%, gray 100%)'
 
@@ -31,14 +32,19 @@ const ProductColorView = ({ color, curColor, setData }) => {
   const onClick = () => setData(color)
 
   const styleColor = colors[color] ? colors[color] : multi
-  const border = color === curColor ? '2px solid #4986CC' : '1px solid #e1e3e6'
+  const [border, fill] = color === 'белый' ? ['1px solid #e1e3e6', '#000'] : ['none', '#fff']
 
   const style = {
+    display: 'flex', alignItems: 'center', justifyContent: 'center',
     width: '40px', height: '40px', background: styleColor, borderRadius: '50%',
     boxSizing: 'border-box', border: border
   };
 
-  return <div style={style} onClick={onClick} />
+  return (
+    <div style={style} onClick={onClick} >
+      {color === curColor ? <Icon16Done fill={fill} /> : null}
+    </div>
+  )
 };
 
 export default ProductColorView;
