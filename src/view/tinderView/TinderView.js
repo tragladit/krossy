@@ -1,4 +1,5 @@
 import React from 'react';
+// import ApiService from "../../api/krossy-api";
 import { View } from "@vkontakte/vkui";
 import TinderPanel from "../../panels/tinderPanel/TinderPanel";
 import ProductCardPanel from "../../panels/productCardPanel/ProductCardPanel";
@@ -7,7 +8,15 @@ import {
   setInitialCards, resTinderData, setLikeTinder, setDislikeTinder, setIsWelcome
 } from '../../reducers/tinder';
 
+// const service = new ApiService();
+
+// const getGameModels = async (userId) => {
+//   const res = await service.getModels(userId);
+//   console.log('#game models#', res)
+// }
+
 class TinderView extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = { activePanel: 'tinder', isWelcome: this.props.isWelcome }
@@ -18,7 +27,10 @@ class TinderView extends React.Component {
     this.props.resTinderData()
   }
 
-  initCardsData = () => this.props.setInitialCards(Object.keys(this.props.products))
+  initCardsData = () => {
+    // getGameModels(this.props.userId)
+    this.props.setInitialCards(Object.keys(this.props.products))
+  }
 
   onCloseModal = (checked) => {
     if (checked) {
@@ -31,15 +43,16 @@ class TinderView extends React.Component {
 
   render() {
 
-    const { products, cards, likes, setLikeTinder, setDislikeTinder } = this.props
+    const { userId, products, cards, likes, setLikeTinder, setDislikeTinder } = this.props
 
     const { isWelcome } = this.state
 
     return (
       <View id={this.props.id} activePanel={this.state.activePanel}>
         <TinderPanel
-          id='tinder' go={this.go} isWelcome={isWelcome} products={products} cards={cards} likes={likes}
-          setLikeTinder={setLikeTinder} setDislikeTinder={setDislikeTinder} onCloseModal={this.onCloseModal}
+          id='tinder' go={this.go} isWelcome={isWelcome} onCloseModal={this.onCloseModal}
+          userId={userId} products={products} cards={cards}
+          likes={likes} setLikeTinder={setLikeTinder} setDislikeTinder={setDislikeTinder}
         />
         <ProductCardPanel id='productCardPanel' go={this.go} goBack='tinder' />
       </View>
@@ -49,6 +62,7 @@ class TinderView extends React.Component {
 
 export default reduxConnect(
   state => ({
+    userId: state.user.userInfo.id,
     products: state.user.products,
     isWelcome: state.tinder.isWelcome,
     cards: state.tinder.cards,

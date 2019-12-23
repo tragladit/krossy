@@ -13,6 +13,7 @@
   grid-template-rows: auto 46px;
   grid-gap: 12px;
   padding: 12px 20px;
+  overflow: hidden;
 }
 
 .swipeable_card {

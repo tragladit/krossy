@@ -13,7 +13,7 @@ import { getNormalizeData } from '../../reducers/selectors';
 import ApiService from '../../api/krossy-api';
 
 const ProductCardTinder = ({ userId, isLoad, setNewInitData, product, go, isWelcome }) => {
-
+  console.log('#user and product ids#', userId, product.id)
   const Service = new ApiService()
 
   useEffect(() => {
@@ -35,6 +35,7 @@ const ProductCardTinder = ({ userId, isLoad, setNewInitData, product, go, isWelc
       isLoad(true);
       const resModels = await Service.getModels(target, userId)
       if (resModels.ok) {
+        console.log('#models#', resModels.result)
         const nmzData = getNormalizeData(resModels.result, product.pictureModelId)
         setNewInitData(nmzData.models, target, nmzData.current)
         isLoad(false)

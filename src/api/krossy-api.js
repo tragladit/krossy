@@ -40,4 +40,32 @@ export default class ApiService {
     return res;
   }
 
+  getGameModels = async (userId) => {
+    const res = await this.getResource(`/game/${userId}`);
+    console.log('#krossy-api.ApiService.getGameModels#', res);
+  }
+
+  setGame = async (body) => {
+    // const res = await fetch(`${this._apiBase}/game/like`, {
+    //   method: 'POST',
+    //   body: body
+    // });
+    console.log('#krossy-api.ApiService.setGame#', body);
+  };
+
+  setSubscribe = async (productId, body) => {
+    try {
+      const res = await fetch(`${this._apiBase}/goods/${productId}/subscribe`, {
+        method: 'POST',
+        body: body
+      });
+      if (res.ok) {
+        return true
+      }
+      return false
+    } catch (err) {
+      console.log('#krossy-api.ApiService.setSubscribe#', err)
+      return false
+    }
+  };
 }

@@ -28,11 +28,11 @@ const tinder = (state = initialState, action) => {
     case SET_IS_WELCOME:
       return { ...state, isWelcome: false };
     case SET_LIKE_TINDER:
-      const lk = parseSwipe(state.cards, state.likes)
-      return { ...state, cards: lk.cards, likes: lk.swipes };
+      const likes = parseSwipe(state.cards, state.likes)
+      return { ...state, cards: likes.cards, likes: likes.swipes };
     case SET_DISLIKE_TINDER:
-      const ds = parseSwipe(state.cards, state.dislikes)
-      return { ...state, cards: ds.cards, dislikes: ds.swipes };
+      const dislikes = parseSwipe(state.cards, state.dislikes)
+      return { ...state, cards: dislikes.cards, dislikes: dislikes.swipes };
     case SET_INITIAL_DATA:
       return { ...state, cards: action.data };
     case RES_TINDER_DATA:

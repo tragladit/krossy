@@ -3,9 +3,11 @@ import './ProductCardNotification.css';
 import RectangleButton from "../buttons/rectangleButton/RectangleButton";
 import pic from '../../assets/image/tag.svg';
 import { IOS, platform } from "@vkontakte/vkui";
-import { connect as reduxConnect } from "react-redux";
+import ApiService from "../../api/krossy-api";
 
-const ProductCardNotification = ({ isOpen, userId, modelId, offers }) => {
+const service = new ApiService()
+
+const ProductCardNotification = ({ userId, productId, subscribed, isOpen }) => {
 
   const osname = platform();
 
@@ -16,9 +18,12 @@ const ProductCardNotification = ({ isOpen, userId, modelId, offers }) => {
     fontFamily: 'SF UI Text, sans-serif',
   };
 
-  const onNotification = () => {
-    const data = { userId: userId, modelId: modelId, price: offers[0].price }
-    alert(`Send to server: userId ${data.userId}, modelId ${data.modelId}, price ${data.price}`)
+  const onNotification = async () => {
+    const form = new FormData()
+    form.append("userId", userId)
+    form.append("type", subscribed === 0 ? 1 : 0)
+    const res = await service.setSubscribe(productId, form)
+    console.log('onNotification', res)
     isOpen(false)
   }
 
@@ -41,11 +46,4 @@ const ProductCardNotification = ({ isOpen, userId, modelId, offers }) => {
   )
 };
 
-export default reduxConnect(
-  state => ({
-    userId: state.user.userInfo.id,
-    offers: state.user.offersByModel,
-    modelId: state.user.modelId
-  }),
-  null
-)(ProductCardNotification);
+export default ProductCardNotification

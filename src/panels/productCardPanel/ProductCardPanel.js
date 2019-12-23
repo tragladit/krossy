@@ -7,7 +7,7 @@ import RectangleButton from '../../components/buttons/rectangleButton/RectangleB
 import ProductColorView from '../../components/product/productColorView/ProductColorView';
 import ProductSizeChartView from "../../components/product/productSizeChartView/ProductSizeChartView";
 import ProductPriceView from "../../components/product/productPriceView/ProductPriceView";
-// import IconNotificationOn from '../../components/icon/IconNotificationOn';
+import IconNotificationOn from '../../components/icon/IconNotificationOn';
 import IconNotificationOff from '../../components/icon/IconNotificationOff';
 import IconHeartSet from '../../components/icon/IconHeartSet';
 import IconQuestion from '../../components/icon/IconQuestion';
@@ -62,13 +62,14 @@ class ProductCardPanel extends React.PureComponent {
 
   render() {
     const {
-      offers, products, productId, modelsParams, currentColor, currentSize,
+      offers, products, userId, productId, modelsParams, currentColor, currentSize,
       setDataOnChangeColor, setDataOnChangeSize, setLike
     } = this.props;
 
     const pictures = modelsParams[currentColor].pictures
     const colors = Object.keys(modelsParams)
     const params = modelsParams[currentColor].params
+    const subscribed = products[productId].subscribed
 
     const osname = platform();
 
@@ -113,7 +114,7 @@ class ProductCardPanel extends React.PureComponent {
     const getProductColorView = () => (
       colors.map((el, i) => (
         <ProductColorView
-          key={i} color={el} curColor={currentColor} setData={onColor} icons={modelsParams}
+          key={i} color={el} curColor={currentColor} setData={onColor}
         />
       )
       ))
@@ -127,7 +128,10 @@ class ProductCardPanel extends React.PureComponent {
         />
         {
           this.state.isOpenNotification ?
-            <ProductCardNotification isOpen={this.handleOpenNotificationModal} /> :
+            <ProductCardNotification
+              userId={userId} productId={productId} subscribed={subscribed}
+              isOpen={this.handleOpenNotificationModal}
+            /> :
             null
         }
         <div style={this.state.isOpenNotification ? blurStyle : null} className='product-card_wrap'>
@@ -168,7 +172,8 @@ class ProductCardPanel extends React.PureComponent {
                 func={setLike} goTo={productId} iconSvg={<IconHeartSet color={colorHeart} />}
               />
               <RoundSizeButton
-                func={this.handleOpenNotificationModal} iconSvg={<IconNotificationOff />}
+                func={this.handleOpenNotificationModal}
+                iconSvg={subscribed === 0 ? <IconNotificationOff/> : <IconNotificationOn/>}
               />
               <RectangleButton iconSvg={<IconQuestion />} title='Поделиться' secondAction={sendShare} />
             </div>
@@ -190,11 +195,13 @@ export default reduxConnect(
   state => ({
     offers: state.user.offersByModel,
     products: state.user.products,
+    userId: state.user.userInfo.id,
     productId: state.user.productId,
     modelsParams: state.user.modelsParams,
     modelId: state.user.modelId,
     currentColor: state.user.currentColor,
-    currentSize: state.user.currentSize
+    currentSize: state.user.currentSize,
+    subscribed: state.user.products.subscribed
   }),
   dispatch => ({
     setOffers: data => dispatch(getData('offersByModel', data)),
