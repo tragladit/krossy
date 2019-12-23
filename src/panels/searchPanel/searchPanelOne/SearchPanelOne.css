@@ -225,22 +225,30 @@
 
 .search-page-colors-items {
   display: grid;
-  grid-template-columns: repeat(10, max-content); 
-  grid-auto-rows: max-content;
-  column-gap: 8px;
-  row-gap: 8px;
+  grid-template-columns: repeat(20, max-content);
   align-items: center;
-  justify-content: space-around;
   width: 100%;
+  margin: 12px 0;
+  overflow-x: scroll;
 }
 
 .search-page-colors-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 40px;
   height: 40px;
   border-radius: 50%;
   box-sizing: border-box;
 }
 
+.Cell__main,
+.Cell--ios .Cell__main,
+.Cell--android .Cell__main {
+  padding: 0;
+}
+
+.Cell__before,
 .Cell--ios .Cell__before,
 .Cell--android .Cell__before {
   display: none;

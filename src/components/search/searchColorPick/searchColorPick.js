@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Switch, List, Cell } from "@vkontakte/vkui";
+import Icon16Done from '@vkontakte/icons/dist/16/done';
 
 const multi = 'linear-gradient(90deg, blue 0%, red 25%, green 50%, yellow 75%, gray 100%)'
 
@@ -27,7 +28,6 @@ const colors = {
 }
 
 const styleBorder = '1px solid #e1e3e6'
-const styleBorderActive = '2px solid #4986CC'
 
 const styleList = { width: '100%', pointerEvents: 'auto', opacity: 1 }
 const styleListDisabled = { width: '100%', pointerEvents: 'none', opacity: 0.5 }
@@ -64,19 +64,21 @@ const SearchColorPick = () => {
     }
   }
   
-  const ColorItem = ({ value, style }) => (
-      <Cell value={value} selectable >
-        <div className='search-page-colors-item' style={style} />
-      </Cell>
+  const ColorItem = ({ value, style, active, fill }) => (
+    <Cell value={value} selectable >
+      <div className='search-page-colors-item' style={style} >
+        {active ? <Icon16Done fill={fill} /> : null}
+      </div>
+    </Cell>
   )
 
   const getColorsItems = () => {
     return Object.keys(colors).map((k => {
       const [value, colorItem] = [k, colors[k]]
       const active = selected.find(el => el === value)
-      const border = active ? styleBorderActive : styleBorder
+      const [border, fill] = value === 'белый' ? [styleBorder, '#000'] : ['none', '#fff']
       const style = { background: colorItem, border: border }
-      return <ColorItem key={value} value={value} style={style} />
+      return <ColorItem key={value} value={value} style={style} active={active} fill={fill} />
     }))
   }
 
