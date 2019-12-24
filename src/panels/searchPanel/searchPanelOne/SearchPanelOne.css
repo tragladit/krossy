@@ -229,26 +229,18 @@
   box-sizing: border-box;
 }
 
-.search-page-color-pick .Cell__main {
+.search-page-colors-items .Cell__main {
   padding: 0;
 }
 
-.Panel--ios .search-page-color-pick .Cell__before {
+.search-page-colors-items .Cell__before {
   display: none;
 }
 
-.Panel--android .search-page-color-pick .Cell__before {
+.View--ios .search-page-colors-items .Cell__before {
   display: none;
 }
 
-/* .Cell__main,
-.Cell--ios .Cell__main,
-.Cell--android .Cell__main {
-  padding: 0;
-} */
-/* 
-.Cell__before,
-.Cell--ios .Cell__before,
-.Cell--android .Cell__before {
+.View--android .search-page-colors-items .Cell__before {
   display: none;
-} */
+}
