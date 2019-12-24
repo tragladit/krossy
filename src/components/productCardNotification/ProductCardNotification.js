@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './ProductCardNotification.css';
 import RectangleButton from "../buttons/rectangleButton/RectangleButton";
 import pic from '../../assets/image/tag.svg';
@@ -7,25 +7,39 @@ import ApiService from "../../api/krossy-api";
 
 const service = new ApiService()
 
+const osname = platform();
+
+const fontStyleAndroid = {
+  fontFamily: 'Roboto, sans-serif',
+};
+
+const fontStyleIOS = {
+  fontFamily: 'SF UI Text, sans-serif',
+};
+
 const ProductCardNotification = ({ userId, productId, subscribed, isOpen }) => {
 
-  const osname = platform();
+  const [notification, setNotification] = useState(2)
 
-  const fontStyleAndroid = {
-    fontFamily: 'Roboto, sans-serif',
-  };
-  const fontStyleIOS = {
-    fontFamily: 'SF UI Text, sans-serif',
-  };
+  const onNotification = () => setNotification(notification === 0 ? 1 : 0)
 
-  const onNotification = async () => {
-    const form = new FormData()
-    form.append("userId", userId)
-    form.append("type", subscribed === 0 ? 1 : 0)
-    const res = await service.setSubscribe(productId, form)
-    console.log('onNotification', res)
-    isOpen(false)
-  }
+  useEffect(() => {
+    const setSubscribe = async () => {
+      const form = new FormData()
+      form.append("userId", userId)
+      form.append("type", subscribed === 0 ? 1 : 0)
+      try {
+        const res = await service.setSubscribe(productId, form)
+      } catch (err) {
+        console.log('#ProductCardNotification.setSubscribe#', err)
+      }
+    }
+    if (notification !== 2) {
+      console.log('notification', notification)
+    } else {
+      console.log('not notification', notification)
+    }
+  }, [notification])
 
   return (
     <div

@@ -29,8 +29,8 @@ const colors = {
 
 const styleBorder = '1px solid #e1e3e6'
 
-const styleList = { width: '100%', pointerEvents: 'auto', opacity: 1 }
-const styleListDisabled = { width: '100%', pointerEvents: 'none', opacity: 0.5 }
+const styleList = { pointerEvents: 'auto', opacity: 1 }
+const styleListDisabled = { pointerEvents: 'none', opacity: 0.5 }
 
 const SearchColorPick = () => {
 
@@ -91,15 +91,15 @@ const SearchColorPick = () => {
         </div>
         <Switch checked={checked} onChange={onSwitch} />
       </div>
-      <div className='search-page-color-pick'>
-        <List style={checked ? styleList : styleListDisabled} onChange={onChange}>
-          <HorizontalScroll>
+      <HorizontalScroll>
+        <div className='search-page-color-pick'>
+          <List style={checked ? styleList : styleListDisabled} onChange={onChange}>
             <div className='search-page-colors-items'>
               {getColorsItems()}
             </div>
-          </HorizontalScroll>
-        </List>
-      </div>
+          </List>
+        </div>
+      </HorizontalScroll>
     </div>
   )
 }
