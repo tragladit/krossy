@@ -45,7 +45,7 @@ class ProductCardSmall extends React.PureComponent {
     const { goTo, formSticker, nameSticker, prodId, product } = this.props;
 
     const sizes = product && product.sizes.sort((a, b) => a - b)
-
+    console.log('ProductCardSmall')
     return (
       <div
         onClick={this.goProduct} data-good-id={prodId} data-to={goTo}

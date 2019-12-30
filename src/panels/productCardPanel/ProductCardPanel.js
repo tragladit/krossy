@@ -119,6 +119,11 @@ class ProductCardPanel extends React.PureComponent {
       )
       ))
 
+    const getProductsDt = (data) => {
+      const keys = Object.keys(data).splice(0, 6)
+      return keys
+    }
+
     return (
       <Panel id={this.props.id}
         style={osname === IOS ? fontStyleIOS : fontStyleAndroid}>
@@ -184,7 +189,7 @@ class ProductCardPanel extends React.PureComponent {
             func={this.handleOpenSelect} isOpen={this.state.isOpenShopList} count={offers.length}
           />
           {this.state.isOpenShopList ? <ShopList /> : null}
-          <ProductCardLikeBrand />
+          <ProductCardLikeBrand keys={getProductsDt(products)} products={products} />
         </div>
       </Panel>
     )

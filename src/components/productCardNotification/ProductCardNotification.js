@@ -3,9 +3,9 @@ import './ProductCardNotification.css';
 import RectangleButton from "../buttons/rectangleButton/RectangleButton";
 import pic from '../../assets/image/tag.svg';
 import { IOS, platform } from "@vkontakte/vkui";
-import ApiService from "../../api/krossy-api";
+// import ApiService from "../../api/krossy-api";
 
-const service = new ApiService()
+// const service = new ApiService()
 
 const osname = platform();
 
@@ -24,16 +24,16 @@ const ProductCardNotification = ({ userId, productId, subscribed, isOpen }) => {
   const onNotification = () => setNotification(notification === 0 ? 1 : 0)
 
   useEffect(() => {
-    const setSubscribe = async () => {
-      const form = new FormData()
-      form.append("userId", userId)
-      form.append("type", subscribed === 0 ? 1 : 0)
-      try {
-        const res = await service.setSubscribe(productId, form)
-      } catch (err) {
-        console.log('#ProductCardNotification.setSubscribe#', err)
-      }
-    }
+    // const setSubscribe = async () => {
+    //   const form = new FormData()
+    //   form.append("userId", userId)
+    //   form.append("type", subscribed === 0 ? 1 : 0)
+    //   try {
+    //     const res = await service.setSubscribe(productId, form)
+    //   } catch (err) {
+    //     console.log('#ProductCardNotification.setSubscribe#', err)
+    //   }
+    // }
     if (notification !== 2) {
       console.log('notification', notification)
     } else {
