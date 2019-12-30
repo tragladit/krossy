@@ -36,16 +36,16 @@
   padding: 12px 6px;
 }
 
-.Panel--ios .product-card-small_wrap {
-  width: auto;
-}
-
-.Panel--android .product-card-small_wrap {
-  width: auto;
-}
-
 .product-card-like-brand .product-card-small_wrap {
   display: flex;
   padding: 0;
   margin: 0;
+}
+
+.Panel--ios .product-card-like-brand .product-card-small_wrap {
+  width: 100%;
+}
+
+.Panel--android .product-card-like-brand .product-card-small_wrap {
+  width: 100%;
 }
