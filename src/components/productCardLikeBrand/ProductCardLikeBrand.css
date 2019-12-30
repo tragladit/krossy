@@ -1,13 +1,9 @@
-.product-card-like-brand_wrap {
+/* .product-card-like-brand_wrap {
   display: flex;
   flex-direction: column;
   overflow: hidden;
   width: auto;
-}
-
-.product-card-like-brand_wrap .HorizontalScroll {
-  background-color: #F7F8F9;
-}
+} */
 
 .product-card-like-brand-title {
   display: flex;
@@ -40,9 +36,16 @@
   padding: 12px 6px;
 }
 
+.Panel--ios .product-card-small_wrap {
+  width: auto;
+}
+
+.Panel--android .product-card-small_wrap {
+  width: auto;
+}
+
 .product-card-like-brand .product-card-small_wrap {
   display: flex;
-  flex-shrink: 0;
   padding: 0;
   margin: 0;
 }
