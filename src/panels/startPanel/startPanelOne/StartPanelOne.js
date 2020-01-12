@@ -17,7 +17,6 @@ class StartPanelOne extends React.Component {
     this.props.isLoad(true);
     this.Service.loadSetting(id)
       .then(res => {
-        debugger
         if (res.ok) {
           const { gender, size } = res.result
           this.props.gender(gender);

@@ -1,3 +1,9 @@
+.product-card-like-brand_wrap {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 .product-card-like-brand-title {
   display: flex;
   align-items: center;
@@ -21,17 +27,18 @@
 
 .product-card-like-brand {
   justify-items: center;
-  align-items: end;
+  align-items: stretch;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  column-gap: 16px;
-  row-gap: 16px;
-  padding: 16px;
+  grid-template-rows: repeat(2, auto);
+  column-gap: 8px;
+  row-gap: 8px;
+  padding: 0 16px 16px;
 }
 
 .product-card-like-brand .product-card-small_wrap {
   display: flex;
+  justify-content: flex-end;
   padding: 8px;
   margin: 0;
 }
