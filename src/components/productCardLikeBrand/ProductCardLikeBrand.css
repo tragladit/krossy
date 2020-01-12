@@ -44,9 +44,9 @@
 }
 
 .Panel--ios .product-card-like-brand .product-card-small_wrap {
-  width: 100%;
+  width: auto;
 }
 
 .Panel--android .product-card-like-brand .product-card-small_wrap {
-  width: 100%;
+  width: auto;
 }

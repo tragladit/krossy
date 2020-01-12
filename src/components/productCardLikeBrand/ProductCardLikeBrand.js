@@ -4,24 +4,6 @@ import '../productCardSmall/ProductCardSmall.css';
 import ProductCardSmall from '../productCardSmall/ProductCardSmall'
 import { platform, IOS } from '@vkontakte/vkui';
 import uuid from 'uuid';
-
-// const dataCards = [1,2,3,4,5,6]
-
-// const getCards = (products) => {
-//   console.log('products', products)
-//   const dataKeys = Object.keys(products)
-//   const keys = dataKeys.splice(0, 6)
-//   console.log('keys', keys)
-//   keys.map((k, i) => {
-//     const product = products[k]
-//     console.log('product', product)
-//     return (
-//       <ProductCardSmall
-//         key={`smalllikes${i}`} prodId={k} product={product}
-//       />
-//     )
-//   })
-// }
             
 class ProductCardLikeBrand extends React.Component {
   constructor(props) {
