@@ -45,8 +45,10 @@
 
 .Panel--ios .product-card-like-brand .product-card-small_wrap {
   width: auto;
+  height: auto;
 }
 
 .Panel--android .product-card-like-brand .product-card-small_wrap {
   width: auto;
+  height: auto;
 }

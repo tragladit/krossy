@@ -229,18 +229,26 @@
   box-sizing: border-box;
 }
 
-.search-page-colors-items .Cell__main {
+.search-page-colors-item .Cell__main {
   padding: 0;
 }
 
-.search-page-colors-items .Cell__before {
+.search-page-colors-item .Cell__before {
   display: none;
 }
 
-.View--ios .search-page-colors-items .Cell__before {
+.Panel--ios .search-page-colors-item .Cell__before {
+  display: none;
+}
+
+.Panel--android .search-page-colors-item .Cell__before {
+  display: none;
+}
+
+/* .View--ios .search-page-colors-items .Cell__before {
   display: none;
 }
 
 .View--android .search-page-colors-items .Cell__before {
   display: none;
-}
+} */
