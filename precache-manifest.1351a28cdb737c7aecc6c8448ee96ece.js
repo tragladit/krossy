@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d57854bb8b7f5794965847edfd06d961",
+    "revision": "10e4a39a96023a0cc1f78cde196ba3bd",
     "url": "/krossy/index.html"
   },
   {
-    "revision": "9d2df91bcadcaef73288",
+    "revision": "2f22f7a17863c15f57a8",
     "url": "/krossy/static/css/2.7214840c.chunk.css"
   },
   {
-    "revision": "2aafa22bf016df6c5fbd",
+    "revision": "c44d517672800dfdf868",
     "url": "/krossy/static/css/main.678a090d.chunk.css"
   },
   {
-    "revision": "9d2df91bcadcaef73288",
-    "url": "/krossy/static/js/2.ea4ebb43.chunk.js"
+    "revision": "2f22f7a17863c15f57a8",
+    "url": "/krossy/static/js/2.69ff35d0.chunk.js"
   },
   {
-    "revision": "2aafa22bf016df6c5fbd",
-    "url": "/krossy/static/js/main.08ed9700.chunk.js"
+    "revision": "c44d517672800dfdf868",
+    "url": "/krossy/static/js/main.7f94d46c.chunk.js"
   },
   {
     "revision": "3d159f25f5167fd4be43",
