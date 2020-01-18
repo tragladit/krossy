@@ -6,6 +6,7 @@ import IconChevronAndroidRight from "../../icon/IconChevronAndroidRight";
 
 const ProductSelectShop = ({ func, isOpen, count }) => {
   const osname = platform();
+  
   const fontStyleAndroid = {
     fontFamily: 'Roboto, sans-serif',
     backgroundColor: `${isOpen ? '#F7F8F9' : '#4986CC'}`

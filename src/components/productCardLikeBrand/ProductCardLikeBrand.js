@@ -22,13 +22,13 @@ class ProductCardLikeBrand extends React.Component {
       fontFamily: 'SF UI Text, sans-serif',
     };
 
-    const {keys, products} = this.props
+    const {keys, vendor, products} = this.props
 
     return (
       <div className='product-card-like-brand_wrap' style={osname === IOS ? fontStyleIOS : fontStyleAndroid} >
         <div className='product-card-like-brand-title'>
-          <div className='like-brand-title_text'>Нравиться</div>
-          <div className='like-brand-title_text like-brand-title_color'>Nike?</div>
+          <div className='like-brand-title_text'>Нравится</div>
+          <div className='like-brand-title_text like-brand-title_color'>{`${vendor}?`}</div>
         </div>
         <div className='product-card-like-brand'>
           {keys.map(k => {

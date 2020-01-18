@@ -64,6 +64,42 @@ export default class ApiService {
     }
   }
 
+  getColors = async () => {
+    try {
+      return await this.getResource('/colors');
+    } catch (err) {
+      console.log('#api.krossy-api.ApiService.getColors#', err)
+      return false
+    }
+  }
+
+  getAllShops = async () => {
+    try {
+      return await this.getResource('/shops');
+    } catch (err) {
+      console.log('#api.krossy-api.ApiService.getAllShops#', err)
+      return false
+    }
+  }
+
+  getLikes = async ({userId}) => {
+    try {
+      return await this.getResource(`/likes/${userId}`);
+    } catch (err) {
+      console.log('#api.krossy-api.ApiService.getLikes#', err)
+      return false
+    }
+  }
+
+  getSubscribes = async ({userId}) => {
+    try {
+      return await this.getResource(`/subscribes/${userId}`);
+    } catch (err) {
+      console.log('#api.krossy-api.ApiService.getSubscribes#', err)
+      return false
+    }
+  }
+
   getGameModel = async (userId) => {
     try {
       return await this.getResource(`/game/${userId}`);

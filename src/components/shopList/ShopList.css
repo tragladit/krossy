@@ -47,22 +47,40 @@
 }
 
 .Panel--android .shop-list-attribute_shop-name {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
 }
 
 .shop-list-attribute_price {
   display: flex;
+  align-items: center;
 }
 
 .shop-list-attribute_price-new {
   font-size: 16px;
-  margin-right: 5px;
+  margin-right: 8px;
 }
 
 .shop-list-attribute_price-currency {
   font-size: 9px;
   align-self: center;
+}
+
+.shop-list-attribute_price_old {
+  color: rgba(174, 191, 207, 0.4);
+  font-weight: 500;
+  text-decoration: line-through;
+  margin-right: 12px;
+}
+
+.shop-list-attribute_price_discount {
+  display: flex;
+  padding: 3px 6px;
+  background-color: #404040;
+  border-radius: 12px;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 500;
 }
 
 .shop-list-attribute_rating {
@@ -78,23 +96,23 @@
 }
 
 .Panel--ios .shop-list-attribute_button .rectangle-button {
-  width: 70px;
+  width: 80px;
   height: 32px;
 }
 
 .Panel--android .shop-list-attribute_button .rectangle-button {
-  width: 65px;
+  width: 68px;
   height: 32px;
 }
 
 .shop-list-attribute_button .rectangle-button_text {
-  font-size: 12px;
+  font-size: 14px;
+  text-decoration: none;
+  color: #fff;
 }
 
 .Panel--android .shop-list-attribute_button .rectangle-button_text {
-  font-size: 10px;
-}
-
-.shop-list-attribute_button .Button--sz-l .Button__content {
-  padding: 0;
+  font-size: 12px;
+  text-decoration: none;
+  color: #fff;
 }

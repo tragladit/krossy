@@ -36,12 +36,15 @@ class ProductCardPanel extends React.PureComponent {
   }
 
   loadOffers = async (id) => {
-    await this.Service.getOffers(id)
-      .then(res => {
-        if (res.ok) {
-          this.props.setOffers(sortMinPrice(res.result));
-        }
-      });
+    try {
+      const offersList = await this.Service.getOffers(id)
+      if (offersList.ok) {
+        console.log('offersList.result', offersList.result)
+        this.props.setOffers(sortMinPrice(offersList.result));
+      }
+    } catch (err) {
+      console.log('#panels.productCardPanel.ProductCardPanel.loadOffers#', err)
+    }
   };
 
   componentDidMount() {
@@ -65,7 +68,7 @@ class ProductCardPanel extends React.PureComponent {
       offers, products, product, userId, productId, modelsParams, currentColor, currentSize,
       setDataOnChangeColor, setDataOnChangeSize, setLike
     } = this.props;
-
+    
     const pictures = modelsParams[currentColor].pictures
     const colors = Object.keys(modelsParams)
     const params = modelsParams[currentColor].params
@@ -191,8 +194,10 @@ class ProductCardPanel extends React.PureComponent {
           <ProductSelectShop
             func={this.handleOpenSelect} isOpen={this.state.isOpenShopList} count={offers.length}
           />
-          {this.state.isOpenShopList ? <ShopList /> : null}
-          <ProductCardLikeBrand keys={getProductsDt(products)} products={products} />
+          {this.state.isOpenShopList ? <ShopList offers={offers} /> : null}
+          <ProductCardLikeBrand
+            keys={getProductsDt(products)} vendor={vendor} products={products}
+          />
         </div>
       </Panel>
     )
