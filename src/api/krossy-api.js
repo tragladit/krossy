@@ -3,68 +3,98 @@ export default class ApiService {
   _apiBase = 'https://krosi.todozzle.com/api';
 
   getResource = async (url) => {
-    const res = await fetch(`${this._apiBase}${url}`);
-
-    if (!res.ok) {
-      throw new Error(`Could not fetch ${url}` +
-        `, received ${res.status}`)
+    try {
+      const res = await fetch(`${this._apiBase}${url}`);
+      if (!res.ok) {
+        throw new Error(`Could not fetch ${url}` +
+          `, received ${res.status}`)
+      }
+      return await res.json();
+    } catch (err) {
+      console.log('#api.krossy-api.ApiService.getResource#', err)
+      return false
     }
-    return await res.json();
   };
 
   loadSetting = async (id) => {
-    const res = await this.getResource(`/settings/${id}`);
-    return res;
+    try {
+      return await this.getResource(`/settings/${id}`);
+    } catch (err) {
+      console.log('#api.krossy-api.ApiService.loadSetting#', err)
+      return false
+    }
   };
 
   saveSetting = async (id, body) => {
-    const res = await fetch(`${this._apiBase}/settings/${id}`, {
-      method: 'POST',
-      body: body
-    });
-    return res;
+    try {
+      return await fetch(`${this._apiBase}/settings/${id}`, {
+        method: 'POST',
+        body: body
+      });
+    } catch (err) {
+      console.log('#api.krossy-api.ApiService.saveSetting#', err)
+      return false
+    }
   };
 
   getProducts = async (userId) => {
-    const res = await this.getResource(`/shoes?userId=${userId}`);
-    return res;
+    try {
+      return await this.getResource(`/shoes?userId=${userId}`);
+    } catch (err) {
+      console.log('#api.krossy-api.ApiService.getProducts#', err)
+      return false
+    }
   };
 
   getModels = async  (goodId, userId) => {
-    const res = await this.getResource(`/goods/${goodId}/models?userId=${userId}`);
-    return res;
+    try {
+      return await this.getResource(`/goods/${goodId}/models?userId=${userId}`);
+    } catch (err) {
+      console.log('#api.krossy-api.ApiService.getModels#', err)
+      return false
+    }
   };
 
   getOffers = async (goodId) => {
-    const res = await this.getResource(`/models/${goodId}/offers`);
-    return res;
+    try {
+      return await this.getResource(`/models/${goodId}/offers`);
+    } catch (err) {
+      console.log('#api.krossy-api.ApiService.getOffers#', err)
+      return false
+    }
   }
 
-  getGameModels = async (userId) => {
-    const res = await this.getResource(`/game/${userId}`);
-    console.log('#krossy-api.ApiService.getGameModels#', res);
+  getGameModel = async (userId) => {
+    try {
+      return await this.getResource(`/game/${userId}`);
+    } catch (err) {
+      console.log('#api.krossy-api.ApiService.getGameModel#', err)
+      return false
+    }
   }
 
   setGame = async (body) => {
-    // const res = await fetch(`${this._apiBase}/game/like`, {
-    //   method: 'POST',
-    //   body: body
-    // });
-    console.log('#krossy-api.ApiService.setGame#', body);
+    try {
+      const res = await fetch(`${this._apiBase}/game/like`, {
+        method: 'POST',
+        body: body
+      });
+      if (!res) {
+        console.log('#api.krossy-api.ApiService.setGame# RESPONCE ERROR');
+      }
+    } catch (err) {
+      console.log('#api.krossy-api.ApiService.setGame#', err);
+    }
   };
 
   setSubscribe = async (productId, body) => {
     try {
-      const res = await fetch(`${this._apiBase}/goods/${productId}/subscribe`, {
+      return await fetch(`${this._apiBase}/goods/${productId}/subscribe`, {
         method: 'POST',
         body: body
       });
-      if (res.ok) {
-        return true
-      }
-      return false
     } catch (err) {
-      console.log('#krossy-api.ApiService.setSubscribe#', err)
+      console.log('#api.krossy-api.ApiService.setSubscribe#', err)
       return false
     }
   };

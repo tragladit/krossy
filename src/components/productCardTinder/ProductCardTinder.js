@@ -7,14 +7,16 @@ import ProductCountShopView from "../product/productCountShopView/ProductCountSh
 import './ProductCardTinder.css';
 import RoundSizeButton from '../buttons/roundSizeButton/RoundSizeButton';
 import IconArrowRight from '../icon/IconArrowRight';
-import { connect as reduxConnect } from "react-redux";
-import { isChangeBoolean, setNewInitData } from '../../reducers/user';
-import { getNormalizeData } from '../../reducers/selectors';
-import ApiService from '../../api/krossy-api';
 
-const ProductCardTinder = ({ userId, isLoad, setNewInitData, product, go, isWelcome }) => {
-  console.log('#user and product ids#', userId, product.id)
-  const Service = new ApiService()
+const ProductCardTinder = ({ product, setProduct, isWelcome }) => {
+
+  const divStyleBlur = { filter: 'blur(9px)' }
+
+  const sizes = product.sizes.sort((a, b) => a - b)
+
+  const style = { backgroundImage: `url('${product.pictures[0]}')` }
+
+  const goProduct = () => setProduct(product)
 
   useEffect(() => {
     const page = document.getElementById('tpw')
@@ -27,32 +29,6 @@ const ProductCardTinder = ({ userId, isLoad, setNewInitData, product, go, isWelc
     }
     document.getElementById('tppiw').style.height = `${imgHeight}px`
   })
-
-  const goProduct = async () => {
-    try {
-      const goTo = 'productCardPanel'
-      const target = product.id
-      isLoad(true);
-      const resModels = await Service.getModels(target, userId)
-      if (resModels.ok) {
-        console.log('#models#', resModels.result)
-        const nmzData = getNormalizeData(resModels.result, product.pictureModelId)
-        setNewInitData(nmzData.models, target, nmzData.current)
-        isLoad(false)
-        go(goTo)
-      } else {
-        console.log('#ProductCardTinder.goProduct.findCurrentModel# Model not find')
-      }
-    } catch (err) {
-      console.log('#ProductCardTinder.goProduct#', err)
-    }
-  };
-
-  const divStyleBlur = { filter: 'blur(9px)' }
-
-  const sizes = product.sizes.sort((a, b) => a - b)
-
-  const style = { backgroundImage: `url('${product.pictures[0]}')` }
 
   return (
     <div style={isWelcome ? divStyleBlur : null} className='tinder-page-product'>
@@ -76,14 +52,4 @@ const ProductCardTinder = ({ userId, isLoad, setNewInitData, product, go, isWelc
   )
 };
 
-export default reduxConnect(
-  state => ({
-    userId: state.user.userInfo.id
-  }),
-  dispatch => ({
-    isLoad: bool => dispatch(isChangeBoolean('isLoadModels', bool)),
-    setNewInitData: (modelsParams, currentProduct, current) => {
-      dispatch(setNewInitData(modelsParams, currentProduct, current))
-    }
-  })
-)(ProductCardTinder);
+export default ProductCardTinder;

@@ -1,6 +1,7 @@
 import {
   CHANGE_GENDER, CHOOSE_SIZE, CHOOSE_SIZE_BY_SIZE, GET_USER_INFO, IS_CHANGE_BOOLEAN, GET_DATA,
-  SET_NEW_INIT_DATA, SET_DATA_ON_CHANGE_COLOR, SET_DATA_ON_CHANGE_SIZE, SET_SIZE_CHART, SET_LIKE
+  SET_NEW_INIT_DATA, SET_DATA_ON_CHANGE_COLOR, SET_DATA_ON_CHANGE_SIZE, SET_SIZE_CHART, SET_LIKE,
+  SET_DATA_ON_GO_GAME,
 } from "./constants";
 import { setProductLike } from './selectors';
 
@@ -91,6 +92,7 @@ const initialState = {
   ],
   offersByModel: [],
   products: false,
+  product: false,
   productId: null,
   modelsParams: {},
   modelId: null,
@@ -146,6 +148,10 @@ export const setNewInitData = (modelsParams, productId, current) => ({
   type: SET_NEW_INIT_DATA, modelsParams, productId, current
 });
 
+export const setOnGoGameData = (modelsParams, product, current) => ({
+  type: SET_DATA_ON_GO_GAME, modelsParams, product, current
+});
+
 export const setDataOnChangeColor = (color, size, id, offers) => (
   { type: SET_DATA_ON_CHANGE_COLOR, color, size, id, offers }
 );
@@ -181,6 +187,12 @@ export function user(state = initialState, action) {
         ...state,
         modelsParams: action.modelsParams, productId: action.productId,
         modelId: action.current.id, currentSize: action.current.size, currentColor: action.current.color
+      };
+    case SET_DATA_ON_GO_GAME:
+      return {
+        ...state,
+        modelsParams: action.modelsParams, product: action.product, modelId: action.current.id,
+        currentSize: action.current.size, currentColor: action.current.color
       };
     case SET_DATA_ON_CHANGE_COLOR:
       return {

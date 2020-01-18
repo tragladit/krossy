@@ -1,79 +1,65 @@
-import React from 'react';
-// import ApiService from "../../api/krossy-api";
+import React, { useState, useEffect } from 'react';
 import { View } from "@vkontakte/vkui";
 import TinderPanel from "../../panels/tinderPanel/TinderPanel";
 import ProductCardPanel from "../../panels/productCardPanel/ProductCardPanel";
 import { connect as reduxConnect } from "react-redux";
-import {
-  setInitialCards, resTinderData, setLikeTinder, setDislikeTinder, setIsWelcome
-} from '../../reducers/tinder';
+import { isChangeBoolean, setOnGoGameData } from '../../reducers/user';
+import { getNormalizeData } from '../../reducers/selectors';
+import ApiService from '../../api/krossy-api';
 
-// const service = new ApiService();
+const Service = new ApiService()
 
-// const getGameModels = async (userId) => {
-//   const res = await service.getModels(userId);
-//   console.log('#game models#', res)
-// }
+const TINDER = 'tinder'
+const PRODUCT_CARD = 'productCardPanel'
 
-class TinderView extends React.Component {
+const TinderView = ({ id, userId, isLoad, setGameData }) => {
 
-  constructor(props) {
-    super(props);
-    this.state = { activePanel: 'tinder', isWelcome: this.props.isWelcome }
-    this.initCardsData()
-  }
+  const [activePanel, setActivePanel] = useState(TINDER)
+  const [product, setProduct] = useState(false)
 
-  componentWillUnmount() {
-    this.props.resTinderData()
-  }
+  const go = (panel) => setActivePanel(panel)
 
-  initCardsData = () => {
-    // getGameModels(this.props.userId)
-    this.props.setInitialCards(Object.keys(this.props.products))
-  }
+  const onSetProduct = (data) => setProduct(data)
 
-  onCloseModal = (checked) => {
-    if (checked) {
-      this.props.setIsWelcome()
+  useEffect(() => {
+    const { id, pictureModelId } = product
+    const goProduct = async () => {
+      try {
+        isLoad(true);
+        const resModels = await Service.getModels(id, userId)
+        if (resModels.ok) {
+          const nmzData = getNormalizeData(resModels.result, pictureModelId)
+          setGameData(nmzData.models, product, nmzData.current)
+          isLoad(false)
+          go(PRODUCT_CARD)
+        } else {
+          console.log('#ProductCardTinder.goProduct.findCurrentModel# Model not find')
+        }
+      } catch (err) {
+        console.log('#ProductCardTinder.goProduct#', err)
+      }
     }
-    this.setState({ isWelcome: false })
-  }
+    if (product) {
+      goProduct()
+    }
+  }, [product, userId, isLoad, setGameData])
 
-  go = (panel) => this.setState({ activePanel: panel })
-
-  render() {
-
-    const { userId, products, cards, likes, setLikeTinder, setDislikeTinder } = this.props
-
-    const { isWelcome } = this.state
-
-    return (
-      <View id={this.props.id} activePanel={this.state.activePanel}>
-        <TinderPanel
-          id='tinder' go={this.go} isWelcome={isWelcome} onCloseModal={this.onCloseModal}
-          userId={userId} products={products} cards={cards}
-          likes={likes} setLikeTinder={setLikeTinder} setDislikeTinder={setDislikeTinder}
-        />
-        <ProductCardPanel id='productCardPanel' go={this.go} goBack='tinder' />
-      </View>
-    )
-  }
+  return (
+    <View id={id} activePanel={activePanel}>
+      <TinderPanel id={TINDER} userId={userId} setProduct={onSetProduct} />
+      <ProductCardPanel id={PRODUCT_CARD} go={go} goBack={TINDER} />
+    </View>
+  )
 }
 
 export default reduxConnect(
   state => ({
-    userId: state.user.userInfo.id,
-    products: state.user.products,
-    isWelcome: state.tinder.isWelcome,
-    cards: state.tinder.cards,
-    likes: state.tinder.likes,
-    dislikes: state.tinder.dislikes
+    userId: state.user.userInfo.id
   }),
   dispatch => ({
-    setIsWelcome: () => dispatch(setIsWelcome()),
-    setInitialCards: data => dispatch(setInitialCards(data)),
-    resTinderData: () => dispatch(resTinderData()),
-    setLikeTinder: () => dispatch(setLikeTinder()),
-    setDislikeTinder: () => dispatch(setDislikeTinder())
+    isLoad: bool => dispatch(isChangeBoolean('isLoadModels', bool)),
+    setGameData: (modelsParams, currentProduct, current) => {
+      dispatch(setOnGoGameData(modelsParams, currentProduct, current))
+    }
   })
 )(TinderView);

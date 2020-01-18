@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import './TinderPanel.css';
 import { Panel, platform, IOS } from "@vkontakte/vkui";
 import ProductCardTinder from "../../components/productCardTinder/ProductCardTinder";
@@ -23,31 +23,57 @@ const fontStyleIOS = {
 
 const service = new ApiService();
 
-const TinderPanel = ({
-  id, go, isWelcome, userId, products, cards, likes, setLikeTinder, setDislikeTinder, onCloseModal
-}) => {
+const TinderPanel = ({ id, userId, setProduct }) => {
 
-  const [direction, setDirection] = useState('')
-  const lenCards = cards.length
+  const [model, setModel] = useState(false)
+  const [swipe, setSwipe] = useState({ id: false, likes: 0, type: false })
+  const [isWelcome, setIsWelcome] = useState(true)
 
-  const setSwipe = () => {
-    const type = direction === 'right' ? 1 : 0
-    service.setGame({ userId: userId, goodId: products[cards[0]].id, type: type })
-    if (direction === 'right') {
-      setLikeTinder()
-    } else if (direction === 'left') {
-      setDislikeTinder()
-    } else {
-      console.log('#TinderPanel.setSwipe# Error swipe val')
-    }
+  const onSwipe = (value) => {
+    const type = value === 'right' ? 1 : 0
+    const likes = type === 1 ? swipe.likes + 1 : swipe.likes
+    setSwipe({ id: model.id, likes, type })
   }
+
+  const onCloseWelcome = () => setIsWelcome(false)
+
+  const getModel = useCallback(async () => {
+    try {
+      const res = await service.getGameModel(userId)
+      if (res && res.ok) {
+        setModel(res.result)
+      } else {
+        console.log('#panels.tinderPanel.TinderPanel.getModel# RESPONCE ERROR')
+      }
+    } catch (err) {
+      console.log('#panels.tinderPanel.TinderPanel.getModel#', err)
+    }
+  }, [userId])
+
+  useEffect(() => {
+    getModel()
+  }, [getModel])
+
+  useEffect(() => {
+    const setGame = async () => {
+      try {
+        await service.setGame({ userId, goodId: swipe.id, type: swipe.type })
+        getModel()
+      } catch (err) {
+        console.log('#panels.tinderPanel.TinderPanel.setGame#', err)
+      }
+    }
+    if (swipe.id) {
+      setGame()
+    }
+  }, [swipe, userId, getModel])
 
   return (
     <Panel style={osname === IOS ? fontStyleIOS : fontStyleAndroid} id={id} theme='white'>
-      <HeaderTinder title='Кроссы ' page='tinder' countLikes={likes.length} />
+      <HeaderTinder title='Кроссы ' page='tinder' countLikes={swipe.likes} />
       <div id='tpw' className='tinder_page_wrap'>
         {
-          cards.length > 0 &&
+          model &&
           <Swipeable
             buttons={({ left, right }) => (
               <div className='tinder_buttons_wrap'>
@@ -55,17 +81,15 @@ const TinderPanel = ({
                 <TinderButton func={right} title='Нравится' iconSvg={<IconLike />} />
               </div>
             )}
-            onSwipe={(val) => setDirection(val)}
-            onAfterSwipe={setSwipe}
+            onSwipe={onSwipe}
           >
             <Card>
-              <ProductCardTinder product={products[cards[0]]} go={go} isWelcome={isWelcome} />
+              <ProductCardTinder product={model} setProduct={setProduct} isWelcome={isWelcome} />
             </Card>
           </Swipeable>
         }
-        {isWelcome ? <ProductCardTinderWelcome closeModal={onCloseModal} /> : null}
+        {isWelcome ? <ProductCardTinderWelcome closeWelcome={onCloseWelcome} /> : null}
       </div>
-      {!lenCards && <Card endCards={true} />}
     </Panel>
   )
 }

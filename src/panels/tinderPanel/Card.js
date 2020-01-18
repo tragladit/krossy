@@ -1,11 +1,8 @@
 import React from "react"
-import InfoCard from "../../components/infoCard/InfoCard"
 
-const Card = ({ endCards, children }) => {
+const Card = ({ children }) => {
   return (
-    endCards ?
-      <InfoCard text='Вы всё просмотрели' /> :
-      <div className='swipeable_card'>{children}</div>
+    <div className='swipeable_card'>{children}</div>
   )
 }
 

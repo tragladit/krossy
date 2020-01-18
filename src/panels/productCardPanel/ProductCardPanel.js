@@ -62,14 +62,19 @@ class ProductCardPanel extends React.PureComponent {
 
   render() {
     const {
-      offers, products, userId, productId, modelsParams, currentColor, currentSize,
+      offers, products, product, userId, productId, modelsParams, currentColor, currentSize,
       setDataOnChangeColor, setDataOnChangeSize, setLike
     } = this.props;
 
     const pictures = modelsParams[currentColor].pictures
     const colors = Object.keys(modelsParams)
     const params = modelsParams[currentColor].params
-    const subscribed = products[productId].subscribed
+    const subscribed = product ? product.subscribed : products[productId].subscribed
+    const liked = product ? product.top : products[productId].top
+    const colorHeart = liked ? '#ff5c7b' : '#aebfcf'
+    const vendor = product ? product.vendor : products[productId].vendor
+    const model = product ? product.model : products[productId].model
+    const gender = product ? product.gender : products[productId].gender
 
     const osname = platform();
 
@@ -83,8 +88,6 @@ class ProductCardPanel extends React.PureComponent {
     const blurStyle = {
       filter: 'blur(9px)'
     };
-
-    const colorHeart = products[productId].top ? '#ff5c7b' : '#aebfcf'
 
     const onColor = async (newColor) => {
       const newParams = modelsParams[newColor].params[0]
@@ -148,9 +151,9 @@ class ProductCardPanel extends React.PureComponent {
           <Div className='product-card_attribute'>
             <div className='product-card-name'>
               <span className='product-card-name_brand'>
-                {products[productId].vendor}
+                {vendor}
               </span>
-              <span className='product-card-name_product'>{products[productId].model}</span>
+              <span className='product-card-name_product'>{model}</span>
             </div >
             <div className='product-card-price_wrap'>
               {
@@ -169,7 +172,7 @@ class ProductCardPanel extends React.PureComponent {
             <div className='product-card_attribute-size-sex' >
               <ProductSizeChartView params={params} curSize={currentSize} setData={onSize} />
               <div className='product-card_attribute-sex'>
-                {products[productId].gender}
+                {gender}
               </div>
             </div>
             <div className='product-card-share_wrap'>
@@ -200,6 +203,7 @@ export default reduxConnect(
   state => ({
     offers: state.user.offersByModel,
     products: state.user.products,
+    product: state.user.product,
     userId: state.user.userInfo.id,
     productId: state.user.productId,
     modelsParams: state.user.modelsParams,
