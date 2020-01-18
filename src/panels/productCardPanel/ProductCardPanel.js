@@ -39,7 +39,6 @@ class ProductCardPanel extends React.PureComponent {
     try {
       const offersList = await this.Service.getOffers(id)
       if (offersList.ok) {
-        console.log('offersList.result', offersList.result)
         this.props.setOffers(sortMinPrice(offersList.result));
       }
     } catch (err) {

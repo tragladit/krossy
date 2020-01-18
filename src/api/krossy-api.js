@@ -82,7 +82,7 @@ export default class ApiService {
     }
   }
 
-  getLikes = async ({userId}) => {
+  getLikes = async (userId) => {
     try {
       return await this.getResource(`/likes/${userId}`);
     } catch (err) {
@@ -91,7 +91,7 @@ export default class ApiService {
     }
   }
 
-  getSubscribes = async ({userId}) => {
+  getSubscribes = async (userId) => {
     try {
       return await this.getResource(`/subscribes/${userId}`);
     } catch (err) {

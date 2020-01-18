@@ -4,16 +4,20 @@ import { Panel, Div } from "@vkontakte/vkui";
 import ProductCardSmall from "../../components/productCardSmall/ProductCardSmall";
 import HeaderFavorite from "../../components/headerFavorite/HeaderFavorite";
 import { connect as reduxConnect } from "react-redux";
-import { filterFavorite, filterLike } from '../../reducers/favoriteSelectors';
+// import { filterFavorite, filterLike } from '../../reducers/favoriteSelectors';
 import InfoCard from '../../components/infoCard/InfoCard';
+import ApiService from "../../api/krossy-api";
 
 class FavoritesPanel extends React.Component {
+
+  Service = new ApiService();
 
   constructor(props) {
     super(props)
     this.state = {
       contextOpened: false,
-      mode: 'favorite'
+      mode: 'favorite',
+      data: [],
     };
   }
 
@@ -25,29 +29,34 @@ class FavoritesPanel extends React.Component {
     requestAnimationFrame(this.toggleContext);
   };
 
+  getData = async (id) => {
+    const {mode} = this.state
+    try {
+      const res = mode === 'favorite'
+        ? await this.Service.getSubscribes(id)
+        : await this.Service.getLikes(id)
+      if (res.ok) {
+        console.log('result', res.result)
+        this.setState({ data: res.result });
+      }
+    } catch (err) {
+      console.log('#panels.favoritesPanel.FavoritesPanel.getData#', err)
+    }
+  };
+
+  componentDidMount() {
+    this.getData(this.props.userId);
+  }
+
   render() {
 
-    const { contextOpened, mode } = this.state;
-    const { products, likes } = this.props
+    const { contextOpened, mode, data } = this.state;
 
-    const getData = () => {
-      if (mode === 'favorite') {
-        return filterFavorite(products)
-      } else if (mode === 'like') {
-        if (likes.length) {
-          return filterLike(likes, products)
-        }
-        return []
-      }
-    }
-
-    const dataCards = getData()
-
-    const lenData = dataCards.length
+    const lenData = data.length
 
     const Cards = () => {
       if (lenData) {
-        return dataCards.map(el => (
+        return data.map(el => (
           <ProductCardSmall
             key={el.id} formSticker='round' nameSticker={mode === 'favorite' ? 'like' : 'star'}
             prodId={el.id} product={el}
@@ -74,8 +83,7 @@ class FavoritesPanel extends React.Component {
 
 export default reduxConnect(
   state => ({
-    products: state.user.products,
-    likes: state.tinder.likes
+    userId: state.user.userInfo.id,
   }),
   null
 )(FavoritesPanel);

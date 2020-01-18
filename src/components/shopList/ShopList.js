@@ -16,9 +16,9 @@ const Shop = ({ data }) => {
   return (
     <div className='shop-list-border'>
       <div className='shop-list_row'>
-        <div className='shop-list-image_wrap'>
+        {/* <div className='shop-list-image_wrap'>
           <img className='shop-list-image' src={pic} alt='shop-logo' />
-        </div>
+        </div> */}
         <div className='shop-list-attribute'>
           <div className='shop-list-attribute_shop-name'>{shopsNames[shopId]}</div>
           <div className='shop-list-attribute_price'>
