@@ -1,6 +1,5 @@
 import React from 'react';
 import './ShopList.css';
-import pic from '../../assets/image/wb.png';
 import IconRatingStar from "../icon/IconRatingStar";
 import {IOS, platform} from "@vkontakte/vkui";
 import uuid from 'uuid';
@@ -16,9 +15,6 @@ const Shop = ({ data }) => {
   return (
     <div className='shop-list-border'>
       <div className='shop-list_row'>
-        {/* <div className='shop-list-image_wrap'>
-          <img className='shop-list-image' src={pic} alt='shop-logo' />
-        </div> */}
         <div className='shop-list-attribute'>
           <div className='shop-list-attribute_shop-name'>{shopsNames[shopId]}</div>
           <div className='shop-list-attribute_price'>
