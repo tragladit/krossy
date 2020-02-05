@@ -1,31 +1,30 @@
 {
   "files": {
-    "main.css": "/krossy/static/css/main.2a21a978.chunk.css",
-    "main.js": "/krossy/static/js/main.b281c82f.chunk.js",
-    "main.js.map": "/krossy/static/js/main.b281c82f.chunk.js.map",
+    "main.css": "/krossy/static/css/main.b0fc85bd.chunk.css",
+    "main.js": "/krossy/static/js/main.320f4eb4.chunk.js",
+    "main.js.map": "/krossy/static/js/main.320f4eb4.chunk.js.map",
     "runtime-main.js": "/krossy/static/js/runtime-main.3baf317b.js",
     "runtime-main.js.map": "/krossy/static/js/runtime-main.3baf317b.js.map",
     "static/css/2.7214840c.chunk.css": "/krossy/static/css/2.7214840c.chunk.css",
-    "static/js/2.39ab85c4.chunk.js": "/krossy/static/js/2.39ab85c4.chunk.js",
-    "static/js/2.39ab85c4.chunk.js.map": "/krossy/static/js/2.39ab85c4.chunk.js.map",
+    "static/js/2.39b516a9.chunk.js": "/krossy/static/js/2.39b516a9.chunk.js",
+    "static/js/2.39b516a9.chunk.js.map": "/krossy/static/js/2.39b516a9.chunk.js.map",
     "index.html": "/krossy/index.html",
-    "precache-manifest.20fc5d7ccf67114ecbee9512c9b17963.js": "/krossy/precache-manifest.20fc5d7ccf67114ecbee9512c9b17963.js",
+    "precache-manifest.d5fc9a6ec4baffd7d207f328d7480882.js": "/krossy/precache-manifest.d5fc9a6ec4baffd7d207f328d7480882.js",
     "service-worker.js": "/krossy/service-worker.js",
     "static/css/2.7214840c.chunk.css.map": "/krossy/static/css/2.7214840c.chunk.css.map",
-    "static/css/main.2a21a978.chunk.css.map": "/krossy/static/css/main.2a21a978.chunk.css.map",
+    "static/css/main.b0fc85bd.chunk.css.map": "/krossy/static/css/main.b0fc85bd.chunk.css.map",
     "static/media/fonts.css": "/krossy/static/media/SFUIText-Semibold.34dfe822.ttf",
     "static/media/backTinder.svg": "/krossy/static/media/backTinder.8d3b5751.svg",
     "static/media/StartPanelOne.css": "/krossy/static/media/iOS 1.0e943850.svg",
     "static/media/StartPanelTwo.module.css": "/krossy/static/media/iOS 2.d7d002a4.svg",
     "static/media/StartPanelThree.module.css": "/krossy/static/media/iOS 3.c988a16c.svg",
-    "static/media/tag.svg": "/krossy/static/media/tag.dc757a4e.svg",
-    "static/media/wb.png": "/krossy/static/media/wb.81ec8c10.png"
+    "static/media/tag.svg": "/krossy/static/media/tag.dc757a4e.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.3baf317b.js",
     "static/css/2.7214840c.chunk.css",
-    "static/js/2.39ab85c4.chunk.js",
-    "static/css/main.2a21a978.chunk.css",
-    "static/js/main.b281c82f.chunk.js"
+    "static/js/2.39b516a9.chunk.js",
+    "static/css/main.b0fc85bd.chunk.css",
+    "static/js/main.320f4eb4.chunk.js"
   ]
 }
